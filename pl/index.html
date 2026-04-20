@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Polityka prywatności — Mote</title>
+    <link rel="alternate" hreflang="pl" href="https://macsiem.github.io/mote-privacy/pl/">
+    <link rel="alternate" hreflang="en" href="https://macsiem.github.io/mote-privacy/en/">
+    <link rel="alternate" hreflang="x-default" href="https://macsiem.github.io/mote-privacy/">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; line-height: 1.6; color: #333; background-color: #fafafa; }
+        .container { max-width: 800px; margin: 0 auto; padding: 40px 20px; background-color: #fff; }
+        h1 { color: #7c3aed; margin-top: 40px; margin-bottom: 10px; font-size: 2.5em; }
+        h1:first-of-type { margin-top: 0; }
+        h2 { color: #6d28d9; margin-top: 30px; margin-bottom: 15px; font-size: 1.5em; }
+        h3 { color: #6d28d9; margin-top: 20px; margin-bottom: 10px; font-size: 1.2em; }
+        p { margin-bottom: 15px; text-align: justify; }
+        ul, ol { margin-left: 25px; margin-bottom: 15px; }
+        li { margin-bottom: 8px; }
+        a { color: #7c3aed; text-decoration: none; border-bottom: 1px solid #7c3aed; }
+        a:hover { color: #6d28d9; }
+        strong { color: #6d28d9; }
+        .lang-switcher { text-align: center; margin-bottom: 30px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0; font-size: 0.95em; }
+        .lang-switcher a { margin: 0 8px; font-weight: 500; }
+        .lang-switcher .active { color: #333; border-bottom: none; font-weight: 700; }
+        footer { margin-top: 40px; padding-top: 20px; border-top: 1px solid #e0e0e0; text-align: center; color: #666; font-size: 0.9em; }
+        .updated { color: #666; font-style: italic; margin-bottom: 30px; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="lang-switcher">
+        <a class="active">Polski</a> | <a href="../en/">English</a>
+    </div>
+
+    <h1>Polityka prywatności — Mote</h1>
+    <p class="updated">Ostatnia aktualizacja: 19 kwietnia 2026</p>
+
+    <h2>1. Wprowadzenie</h2>
+    <p><strong>Mote</strong> to aplikacja mobilna dla par, ktora pomaga dzielic sie codziennymi momentami docenienia partnera. Prywatnosc jest fundamentem produktu: dane sa <strong>szyfrowane end-to-end</strong>, aplikacja dziala <strong>offline-first</strong>, a wiekszosc tresci nigdy nie opuszcza Twojego urzadzenia w formie czytelnej dla kogokolwiek poza Toba i Twoja para.</p>
+    <p>Administratorem aplikacji jest Maciej Sieminski (kontakt: <a href="mailto:maciek.sieminski@gmail.com">maciek.sieminski@gmail.com</a>).</p>
+
+    <h2>2. Jakie dane przetwarzamy</h2>
+
+    <h3>2.1 Tresci wpisow i notatek</h3>
+    <p>Wpisy, wiadomosci, tagi, mood check-iny oraz zdjecia/nagrania audio dodane przez Ciebie sa przechowywane <strong>lokalnie na Twoim urzadzeniu</strong> i szyfrowane zarowno w spoczynku (local encryption), jak i w transmisji do Twojej pary (end-to-end encryption). Operator aplikacji nie ma dostepu do tresci Twoich wpisow.</p>
+
+    <h3>2.2 Dane identyfikacyjne pary</h3>
+    <p>Do sparowania dwoch urzadzen Mote uzywa 6-znakowego kodu lub kodu QR. Zaden adres e-mail, numer telefonu ani dane PII nie sa wymagane do korzystania z aplikacji. Para zostaje powiazana przez losowy identyfikator, ktory sam w sobie nie identyfikuje osoby.</p>
+
+    <h3>2.3 Dane diagnostyczne (Sentry)</h3>
+    <p>Aby wykrywac awarie i poprawiac stabilnosc, korzystamy z <strong>Sentry</strong> (sentry.io). Sentry zbiera:</p>
+    <ul>
+        <li>stack trace bledow (crash logs);</li>
+        <li>informacje o urzadzeniu (model, wersja OS, locale);</li>
+        <li>wersje aplikacji i build number.</li>
+    </ul>
+    <p>Sentry <strong>nie</strong> zbiera tresci Twoich wpisow, nazw uzytkownikow, ani danych pary. Dane diagnostyczne sa retencjonowane do 90 dni.</p>
+
+    <h3>2.4 Reklamy (AdMob)</h3>
+    <p>Mote wyswietla nieinwazyjne reklamy bannerowe w ekranach Ustawienia, Empty state i Eksport. Reklamy sa dostarczane przez <strong>Google AdMob</strong>, ktore w ramach swojego SDK:</p>
+    <ul>
+        <li>zbiera <strong>identyfikator reklamowy</strong> (Android Advertising ID / Apple IDFA), ktory jest udostepniany Google w celu serwowania reklam;</li>
+        <li>zbiera dane diagnostyczne (model urzadzenia, lokalizacje ogolna na poziomie kraju, jezyk).</li>
+    </ul>
+    <p>Nigdy nie sprzedajemy danych osobowych stronom trzecim. Identyfikator reklamowy mozesz w kazdej chwili zresetowac w ustawieniach Androida/iOS. Reklamy wylaczysz jednorazowym zakupem IAP "Usun reklamy".</p>
+
+    <h3>2.5 Uprawnienia na urzadzeniu</h3>
+    <ul>
+        <li><strong>Aparat</strong> (<code>CAMERA</code>): robienie zdjec do wpisow (opcjonalnie).</li>
+        <li><strong>Mikrofon</strong> (<code>RECORD_AUDIO</code>): nagrywanie wiadomosci glosowych (opcjonalnie).</li>
+        <li><strong>Zdjecia/Media</strong> (<code>READ_MEDIA_IMAGES</code>): dodawanie zdjec z galerii (opcjonalnie).</li>
+        <li><strong>Powiadomienia</strong> (<code>POST_NOTIFICATIONS</code>): delikatne przypomnienia o mood check-inie.</li>
+        <li><strong>Wibracje</strong> (<code>VIBRATE</code>): haptyczny feedback UI.</li>
+    </ul>
+    <p>Kazde uprawnienie jest proszone kontekstowo i mozesz go odmowic bez utraty dostepu do rdzennych funkcji.</p>
+
+    <h2>3. Podstawy prawne (RODO)</h2>
+    <p>Dla uzytkownikow w UE: wykonanie umowy (art. 6 ust. 1 lit. b RODO) — podstawowe funkcje aplikacji; prawnie uzasadniony interes (art. 6 ust. 1 lit. f) — diagnostyka Sentry; zgoda (art. 6 ust. 1 lit. a) — reklamy spersonalizowane (mozesz odmowic przy pierwszym uruchomieniu; nie-spersonalizowane sa domyslne).</p>
+
+    <h2>4. Prawa uzytkownika</h2>
+    <p>Masz prawo do: dostepu do swoich danych, ich sprostowania, usuniecia, ograniczenia przetwarzania, sprzeciwu wobec przetwarzania, przenoszenia danych. Aplikacja oferuje <strong>pelen eksport</strong> (JSON + Markdown) w dowolnym momencie, bezplatnie. Usuniecie konta usuwa wszystkie dane pary z backendu; dane lokalne pozostaja do momentu odinstalowania aplikacji.</p>
+    <p>Aby zglosic zadanie zwiazane z danymi osobowymi lub zlozyc skarge, napisz na <a href="mailto:maciek.sieminski@gmail.com">maciek.sieminski@gmail.com</a>. Masz tez prawo zlozyc skarge do Prezesa UODO (uodo.gov.pl).</p>
+
+    <h2>5. Dzieci</h2>
+    <p>Mote nie jest przeznaczony dla dzieci ponizej 13 lat. Target audience w Google Play to 13+. Nie zbieramy swiadomie danych dzieci; jesli zostana zidentyfikowane, zostana niezwlocznie usuniete.</p>
+
+    <h2>6. Zmiany polityki</h2>
+    <p>Istotne zmiany niniejszej polityki beda komunikowane w aplikacji oraz na tej stronie (z data ostatniej aktualizacji u gory). Dalsze korzystanie z Mote po zmianie oznacza jej akceptacje.</p>
+
+    <h2>7. Kontakt</h2>
+    <p>E-mail: <a href="mailto:maciek.sieminski@gmail.com">maciek.sieminski@gmail.com</a></p>
+
+    <footer>
+        <p>&copy; 2026 Mote. Polityka prywatnosci hostowana na GitHub Pages.</p>
+    </footer>
+</div>
+</body>
+</html>

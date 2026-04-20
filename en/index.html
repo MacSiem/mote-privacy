@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy — Mote</title>
+    <link rel="alternate" hreflang="pl" href="https://macsiem.github.io/mote-privacy/pl/">
+    <link rel="alternate" hreflang="en" href="https://macsiem.github.io/mote-privacy/en/">
+    <link rel="alternate" hreflang="x-default" href="https://macsiem.github.io/mote-privacy/">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; line-height: 1.6; color: #333; background-color: #fafafa; }
+        .container { max-width: 800px; margin: 0 auto; padding: 40px 20px; background-color: #fff; }
+        h1 { color: #7c3aed; margin-top: 40px; margin-bottom: 10px; font-size: 2.5em; }
+        h1:first-of-type { margin-top: 0; }
+        h2 { color: #6d28d9; margin-top: 30px; margin-bottom: 15px; font-size: 1.5em; }
+        h3 { color: #6d28d9; margin-top: 20px; margin-bottom: 10px; font-size: 1.2em; }
+        p { margin-bottom: 15px; text-align: justify; }
+        ul, ol { margin-left: 25px; margin-bottom: 15px; }
+        li { margin-bottom: 8px; }
+        a { color: #7c3aed; text-decoration: none; border-bottom: 1px solid #7c3aed; }
+        a:hover { color: #6d28d9; }
+        strong { color: #6d28d9; }
+        .lang-switcher { text-align: center; margin-bottom: 30px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0; font-size: 0.95em; }
+        .lang-switcher a { margin: 0 8px; font-weight: 500; }
+        .lang-switcher .active { color: #333; border-bottom: none; font-weight: 700; }
+        footer { margin-top: 40px; padding-top: 20px; border-top: 1px solid #e0e0e0; text-align: center; color: #666; font-size: 0.9em; }
+        .updated { color: #666; font-style: italic; margin-bottom: 30px; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="lang-switcher">
+        <a href="../pl/">Polski</a> | <a class="active">English</a>
+    </div>
+
+    <h1>Privacy Policy — Mote</h1>
+    <p class="updated">Last updated: April 19, 2026</p>
+
+    <h2>1. Introduction</h2>
+    <p><strong>Mote</strong> is a mobile app for couples that helps share everyday moments of appreciation for your partner. Privacy is the foundation of the product: data is <strong>end-to-end encrypted</strong>, the app is <strong>offline-first</strong>, and most content never leaves your device in a form readable by anyone other than you and your partner.</p>
+    <p>App operator: Maciej Sieminski (contact: <a href="mailto:maciek.sieminski@gmail.com">maciek.sieminski@gmail.com</a>).</p>
+
+    <h2>2. Data we process</h2>
+
+    <h3>2.1 Entry content and notes</h3>
+    <p>Entries, messages, tags, mood check-ins and photos/audio you add are stored <strong>locally on your device</strong> and encrypted both at rest (local encryption) and in transit to your partner (end-to-end encryption). The app operator has no access to your entry content.</p>
+
+    <h3>2.2 Pairing identifiers</h3>
+    <p>Mote pairs two devices using a 6-character code or QR code. No email, phone number, or PII is required to use the app. Pairing produces a random identifier that itself does not identify a person.</p>
+
+    <h3>2.3 Diagnostic data (Sentry)</h3>
+    <p>To detect crashes and improve stability we use <strong>Sentry</strong> (sentry.io). Sentry collects:</p>
+    <ul>
+        <li>error stack traces (crash logs);</li>
+        <li>device information (model, OS version, locale);</li>
+        <li>app version and build number.</li>
+    </ul>
+    <p>Sentry does <strong>not</strong> collect entry content, usernames, or pair data. Diagnostic data retention: up to 90 days.</p>
+
+    <h3>2.4 Advertising (AdMob)</h3>
+    <p>Mote shows non-invasive banner ads in Settings, Empty state and Export screens. Ads are served by <strong>Google AdMob</strong>, whose SDK:</p>
+    <ul>
+        <li>collects the <strong>Advertising ID</strong> (Android Advertising ID / Apple IDFA), shared with Google to serve ads;</li>
+        <li>collects diagnostic data (device model, country-level location, language).</li>
+    </ul>
+    <p>We never sell personal data to third parties. You can reset your Advertising ID in Android/iOS settings at any time. Disable ads permanently via the one-time "Remove Ads" IAP.</p>
+
+    <h3>2.5 Device permissions</h3>
+    <ul>
+        <li><strong>Camera</strong> (<code>CAMERA</code>): take photos for entries (optional).</li>
+        <li><strong>Microphone</strong> (<code>RECORD_AUDIO</code>): record voice messages (optional).</li>
+        <li><strong>Photos/Media</strong> (<code>READ_MEDIA_IMAGES</code>): add images from gallery (optional).</li>
+        <li><strong>Notifications</strong> (<code>POST_NOTIFICATIONS</code>): gentle mood check-in reminders.</li>
+        <li><strong>Vibrate</strong> (<code>VIBRATE</code>): haptic UI feedback.</li>
+    </ul>
+    <p>Each permission is requested contextually and can be denied without losing access to core features.</p>
+
+    <h2>3. Legal basis (GDPR)</h2>
+    <p>For EU users: performance of contract (Art. 6(1)(b)) — core app features; legitimate interest (Art. 6(1)(f)) — Sentry diagnostics; consent (Art. 6(1)(a)) — personalized ads (you may decline on first launch; non-personalized ads are default).</p>
+
+    <h2>4. Your rights</h2>
+    <p>You have the right to: access your data, rectify it, erase it, restrict processing, object to processing, and data portability. The app offers a <strong>full export</strong> (JSON + Markdown) at any time, free of charge. Account deletion removes all pair data from the backend; local data remains until you uninstall the app.</p>
+    <p>To exercise data subject rights or file a complaint, email <a href="mailto:maciek.sieminski@gmail.com">maciek.sieminski@gmail.com</a>. You also have the right to lodge a complaint with your data protection authority.</p>
+
+    <h2>5. Children</h2>
+    <p>Mote is not intended for children under 13. Google Play target audience is 13+. We do not knowingly collect data from children; if identified, it will be deleted promptly.</p>
+
+    <h2>6. Changes</h2>
+    <p>Material changes to this policy will be announced in-app and on this page (with the updated date at the top). Continued use of Mote after changes means acceptance.</p>
+
+    <h2>7. Contact</h2>
+    <p>Email: <a href="mailto:maciek.sieminski@gmail.com">maciek.sieminski@gmail.com</a></p>
+
+    <footer>
+        <p>&copy; 2026 Mote. Privacy policy hosted on GitHub Pages.</p>
+    </footer>
+</div>
+</body>
+</html>
