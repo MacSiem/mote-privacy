@@ -70,14 +70,14 @@
     </div>
 
 <h1>Privacy Policy — Mote</h1>
-<p>Last updated: 2026-05-06 · Effective date: 2026-05-06</p>
+<p>Last updated: 2026-07-16 · Effective date: 2026-05-06</p>
 <h2>1. Who we are</h2>
 <p><strong>Mote</strong> is a mobile app for couples that helps share everyday moments of appreciation between partners. Privacy is the foundation of the product: data is <strong>end-to-end encrypted</strong>, the app is <strong>offline-first</strong>, and most content never leaves your device in a form readable by anyone other than you and your partner.</p>
 <p><strong>Data controller:</strong> Maciej Siemiński — the developer of Mote. <strong>Contact:</strong> <a href="mailto:mail@macsiem.dev">mail@macsiem.dev</a></p>
 <p>For the version of the app distributed via Google Play, the data controller is LICENCEPRO POLSKA Sp. z o.o., ul. Huculska 6, 00-730 Warszawa, Polska.</p>
 <p>This Privacy Policy explains what personal data Mote processes, how, why, and what rights you have.</p>
 <h2>2. Plain-language summary</h2>
-<p>We do not store the content of your entries on our servers. Your messages, photos, voice notes, mood check-ins and tags are encrypted on your device and, when synced with your partner, end-to-end encrypted in transit. We use Google AdMob for non-invasive banner ads on auxiliary screens and Apple/Google billing to process in-app purchases. Sentry is used only when explicitly enabled in a build to report crashes. You have full GDPR rights including access, deletion, and portability — most exercisable directly in the app.</p>
+<p>We do not store the content of your entries on our servers. Your messages, photos, voice notes, mood check-ins and tags are encrypted on your device and, when synced with your partner, end-to-end encrypted in transit. Mote can be used fully without creating an account; signing in with Apple or Google is optional and enables Premium entitlement sync and encrypted cloud-backup recovery across your devices — we never receive your cloud backup content unencrypted. We use Google AdMob for non-invasive banner ads on auxiliary screens and Apple/Google billing to process in-app purchases. Sentry is used only when explicitly enabled in a build to report crashes. You have full GDPR rights including access, deletion, and portability — most exercisable directly in the app.</p>
 <h2>3. Data we process</h2>
 <h3>3.1 Local-only data</h3>
 <p>Entries, messages, tags, mood check-ins, photos and voice notes you add are stored <strong>locally on your device</strong> in encrypted form (MMKV with a device-derived key kept in Apple Keychain / Android Keystore). When synced with your paired partner's device, content is <strong>end-to-end encrypted</strong> using <code>tweetnacl</code> keys generated on each device — Mote's developer cannot read your entries.</p>
@@ -124,13 +124,33 @@
 <p>Each permission is requested contextually. You can deny any permission and still use the core features (where applicable).</p>
 <h3>3.7 What we do NOT collect</h3>
 <ul>
-<li>Your name, email, phone number, address (no account is required).</li>
+<li>Your name, phone number, or address — no account is required for core use. If you choose to sign in with Apple or Google, the provider may share an email address with us; see section 3.8.</li>
 <li>Contacts list, calendar, SMS, call logs.</li>
 <li>Precise location.</li>
 <li>Browsing history outside the app.</li>
 <li>Biometric data (Face ID / Touch ID is used only as a system-level lock and never leaves your device).</li>
 <li>Health, financial, or payment card data.</li>
 </ul>
+<h3>3.8 Optional account and sign-in (Apple / Google)</h3>
+<p>Mote can be used without creating or signing in to an account. Pairing and the core appreciation flow remain available anonymously. Signing in is optional and is used for Premium entitlement sync and encrypted cloud-backup recovery across devices.</p>
+<p>When you choose Sign in with Apple or Sign in with Google:</p>
+<ul>
+<li>Apple or Google authenticates you and sends Mote an identity token;</li>
+<li>the Mote service verifies that token and creates an internal user ID;</li>
+<li>the provider may supply your email address. With Apple this can be an Apple private-relay address if you selected Hide My Email;</li>
+<li>Mote returns a signed session JWT. The app stores the token in the operating system's secure storage and uses it only for authenticated Mote requests.</li>
+</ul>
+<p>The session JWT is valid for 30 days and may be refreshed during its final seven days. Signing out removes the session stored on the device. Signing out does not delete the server-side account record or encrypted cloud backup.</p>
+<p>Mote does not receive your Apple or Google password.</p>
+<h3>3.9 Encrypted cloud backup (Premium)</h3>
+<p>Cloud backup is optional and requires an eligible Premium entitlement, sign-in, pairing and an acknowledged recovery phrase. Before upload, the app encrypts the backup on the device using a key derived from the recovery phrase. The service receives ciphertext associated with the internal Mote user ID; it does not receive the recovery phrase or plaintext backup.</p>
+<p>The encrypted cloud backup can contain the pairing recovery material needed to restore the pair, the display name used inside Mote and encrypted key material. It does not contain your Apple or Google password. A new upload replaces the current backup for that Mote account.</p>
+<p>Keep the recovery phrase safe. The encrypted cloud backup cannot be restored without it.</p>
+<h3>3.10 Sign out vs. account deletion</h3>
+<p>The local session JWT expires after 30 days unless refreshed and is removed from the device when you sign out. The provider link, internal user record, entitlement record and current encrypted cloud backup are retained until you use <strong>Delete account</strong> or ask support to delete them.</p>
+<p><strong>Sign out</strong> only removes the local session and disables cloud backup on that device. It is not an account-deletion action.</p>
+<p><strong>Delete account</strong>, used while online, sends an authenticated deletion request to the Mote service and then clears the local account, encryption material and app data. If the device was offline or the request could not be confirmed, contact <a href="mailto:mail@macsiem.dev">mail@macsiem.dev</a> to confirm server-side deletion.</p>
+<p>Uninstalling the app removes app-local data according to the operating system, but does not by itself guarantee deletion of a signed-in server account or encrypted backup.</p>
 <h2>4. Why we process this data (purposes)</h2>
 <ul>
 <li><strong>Run the app on your device</strong> — local storage and (where present) encryption let your data persist between sessions.</li>
@@ -138,6 +158,7 @@
 <li><strong>Improve stability</strong> — Sentry diagnostics help fix crashes that affect your usage.</li>
 <li><strong>Sustain the free tier</strong> — AdMob delivers non-invasive ads to fund users who do not buy premium.</li>
 <li><strong>Process purchases</strong> — Apple / Google billing fulfils premium entitlements you choose to buy.</li>
+<li><strong>Sync entitlement and cloud backup across devices</strong> — for users who choose to sign in, Premium entitlement sync and optional encrypted cloud-backup recovery let you restore your pairing and settings on a new device.</li>
 </ul>
 <h2>5. Legal basis (GDPR Article 6)</h2>
 <p>For users in the European Economic Area, United Kingdom, and Switzerland:</p>
@@ -145,6 +166,7 @@
 <li><strong>Performance of a contract</strong> (Art. 6(1)(b)) — running the app, syncing with your partner, processing your purchases.</li>
 <li><strong>Legitimate interest</strong> (Art. 6(1)(f)) — Sentry diagnostics, fraud / abuse prevention, non-personalized advertising. Our interest is improving stability and sustaining the free tier; this does not override your fundamental rights.</li>
 <li><strong>Consent</strong> (Art. 6(1)(a)) — personalized advertising, where you grant consent via the ATT prompt (iOS) or in-app preference. You may withdraw consent at any time without affecting prior processing.</li>
+<li><strong>Consent / contractual choice for optional features</strong> (Art. 6(1)(a) and (b)) — signing in with Apple or Google and using encrypted cloud backup are optional actions you choose to take. The related processing is based on the resulting contract for the feature you selected, or your consent; you can withdraw at any time by signing out or deleting your account.</li>
 <li><strong>Legal obligation</strong> (Art. 6(1)(c)) — only when we must respond to a lawful request from authorities.</li>
 </ul>
 <h2>6. Recipients (with whom we share data)</h2>
@@ -152,7 +174,9 @@
 <table>
 <thead><tr><th>Recipient</th><th>Purpose</th><th>Data category</th><th>Privacy policy</th></tr></thead>
 <tbody>
-<tr><td>Cloudflare, Inc.</td><td>Pairing relay (encrypted handshake + ephemeral E2E messages)</td><td>Random pair ID, encrypted blob</td><td><a href="https://www.cloudflare.com/privacypolicy/">https://www.cloudflare.com/privacypolicy/</a></td></tr>
+<tr><td>Cloudflare, Inc.</td><td>Pairing relay; optional account/session service; entitlement sync; encrypted cloud-backup storage</td><td>Random pair ID, encrypted blob, session identifier, encrypted backup ciphertext (only if you sign in and use cloud backup)</td><td><a href="https://www.cloudflare.com/privacypolicy/">https://www.cloudflare.com/privacypolicy/</a></td></tr>
+<tr><td>Apple Inc. (Sign in with Apple)</td><td>Optional account authentication</td><td>Identity token, email address (may be an Apple private-relay address)</td><td><a href="https://www.apple.com/legal/privacy/">https://www.apple.com/legal/privacy/</a></td></tr>
+<tr><td>Google LLC (Google Sign-In)</td><td>Optional account authentication</td><td>Identity token, email address</td><td><a href="https://policies.google.com/privacy">https://policies.google.com/privacy</a></td></tr>
 <tr><td>Google LLC (AdMob)</td><td>Serve ads</td><td>Advertising ID, device &amp; ad metrics</td><td><a href="https://policies.google.com/privacy">https://policies.google.com/privacy</a></td></tr>
 <tr><td>Meta Platforms, Inc. (Meta Audience Network)</td><td>Serve ads</td><td>Advertising ID, device &amp; ad metrics</td><td><a href="https://www.facebook.com/privacy/policy/">https://www.facebook.com/privacy/policy/</a></td></tr>
 <tr><td>Unity Technologies (Unity Ads)</td><td>Serve ads</td><td>Advertising ID, device &amp; ad metrics</td><td><a href="https://unity.com/legal/privacy-policy">https://unity.com/legal/privacy-policy</a></td></tr>
@@ -180,13 +204,16 @@
 <tr><td>Advertising ID</td><td>Google AdMob systems</td><td>Per Google's retention policy (typically up to 14 months for ad metrics)</td></tr>
 <tr><td>Sentry crash data</td><td>Sentry systems</td><td>Up to 90 days from the event</td></tr>
 <tr><td>IAP purchase token / receipt</td><td>Your device + Apple / Google</td><td>Until you uninstall; Apple / Google keep transaction records per their own policies</td></tr>
+<tr><td>Session JWT</td><td>Your device (secure storage)</td><td>Up to 30 days, refreshable during the final 7 days; removed when you sign out</td></tr>
+<tr><td>Provider link, internal account record, entitlement record</td><td>Mote backend (Cloudflare)</td><td>Until you use Delete account or ask support to delete it</td></tr>
+<tr><td>Encrypted cloud backup</td><td>Mote backend (Cloudflare)</td><td>Until you delete your account, request deletion, or a new backup replaces it</td></tr>
 </tbody></table>
 <h2>9. Your rights (GDPR Art. 15–22)</h2>
 <p>You have the following rights regarding your personal data:</p>
 <ul>
 <li><strong>Right of access (Art. 15)</strong> — confirmation whether we process your data and a copy of it. Most of your data is already on your device; export from the app or write to us for the rest.</li>
 <li><strong>Right to rectification (Art. 16)</strong> — correct inaccurate data. Edit data directly in the app.</li>
-<li><strong>Right to erasure / "right to be forgotten" (Art. 17)</strong> — delete all data via Settings → "Erase all data", or by uninstalling the app. Pair relay data expires automatically.</li>
+<li><strong>Right to erasure / "right to be forgotten" (Art. 17)</strong> — delete all data via Settings → "Erase all data", or by uninstalling the app. Pair relay data expires automatically. If you have an optional account (signed in with Apple or Google), use Settings → "Delete account" to remove your provider link, internal account record, entitlement record and encrypted cloud backup from our servers as well as local data — this is distinct from "Sign out", which only clears the local session. If the deletion request cannot be confirmed while offline, contact <a href="mailto:mail@macsiem.dev">mail@macsiem.dev</a> to confirm server-side deletion.</li>
 <li><strong>Right to restrict processing (Art. 18)</strong> — request a temporary halt; write to us.</li>
 <li><strong>Right to data portability (Art. 20)</strong> — Settings → "Export data" produces a JSON / Markdown bundle.</li>
 <li><strong>Right to object (Art. 21)</strong> — object to processing based on legitimate interest, especially profiling-style ads. Disable personalized ads in app settings or via system controls.</li>
@@ -206,7 +233,7 @@
 <li><strong>End-to-end encryption in transit</strong> — pair-to-pair messages use <code>tweetnacl</code> (X25519 + XSalsa20-Poly1305). Each device generates its own key pair; private keys never leave the device.</li>
 <li><strong>Transport security</strong> — all network calls use HTTPS / TLS 1.2+.</li>
 <li><strong>Minimization</strong> — we collect only what is required for the listed purposes.</li>
-<li><strong>No backups to our servers</strong> — your entries are not backed up to Mote infrastructure. Optional system-level backups (iCloud Backup on iOS, Auto Backup on Android) remain entirely under your control.</li>
+<li><strong>Backups</strong> — your entries are not backed up to Mote infrastructure by default. If you sign in and hold an eligible Premium entitlement, you can optionally enable encrypted cloud backup (see section 3.9); the app encrypts the backup on your device before upload, and Mote cannot read its content. Optional system-level backups (iCloud Backup on iOS, Auto Backup on Android) remain entirely under your control regardless.</li>
 </ul>
 <p>No system is 100% secure; please keep your device updated and use strong device locks.</p>
 <h2>13. App Tracking Transparency (iOS) and Advertising ID</h2>
