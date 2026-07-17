@@ -70,14 +70,14 @@
     </div>
 
 <h1>Política de Privacidad — Mote</h1>
-<p>Última actualización: 2026-05-06 · Fecha de entrada en vigor: 2026-05-06</p>
+<p>Última actualización: 2026-07-16 · Fecha de entrada en vigor: 2026-05-06</p>
 <h2>1. Quiénes somos</h2>
 <p><strong>Mote</strong> es una aplicación móvil para parejas que ayuda a compartir momentos cotidianos de aprecio entre compañeros. La privacidad es la base del producto: los datos están <strong>cifrados de extremo a extremo</strong>, la aplicación es <strong>offline-first</strong>, y la mayor parte del contenido nunca sale de su dispositivo en un formato legible por nadie más que usted y su pareja.</p>
 <p><strong>Responsable del tratamiento de datos:</strong> Maciej Siemiński — el desarrollador de Mote. <strong>Contacto:</strong> <a href="mailto:mail@macsiem.dev">mail@macsiem.dev</a></p>
 <p>Para la versión de la aplicación distribuida a través de Google Play, el responsable del tratamiento de los datos es LICENCEPRO POLSKA Sp. z o.o., ul. Huculska 6, 00-730 Warszawa, Polska.</p>
 <p>Esta Política de Privacidad explica qué datos personales procesa Mote, cómo, por qué, y qué derechos tiene usted.</p>
 <h2>2. Resumen en lenguaje sencillo</h2>
-<p>No almacenamos el contenido de sus entradas en nuestros servidores. Sus mensajes, fotos, notas de voz, registros de estado de ánimo y etiquetas se cifran en su dispositivo y, cuando se sincronizan con el dispositivo de su pareja, se cifran de extremo a extremo en tránsito. Utilizamos Google AdMob para anuncios de banner no invasivos en pantallas auxiliares y la facturación de Apple/Google para procesar compras dentro de la aplicación. Sentry se utiliza solo cuando se habilita explícitamente en una compilación para informar de fallos. Usted tiene todos los derechos del RGPD, incluyendo acceso, eliminación y portabilidad — la mayoría de ellos pueden ejercerse directamente en la aplicación.</p>
+<p>No almacenamos el contenido de sus entradas en nuestros servidores. Sus mensajes, fotos, notas de voz, registros de estado de ánimo y etiquetas se cifran en su dispositivo y, cuando se sincronizan con su pareja, se cifran de extremo a extremo en tránsito. Mote se puede usar completamente sin crear una cuenta; iniciar sesión con Apple o Google es opcional y permite la sincronización de la autorización Premium y la recuperación de la copia de seguridad cifrada en la nube en todos sus dispositivos — nunca recibimos el contenido de su copia de seguridad en la nube sin cifrar. Utilizamos Google AdMob para anuncios de banner no invasivos en pantallas auxiliares y la facturación de Apple/Google para procesar compras dentro de la aplicación. Sentry se utiliza solo cuando se habilita explícitamente en una compilación para informar de fallos. Usted tiene todos los derechos del RGPD, incluyendo acceso, eliminación y portabilidad — la mayoría de ellos pueden ejercerse directamente en la aplicación.</p>
 <h2>3. Datos que procesamos</h2>
 <h3>3.1 Datos solo locales</h3>
 <p>Las entradas, mensajes, etiquetas, registros de estado de ánimo, fotos y notas de voz que añade se almacenan <strong>localmente en su dispositivo</strong> en formato cifrado (MMKV con una clave derivada del dispositivo guardada en Apple Keychain / Android Keystore). Cuando se sincroniza con el dispositivo de su pareja emparejada, el contenido está <strong>cifrado de extremo a extremo</strong> utilizando claves <code>tweetnacl</code> generadas en cada dispositivo — el desarrollador de Mote no puede leer sus entradas.</p>
@@ -124,13 +124,33 @@
 <p>Cada permiso se solicita contextualmente. Puede denegar cualquier permiso y seguir utilizando las funciones principales (cuando corresponda).</p>
 <h3>3.7 Qué NO recopilamos</h3>
 <ul>
-<li>Su nombre, correo electrónico, número de teléfono, dirección (no se requiere una cuenta).</li>
+<li>Su nombre, número de teléfono o dirección — no se requiere una cuenta para el uso básico. Si decide iniciar sesión con Apple o Google, el proveedor puede compartir una dirección de correo electrónico con nosotros; consulte la sección 3.8.</li>
 <li>Lista de contactos, calendario, SMS, registros de llamadas.</li>
 <li>Ubicación precisa.</li>
 <li>Historial de navegación fuera de la aplicación.</li>
 <li>Datos biométricos (Face ID / Touch ID se utiliza solo como un bloqueo a nivel de sistema y nunca sale de su dispositivo).</li>
 <li>Datos de salud, financieros o de tarjetas de pago.</li>
 </ul>
+<h3>3.8 Cuenta e inicio de sesión opcionales (Apple / Google)</h3>
+<p>Mote se puede usar sin crear una cuenta ni iniciar sesión. El emparejamiento y el flujo básico de aprecio permanecen disponibles de forma anónima. Iniciar sesión es opcional y se utiliza para la sincronización de la autorización Premium y la recuperación de la copia de seguridad cifrada en la nube entre dispositivos.</p>
+<p>Cuando elige Iniciar sesión con Apple o Iniciar sesión con Google:</p>
+<ul>
+<li>Apple o Google lo autentican y envían a Mote un token de identidad;</li>
+<li>el servicio de Mote verifica ese token y crea un ID de usuario interno;</li>
+<li>el proveedor puede proporcionar su dirección de correo electrónico. Con Apple, esta puede ser una dirección de Private Relay si seleccionó Ocultar mi correo electrónico;</li>
+<li>Mote devuelve un JWT de sesión firmado. La aplicación almacena el token en el almacenamiento seguro del sistema operativo y lo utiliza solo para solicitudes autenticadas de Mote.</li>
+</ul>
+<p>El JWT de sesión es válido durante 30 días y puede renovarse durante los últimos siete días. Cerrar sesión elimina la sesión almacenada en el dispositivo. Cerrar sesión no elimina el registro de la cuenta en el servidor ni la copia de seguridad cifrada en la nube.</p>
+<p>Mote no recibe su contraseña de Apple o Google.</p>
+<h3>3.9 Copia de seguridad cifrada en la nube (Premium)</h3>
+<p>La copia de seguridad en la nube es opcional y requiere una autorización Premium elegible, inicio de sesión, emparejamiento y una frase de recuperación confirmada. Antes de la subida, la aplicación cifra la copia de seguridad en el dispositivo utilizando una clave derivada de la frase de recuperación. El servicio recibe texto cifrado asociado con el ID de usuario interno de Mote; no recibe la frase de recuperación ni la copia de seguridad en texto plano.</p>
+<p>La copia de seguridad cifrada en la nube puede contener el material de recuperación de emparejamiento necesario para restaurar la pareja, el nombre para mostrar utilizado dentro de Mote y material de claves cifrado. No contiene su contraseña de Apple o Google. Una nueva subida reemplaza la copia de seguridad actual de esa cuenta de Mote.</p>
+<p>Mantenga la frase de recuperación segura. La copia de seguridad cifrada en la nube no se puede restaurar sin ella.</p>
+<h3>3.10 Cerrar sesión frente a eliminación de cuenta</h3>
+<p>El JWT de sesión local caduca después de 30 días a menos que se renueve, y se elimina del dispositivo cuando cierra sesión. El vínculo con el proveedor, el registro de usuario interno, el registro de autorización y la copia de seguridad cifrada en la nube actual se conservan hasta que utilice <strong>Eliminar cuenta</strong> o solicite a soporte que los elimine.</p>
+<p><strong>Cerrar sesión</strong> solo elimina la sesión local y desactiva la copia de seguridad en la nube en ese dispositivo. No es una acción de eliminación de cuenta.</p>
+<p><strong>Eliminar cuenta</strong>, utilizada mientras está en línea, envía una solicitud de eliminación autenticada al servicio de Mote y luego borra la cuenta local, el material de cifrado y los datos de la aplicación. Si el dispositivo estaba sin conexión o la solicitud no se pudo confirmar, contacte a <a href="mailto:mail@macsiem.dev">mail@macsiem.dev</a> para confirmar la eliminación en el lado del servidor.</p>
+<p>Desinstalar la aplicación elimina los datos locales de la aplicación según el sistema operativo, pero no garantiza por sí sola la eliminación de una cuenta de servidor iniciada sesión o de una copia de seguridad cifrada.</p>
 <h2>4. Por qué procesamos estos datos (fines)</h2>
 <ul>
 <li><strong>Ejecutar la aplicación en su dispositivo</strong> — el almacenamiento local y (donde esté presente) el cifrado permiten que sus datos persistan entre sesiones.</li>
@@ -138,6 +158,7 @@
 <li><strong>Mejorar la estabilidad</strong> — los diagnósticos de Sentry ayudan a solucionar fallos que afectan su uso.</li>
 <li><strong>Mantener el nivel gratuito</strong> — AdMob entrega anuncios no invasivos para financiar a los usuarios que no compran premium.</li>
 <li><strong>Procesar compras</strong> — la facturación de Apple / Google cumple con las autorizaciones premium que usted elige comprar.</li>
+<li><strong>Sincronizar autorización y copia de seguridad en la nube entre dispositivos</strong> — para los usuarios que eligen iniciar sesión, la sincronización de la autorización Premium y la recuperación opcional de la copia de seguridad cifrada en la nube le permiten restaurar su emparejamiento y configuración en un nuevo dispositivo.</li>
 </ul>
 <h2>5. Base jurídica (Artículo 6 del RGPD)</h2>
 <p>Para usuarios en el Espacio Económico Europeo, Reino Unido y Suiza:</p>
@@ -145,6 +166,7 @@
 <li><strong>Ejecución de un contrato</strong> (Art. 6(1)(b) RGPD) — ejecutar la aplicación, sincronizar con su pareja, procesar sus compras.</li>
 <li><strong>Interés legítimo</strong> (Art. 6(1)(f) RGPD) — diagnósticos de Sentry, prevención de fraude/abuso, publicidad no personalizada. Nuestro interés es mejorar la estabilidad y mantener el nivel gratuito; esto no anula sus derechos fundamentales.</li>
 <li><strong>Consentimiento</strong> (Art. 6(1)(a) RGPD) — publicidad personalizada, donde usted otorga su consentimiento a través de la solicitud ATT (iOS) o la preferencia dentro de la aplicación. Puede retirar el consentimiento en cualquier momento sin afectar el procesamiento anterior.</li>
+<li><strong>Consentimiento / elección contractual para funciones opcionales</strong> (Art. 6(1)(a) y (b) RGPD) — iniciar sesión con Apple o Google y usar la copia de seguridad cifrada en la nube son acciones opcionales que usted elige realizar. El tratamiento relacionado se basa en el contrato resultante para la función que seleccionó, o en su consentimiento; puede retirarse en cualquier momento cerrando sesión o eliminando su cuenta.</li>
 <li><strong>Obligación legal</strong> (Art. 6(1)(c) RGPD) — solo cuando debemos responder a una solicitud legal de las autoridades.</li>
 </ul>
 <h2>6. Destinatarios (con quién compartimos datos)</h2>
@@ -152,7 +174,9 @@
 <table>
 <thead><tr><th>Destinatario</th><th>Propósito</th><th>Categoría de datos</th><th>Política de privacidad</th></tr></thead>
 <tbody>
-<tr><td>Cloudflare, Inc.</td><td>Retransmisor de emparejamiento (saludo cifrado + mensajes E2E efímeros)</td><td>ID de emparejamiento aleatorio, blob cifrado</td><td><a href="https://www.cloudflare.com/privacypolicy/">https://www.cloudflare.com/privacypolicy/</a></td></tr>
+<tr><td>Cloudflare, Inc.</td><td>Retransmisor de emparejamiento; servicio opcional de cuenta/sesión; sincronización de autorización; almacenamiento de copia de seguridad cifrada en la nube</td><td>ID de emparejamiento aleatorio, blob cifrado, identificador de sesión, texto cifrado de la copia de seguridad (solo si inicia sesión y usa la copia de seguridad en la nube)</td><td><a href="https://www.cloudflare.com/privacypolicy/">https://www.cloudflare.com/privacypolicy/</a></td></tr>
+<tr><td>Apple Inc. (Sign in with Apple)</td><td>Autenticación de cuenta opcional</td><td>Token de identidad, dirección de correo electrónico (puede ser una dirección de Private Relay)</td><td><a href="https://www.apple.com/legal/privacy/">https://www.apple.com/legal/privacy/</a></td></tr>
+<tr><td>Google LLC (Google Sign-In)</td><td>Autenticación de cuenta opcional</td><td>Token de identidad, dirección de correo electrónico</td><td><a href="https://policies.google.com/privacy">https://policies.google.com/privacy</a></td></tr>
 <tr><td>Google LLC (AdMob)</td><td>Servir anuncios</td><td>ID de Publicidad, métricas de dispositivo y anuncio</td><td><a href="https://policies.google.com/privacy">https://policies.google.com/privacy</a></td></tr>
 <tr><td>Meta Platforms, Inc. (Meta Audience Network)</td><td>Servir anuncios</td><td>ID de Publicidad, métricas de dispositivo y anuncio</td><td><a href="https://www.facebook.com/privacy/policy/">https://www.facebook.com/privacy/policy/</a></td></tr>
 <tr><td>Unity Technologies (Unity Ads)</td><td>Servir anuncios</td><td>ID de Publicidad, métricas de dispositivo y anuncio</td><td><a href="https://unity.com/legal/privacy-policy">https://unity.com/legal/privacy-policy</a></td></tr>
@@ -180,13 +204,16 @@
 <tr><td>ID de Publicidad</td><td>Sistemas de Google AdMob</td><td>Según la política de retención de Google (típicamente hasta 14 meses para métricas de anuncios)</td></tr>
 <tr><td>Datos de fallos de Sentry</td><td>Sistemas de Sentry</td><td>Hasta 90 días desde el evento</td></tr>
 <tr><td>Token de compra / recibo IAP</td><td>Su dispositivo + Apple / Google</td><td>Hasta que desinstale; Apple / Google guardan registros de transacciones según sus propias políticas</td></tr>
+<tr><td>JWT de sesión</td><td>Su dispositivo (almacenamiento seguro)</td><td>Hasta 30 días, renovable durante los últimos 7 días; se elimina al cerrar sesión</td></tr>
+<tr><td>Vínculo con el proveedor, registro de cuenta interno, registro de autorización</td><td>Backend de Mote (Cloudflare)</td><td>Hasta que utilice Eliminar cuenta o solicite a soporte que lo elimine</td></tr>
+<tr><td>Copia de seguridad cifrada en la nube</td><td>Backend de Mote (Cloudflare)</td><td>Hasta que elimine su cuenta, solicite la eliminación, o una nueva copia de seguridad la reemplace</td></tr>
 </tbody></table>
 <h2>9. Sus derechos (Art. 15–22 RGPD)</h2>
 <p>Usted tiene los siguientes derechos con respecto a sus datos personales:</p>
 <ul>
 <li><strong>Derecho de acceso (Art. 15 RGPD)</strong> — confirmación de si procesamos sus datos y una copia de los mismos. La mayoría de sus datos ya están en su dispositivo; exporte desde la aplicación o escríbanos para el resto.</li>
 <li><strong>Derecho de rectificación (Art. 16 RGPD)</strong> — corregir datos inexactos. Edite los datos directamente en la aplicación.</li>
-<li><strong>Derecho de supresión / "derecho al olvido" (Art. 17 RGPD)</strong> — eliminar todos los datos a través de Configuración → "Borrar todos los datos", o desinstalando la aplicación. Los datos del retransmisor de emparejamiento caducan automáticamente.</li>
+<li><strong>Derecho de supresión / "derecho al olvido" (Art. 17 RGPD)</strong> — elimine todos los datos a través de Configuración → "Borrar todos los datos", o desinstalando la aplicación. Los datos del retransmisor de emparejamiento caducan automáticamente. Si tiene una cuenta opcional (con sesión iniciada con Apple o Google), use Configuración → "Eliminar cuenta" para eliminar de nuestros servidores su vínculo con el proveedor, el registro de cuenta interno, el registro de autorización y la copia de seguridad cifrada en la nube, así como los datos locales — esto es distinto de "Cerrar sesión", que solo borra la sesión local. Si la solicitud de eliminación no se puede confirmar sin conexión, contacte a <a href="mailto:mail@macsiem.dev">mail@macsiem.dev</a> para confirmar la eliminación en el lado del servidor.</li>
 <li><strong>Derecho a la limitación del tratamiento (Art. 18 RGPD)</strong> — solicitar una interrupción temporal; escríbanos.</li>
 <li><strong>Derecho a la portabilidad de los datos (Art. 20 RGPD)</strong> — Configuración → "Exportar datos" produce un paquete JSON / Markdown.</li>
 <li><strong>Derecho de oposición (Art. 21 RGPD)</strong> — oponerse al tratamiento basado en interés legítimo, especialmente anuncios de tipo perfilado. Deshabilite los anuncios personalizados en la configuración de la aplicación o mediante los controles del sistema.</li>
@@ -206,7 +233,7 @@
 <li><strong>Cifrado de extremo a extremo en tránsito</strong> — los mensajes de par a par utilizan <code>tweetnacl</code> (X25519 + XSalsa20-Poly1305). Cada dispositivo genera su propio par de claves; las claves privadas nunca salen del dispositivo.</li>
 <li><strong>Seguridad de transporte</strong> — todas las llamadas de red utilizan HTTPS / TLS 1.2+.</li>
 <li><strong>Minimización</strong> — recopilamos solo lo necesario para los fines enumerados.</li>
-<li><strong>Sin copias de seguridad en nuestros servidores</strong> — sus entradas no se respaldan en la infraestructura de Mote. Las copias de seguridad opcionales a nivel de sistema (iCloud Backup en iOS, Auto Backup en Android) permanecen completamente bajo su control.</li>
+<li><strong>Copias de seguridad</strong> — sus entradas no se respaldan en la infraestructura de Mote de forma predeterminada. Si inicia sesión y tiene una autorización Premium elegible, puede habilitar opcionalmente la copia de seguridad cifrada en la nube (consulte la sección 3.9); la aplicación cifra la copia de seguridad en su dispositivo antes de subirla, y Mote no puede leer su contenido. Las copias de seguridad opcionales a nivel de sistema (iCloud Backup en iOS, Auto Backup en Android) permanecen completamente bajo su control independientemente de esto.</li>
 </ul>
 <p>Ningún sistema es 100% seguro; por favor, mantenga su dispositivo actualizado y utilice bloqueos de dispositivo fuertes.</p>
 <h2>13. Transparencia de Seguimiento de Aplicaciones (iOS) y ID de Publicidad</h2>

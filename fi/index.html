@@ -70,14 +70,14 @@
     </div>
 
 <h1>Tietosuojakäytäntö — Mote</h1>
-<p>Viimeksi päivitetty: 2026-05-06 · Voimaantulopäivä: 2026-05-06</p>
+<p>Viimeksi päivitetty: 2026-07-16 · Voimaantulopäivä: 2026-05-06</p>
 <h2>1. Keitä olemme</h2>
 <p><strong>Mote</strong> on pariskunnille suunnattu mobiilisovellus, joka auttaa jakamaan arjen arvostuksen hetkiä kumppaneiden kesken. Tietosuoja on tuotteen perusta: tiedot ovat <strong>päästä päähän -salattuja</strong>, sovellus toimii <strong>ensi sijaisesti offline-tilassa</strong>, ja suurin osa sisällöstä ei koskaan poistu laitteeltasi muodossa, jonka joku muu kuin sinä ja kumppanisi voisivat lukea.</p>
 <p><strong>Rekisterinpitäjä:</strong> Maciej Siemiński — Mote-sovelluksen kehittäjä. <strong>Yhteyshenkilö:</strong> <a href="mailto:mail@macsiem.dev">mail@macsiem.dev</a></p>
 <p>Google Playn kautta jaettavan sovellusversion osalta tietojen rekisterinpitäjä on LICENCEPRO POLSKA Sp. z o.o., ul. Huculska 6, 00-730 Warszawa, Polska.</p>
 <p>Tämä tietosuojakäytäntö selittää, mitä henkilötietoja Mote käsittelee, miten, miksi ja mitä oikeuksia sinulla on.</p>
 <h2>2. Yksinkertainen yhteenveto</h2>
-<p>Emme tallenna merkintöjesi sisältöä palvelimillemme. Viestisi, valokuvasi, äänimuistiosi, mielialakirjauksesi ja tagisi salataan laitteellasi, ja kun ne synkronoidaan kumppanisi kanssa, ne ovat päästä päähän -salattuja siirron aikana. Käytämme Google AdMob -palvelua ei-invasiivisiin bannerimainoksiin apunäytöillä sekä Apple/Google-laskutusta sovelluksen sisäisten ostosten käsittelyyn. Sentryä käytetään vain, kun se on erikseen otettu käyttöön tietyssä koontiversiossa kaatumisten raportointiin. Sinulla on kaikki GDPR-oikeudet, mukaan lukien pääsy, poisto ja siirrettävyys – useimmat niistä ovat käytettävissä suoraan sovelluksessa.</p>
+<p>Emme tallenna merkintöjesi sisältöä palvelimillemme. Viestisi, valokuvasi, äänimuistiosi, mielialakirjauksesi ja tagisi salataan laitteellasi, ja kun ne synkronoidaan kumppanisi kanssa, ne ovat päästä päähän -salattuja siirron aikana. Motea voi käyttää täysin ilman tilin luomista; kirjautuminen Applella tai Googlella on valinnaista, ja se mahdollistaa Premium-oikeuden synkronoinnin sekä salatun pilvivarmuuskopion palauttamisen eri laitteilla — emme koskaan saa pilvivarmuuskopiosi sisältöä salaamattomana. Käytämme Google AdMob -palvelua ei-invasiivisiin bannerimainoksiin apunäytöillä sekä Apple/Google-laskutusta sovelluksen sisäisten ostosten käsittelyyn. Sentryä käytetään vain, kun se on erikseen otettu käyttöön tietyssä koontiversiossa kaatumisten raportointiin. Sinulla on kaikki GDPR-oikeudet, mukaan lukien pääsy, poisto ja siirrettävyys – useimmat niistä ovat käytettävissä suoraan sovelluksessa.</p>
 <h2>3. Käsittelemämme tiedot</h2>
 <h3>3.1 Vain paikallisesti tallennetut tiedot</h3>
 <p>Lisäämäsi merkinnät, viestit, tagit, mielialakirjaukset, valokuvat ja äänimuistiot tallennetaan <strong>paikallisesti laitteellesi</strong> salatussa muodossa (MMKV laitekohtaisella avaimella, joka on tallennettu Apple Keychainiin / Android Keystoreen). Kun sisältö synkronoidaan pariksi liitetyn kumppanisi laitteen kanssa, se on <strong>päästä päähän -salattu</strong> käyttäen kummassakin laitteessa generoituja <code>tweetnacl</code>-avaimia — Mote-sovelluksen kehittäjä ei voi lukea merkintöjäsi.</p>
@@ -124,13 +124,33 @@
 <p>Jokainen lupa pyydetään kontekstikohtaisesti. Voit kieltää minkä tahansa luvan ja silti käyttää ydintoimintoja (soveltuvin osin).</p>
 <h3>3.7 Mitä emme kerää</h3>
 <ul>
-<li>Nimeäsi, sähköpostiosoitettasi, puhelinnumeroasi, osoitettasi (tiliä ei vaadita).</li>
+<li>Nimeäsi, puhelinnumeroasi tai osoitettasi — tiliä ei vaadita ydintoimintojen käyttöön. Jos päätät kirjautua Applella tai Googlella, palveluntarjoaja saattaa jakaa kanssamme sähköpostiosoitteen; katso kohta 3.8.</li>
 <li>Yhteystietoluetteloa, kalenteria, tekstiviestejä, puhelulokeja.</li>
 <li>Tarkkaa sijaintia.</li>
 <li>Selaushistoriaa sovelluksen ulkopuolelta.</li>
 <li>Biometrisiä tietoja (Face ID / Touch ID käytetään vain järjestelmätason lukituksena, eivätkä ne koskaan poistu laitteeltasi).</li>
 <li>Terveystietoja, taloustietoja tai maksukorttitietoja.</li>
 </ul>
+<h3>3.8 Valinnainen tili ja kirjautuminen (Apple / Google)</h3>
+<p>Motea voi käyttää luomatta tiliä tai kirjautumatta sisään. Pariliitos ja ydinarvostustoiminto ovat edelleen käytettävissä anonyymisti. Kirjautuminen on valinnaista, ja sitä käytetään Premium-oikeuden synkronointiin sekä salatun pilvivarmuuskopion palauttamiseen eri laitteilla.</p>
+<p>Kun valitset kirjautumisen Applella tai Googlella:</p>
+<ul>
+<li>Apple tai Google tunnistaa sinut ja lähettää Motelle identiteettitunnisteen;</li>
+<li>Mote-palvelu vahvistaa tunnisteen ja luo sisäisen käyttäjätunnuksen;</li>
+<li>palveluntarjoaja voi toimittaa sähköpostiosoitteesi. Applen tapauksessa tämä voi olla Applen yksityisen välityksen (private relay) osoite, jos valitsit "Piilota sähköpostini" -toiminnon;</li>
+<li>Mote palauttaa allekirjoitetun istunto-JWT:n. Sovellus tallentaa tunnisteen käyttöjärjestelmän suojattuun tallennustilaan ja käyttää sitä vain todennettuihin Mote-pyyntöihin.</li>
+</ul>
+<p>Istunto-JWT on voimassa 30 päivää, ja se voidaan uusia sen viimeisten seitsemän päivän aikana. Uloskirjautuminen poistaa laitteelle tallennetun istunnon. Uloskirjautuminen ei poista palvelinpuolen tilitietuetta tai salattua pilvivarmuuskopiota.</p>
+<p>Mote ei saa Applen tai Googlen salasanaasi.</p>
+<h3>3.9 Salattu pilvivarmuuskopio (Premium)</h3>
+<p>Pilvivarmuuskopio on valinnainen, ja se edellyttää kelpoista Premium-oikeutta, kirjautumista, pariliitosta sekä vahvistettua palautuslausetta. Ennen lähetystä sovellus salaa varmuuskopion laitteella palautuslauseesta johdetulla avaimella. Palvelu vastaanottaa vain salatekstiä, joka on liitetty sisäiseen Mote-käyttäjätunnukseen; se ei saa palautuslausetta tai selkokielistä varmuuskopiota.</p>
+<p>Salattu pilvivarmuuskopio voi sisältää parin palauttamiseen tarvittavan pariliitoksen palautusmateriaalin, Motessa käytetyn näyttönimen sekä salatun avainmateriaalin. Se ei sisällä Applen tai Googlen salasanaasi. Uusi lähetys korvaa kyseisen Mote-tilin nykyisen varmuuskopion.</p>
+<p>Säilytä palautuslause turvassa. Salattua pilvivarmuuskopiota ei voi palauttaa ilman sitä.</p>
+<h3>3.10 Uloskirjautuminen vs. tilin poistaminen</h3>
+<p>Paikallinen istunto-JWT vanhenee 30 päivän kuluttua, ellei sitä uusita, ja se poistetaan laitteelta, kun kirjaudut ulos. Palveluntarjoajan linkitys, sisäinen käyttäjätietue, oikeustietue ja nykyinen salattu pilvivarmuuskopio säilyvät, kunnes käytät <strong>Poista tili</strong> -toimintoa tai pyydät tukea poistamaan ne.</p>
+<p><strong>Uloskirjautuminen</strong> poistaa vain paikallisen istunnon ja poistaa pilvivarmuuskopioinnin käytöstä kyseisellä laitteella. Se ei ole tilin poistotoimenpide.</p>
+<p><strong>Tilin poistaminen</strong>, kun käytät sitä verkossa, lähettää todennetun poistopyynnön Mote-palvelulle ja tyhjentää sen jälkeen paikallisen tilin, salausmateriaalin ja sovelluksen tiedot. Jos laite oli offline-tilassa tai pyyntöä ei voitu vahvistaa, ota yhteyttä osoitteeseen <a href="mailto:mail@macsiem.dev">mail@macsiem.dev</a> vahvistaaksesi poiston palvelinpuolella.</p>
+<p>Sovelluksen asennuksen poistaminen poistaa sovelluskohtaiset paikalliset tiedot käyttöjärjestelmän toimintatavan mukaisesti, mutta ei sellaisenaan takaa kirjautuneen palvelintilin tai salatun varmuuskopion poistamista.</p>
 <h2>4. Miksi käsittelemme näitä tietoja (tarkoitukset)</h2>
 <ul>
 <li><strong>Sovelluksen suorittaminen laitteellasi</strong> — paikallinen tallennus ja (tarvittaessa) salaus mahdollistavat tietojesi säilymisen istuntojen välillä.</li>
@@ -138,6 +158,7 @@
 <li><strong>Vakauden parantaminen</strong> — Sentryn diagnostiikka auttaa korjaamaan kaatumisia, jotka vaikuttavat käyttöösi.</li>
 <li><strong>Ilmaisen tason ylläpitäminen</strong> — AdMob näyttää ei-invasiivisia mainoksia rahoittaakseen käyttäjiä, jotka eivät osta premium-versiota.</li>
 <li><strong>Ostosten käsittely</strong> — Apple / Google -laskutus täyttää ostamasi premium-oikeudet.</li>
+<li><strong>Oikeuden ja pilvivarmuuskopion synkronointi eri laitteiden välillä</strong> — käyttäjille, jotka valitsevat kirjautumisen, Premium-oikeuden synkronointi ja valinnainen salatun pilvivarmuuskopion palautus mahdollistavat pariliitoksen ja asetusten palauttamisen uudella laitteella.</li>
 </ul>
 <h2>5. Oikeusperuste (GDPR-asetuksen 6 artikla)</h2>
 <p>Käyttäjille Euroopan talousalueella, Yhdistyneessä kuningaskunnassa ja Sveitsissä:</p>
@@ -145,6 +166,7 @@
 <li><strong>Sopimuksen täytäntöönpano</strong> (GDPR-asetuksen 6 artiklan 1 kohdan b alakohta) — sovelluksen suorittaminen, synkronointi kumppanisi kanssa, ostostesi käsittely.</li>
 <li><strong>Oikeutettu etu</strong> (GDPR-asetuksen 6 artiklan 1 kohdan f alakohta) — Sentryn diagnostiikka, petosten/väärinkäytösten estäminen, ei-personoitu mainonta. Intressimme on vakauden parantaminen ja ilmaisen tason ylläpitäminen; tämä ei syrjäytä perusoikeuksiasi.</li>
 <li><strong>Suostumus</strong> (GDPR-asetuksen 6 artiklan 1 kohdan a alakohta) — personoitu mainonta, jossa annat suostumuksesi ATT-kehotuksen (iOS) tai sovelluksen sisäisen asetuksen kautta. Voit peruuttaa suostumuksesi milloin tahansa vaikuttamatta aiempaan käsittelyyn.</li>
+<li><strong>Suostumus / sopimusperusteinen valinta valinnaisille ominaisuuksille</strong> (GDPR-asetuksen 6 artiklan 1 kohdan a ja b alakohta) — kirjautuminen Applella tai Googlella sekä salatun pilvivarmuuskopion käyttäminen ovat valinnaisia toimia, jotka teet omasta valinnastasi. Niihin liittyvä käsittely perustuu valitsemasi ominaisuuden sopimukseen tai suostumukseesi; voit peruuttaa milloin tahansa kirjautumalla ulos tai poistamalla tilisi.</li>
 <li><strong>Lakisääteinen velvoite</strong> (GDPR-asetuksen 6 artiklan 1 kohdan c alakohta) — vain silloin, kun meidän on vastattava viranomaisten lailliseen pyyntöön.</li>
 </ul>
 <h2>6. Vastaanottajat (kenen kanssa jaamme tietoja)</h2>
@@ -152,7 +174,9 @@
 <table>
 <thead><tr><th>Vastaanottaja</th><th>Tarkoitus</th><th>Tietoluokka</th><th>Tietosuojakäytäntö</th></tr></thead>
 <tbody>
-<tr><td>Cloudflare, Inc.</td><td>Pariliitosrele (salattu kättely + lyhytkestoiset E2E-viestit)</td><td>Satunnainen paritunnus, salattu tiiviste</td><td><a href="https://www.cloudflare.com/privacypolicy/">https://www.cloudflare.com/privacypolicy/</a></td></tr>
+<tr><td>Cloudflare, Inc.</td><td>Pariliitosrele; valinnainen tili-/istuntopalvelu; oikeuden synkronointi; salatun pilvivarmuuskopion tallennus</td><td>Satunnainen paritunnus, salattu tiiviste, istuntotunniste, salattu varmuuskopion salateksti (vain jos kirjaudut sisään ja käytät pilvivarmuuskopiota)</td><td><a href="https://www.cloudflare.com/privacypolicy/">https://www.cloudflare.com/privacypolicy/</a></td></tr>
+<tr><td>Apple Inc. (Sign in with Apple)</td><td>Valinnainen tilin todennus</td><td>Identiteettitunniste, sähköpostiosoite (voi olla Applen private relay -osoite)</td><td><a href="https://www.apple.com/legal/privacy/">https://www.apple.com/legal/privacy/</a></td></tr>
+<tr><td>Google LLC (Google Sign-In)</td><td>Valinnainen tilin todennus</td><td>Identiteettitunniste, sähköpostiosoite</td><td><a href="https://policies.google.com/privacy">https://policies.google.com/privacy</a></td></tr>
 <tr><td>Google LLC (AdMob)</td><td>Mainosten näyttäminen</td><td>Mainostunnus, laite- ja mainostilastot</td><td><a href="https://policies.google.com/privacy">https://policies.google.com/privacy</a></td></tr>
 <tr><td>Meta Platforms, Inc. (Meta Audience Network)</td><td>Mainosten näyttäminen</td><td>Mainostunnus, laite- ja mainostilastot</td><td><a href="https://www.facebook.com/privacy/policy/">https://www.facebook.com/privacy/policy/</a></td></tr>
 <tr><td>Unity Technologies (Unity Ads)</td><td>Mainosten näyttäminen</td><td>Mainostunnus, laite- ja mainostilastot</td><td><a href="https://unity.com/legal/privacy-policy">https://unity.com/legal/privacy-policy</a></td></tr>
@@ -180,13 +204,16 @@
 <tr><td>Mainostunnus</td><td>Google AdMob -järjestelmät</td><td>Googlen säilytyskäytännön mukaisesti (yleensä enintään 14 kuukautta mainostilastoille)</td></tr>
 <tr><td>Sentryn kaatumistiedot</td><td>Sentryn järjestelmät</td><td>Enintään 90 päivää tapahtumasta</td></tr>
 <tr><td>IAP-ostotunnus / kuitti</td><td>Laitteesi + Apple / Google</td><td>Kunnes poistat asennuksen; Apple / Google säilyttävät tapahtumarekisterit omien käytäntöjensä mukaisesti</td></tr>
+<tr><td>Istunto-JWT</td><td>Laitteesi (suojattu tallennustila)</td><td>Enintään 30 päivää, uusittavissa viimeisten 7 päivän aikana; poistetaan uloskirjautuessa</td></tr>
+<tr><td>Palveluntarjoajan linkitys, sisäinen tilitietue, oikeustietue</td><td>Mote-taustajärjestelmä (Cloudflare)</td><td>Kunnes käytät Poista tili -toimintoa tai pyydät tukea poistamaan sen</td></tr>
+<tr><td>Salattu pilvivarmuuskopio</td><td>Mote-taustajärjestelmä (Cloudflare)</td><td>Kunnes poistat tilisi, pyydät poistoa tai uusi varmuuskopio korvaa sen</td></tr>
 </tbody></table>
 <h2>9. Oikeutesi (GDPR-asetuksen 15–22 artiklat)</h2>
 <p>Sinulla on seuraavat oikeudet henkilötietoihisi liittyen:</p>
 <ul>
 <li><strong>Oikeus päästä tietoihin (GDPR-asetuksen 15 artikla)</strong> — vahvistus siitä, käsittelemmekö tietojasi ja kopio niistä. Suurin osa tiedoistasi on jo laitteellasi; vie tiedot sovelluksesta tai kirjoita meille muista tiedoista.</li>
 <li><strong>Oikeus tietojen oikaisemiseen (GDPR-asetuksen 16 artikla)</strong> — epätarkkojen tietojen korjaaminen. Muokkaa tietoja suoraan sovelluksessa.</li>
-<li><strong>Oikeus tietojen poistamiseen / "oikeus tulla unohdetuksi" (GDPR-asetuksen 17 artikla)</strong> — poista kaikki tiedot Asetukset → "Pyyhi kaikki tiedot" kautta tai poistamalla sovelluksen asennus. Pariliitosreleen tiedot vanhenevat automaattisesti.</li>
+<li><strong>Oikeus tietojen poistamiseen / "oikeus tulla unohdetuksi" (GDPR-asetuksen 17 artikla)</strong> — poista kaikki tiedot Asetukset → "Pyyhi kaikki tiedot" kautta tai poistamalla sovelluksen asennus. Pariliitosreleen tiedot vanhenevat automaattisesti. Jos sinulla on valinnainen tili (kirjautunut Applella tai Googlella), käytä Asetukset → "Poista tili" -toimintoa poistaaksesi palveluntarjoajan linkityksen, sisäisen tilitietueen, oikeustietueen ja salatun pilvivarmuuskopion palvelimiltamme sekä paikalliset tiedot — tämä eroaa "Uloskirjautumisesta", joka tyhjentää vain paikallisen istunnon. Jos poistopyyntöä ei voida vahvistaa offline-tilassa, ota yhteyttä osoitteeseen <a href="mailto:mail@macsiem.dev">mail@macsiem.dev</a> vahvistaaksesi poiston palvelinpuolella.</li>
 <li><strong>Oikeus käsittelyn rajoittamiseen (GDPR-asetuksen 18 artikla)</strong> — pyydä väliaikaista keskeytystä; kirjoita meille.</li>
 <li><strong>Oikeus siirtää tiedot järjestelmästä toiseen (GDPR-asetuksen 20 artikla)</strong> — Asetukset → "Vie tiedot" tuottaa JSON- / Markdown-paketin.</li>
 <li><strong>Vastustamisoikeus (GDPR-asetuksen 21 artikla)</strong> — vastusta käsittelyä, joka perustuu oikeutettuun etuun, erityisesti profilointityyppisiin mainoksiin. Poista personoidut mainokset käytöstä sovelluksen asetuksista tai järjestelmän hallintalaitteilla.</li>
@@ -206,7 +233,7 @@
 <li><strong>Päästä päähän -salaus siirron aikana</strong> — parien väliset viestit käyttävät <code>tweetnacl</code>-salausta (X25519 + XSalsa20-Poly1305). Jokainen laite luo oman avainparinsa; yksityiset avaimet eivät koskaan poistu laitteelta.</li>
 <li><strong>Siirtoturvallisuus</strong> — kaikki verkkokutsut käyttävät HTTPS / TLS 1.2+ -protokollia.</li>
 <li><strong>Minimointi</strong> — keräämme vain sen, mikä on lueteltuihin tarkoituksiin välttämätöntä.</li>
-<li><strong>Ei varmuuskopioita palvelimillemme</strong> — merkintöjäsi ei varmuuskopioida Mote-infrastruktuuriin. Valinnaiset järjestelmätason varmuuskopiot (iCloud Backup iOS:ssä, Auto Backup Androidissa) pysyvät täysin hallinnassasi.</li>
+<li><strong>Varmuuskopiot</strong> — merkintöjäsi ei oletuksena varmuuskopioida Mote-infrastruktuuriin. Jos kirjaudut sisään ja sinulla on kelpoinen Premium-oikeus, voit halutessasi ottaa käyttöön salatun pilvivarmuuskopion (katso kohta 3.9); sovellus salaa varmuuskopion laitteellasi ennen lähetystä, eikä Mote voi lukea sen sisältöä. Valinnaiset järjestelmätason varmuuskopiot (iCloud Backup iOS:ssä, Auto Backup Androidissa) pysyvät joka tapauksessa täysin hallinnassasi.</li>
 </ul>
 <p>Mikään järjestelmä ei ole 100 % turvallinen; pidä laitteesi päivitettynä ja käytä vahvoja laitelukkoja.</p>
 <h2>13. Sovellusten seurantatoimintojen läpinäkyvyys (iOS) ja mainostunnus</h2>

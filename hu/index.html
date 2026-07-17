@@ -70,14 +70,14 @@
     </div>
 
 <h1>Adatvédelmi szabályzat — Mote</h1>
-<p>Utolsó frissítés: 2026-05-06 · Hatálybalépés dátuma: 2026-05-06</p>
+<p>Utolsó frissítés: 2026-07-16 · Hatálybalépés dátuma: 2026-05-06</p>
 <h2>1. Kik vagyunk</h2>
 <p>A <strong>Mote</strong> egy mobilalkalmazás pároknak, amely segít megosztani egymással a mindennapi elismerő pillanatokat. Az adatvédelem a termék alapja: az adatok <strong>végpontok között titkosítottak</strong>, az alkalmazás <strong>offline-first</strong> megközelítésű, és a tartalom nagy része soha nem hagyja el az eszközt olyan formában, amely Önön és partnerén kívül bárki számára olvasható lenne.</p>
 <p><strong>Adatkezelő:</strong> Maciej Siemiński — a Mote fejlesztője. <strong>Kapcsolat:</strong> <a href="mailto:mail@macsiem.dev">mail@macsiem.dev</a></p>
 <p>A Google Playen keresztül terjesztett alkalmazás verziójának adatkezelője a(z) LICENCEPRO POLSKA Sp. z o.o., ul. Huculska 6, 00-730 Warszawa, Polska.</p>
 <p>Ez az Adatvédelmi szabályzat elmagyarázza, hogy a Mote milyen személyes adatokat kezel, hogyan, miért, és milyen jogai vannak.</p>
 <h2>2. Közérthető összefoglaló</h2>
-<p>Bejegyzései tartalmát nem tároljuk szervereinken. Üzenetei, fotói, hangjegyzetek, hangulatjelentések és címkék titkosítva vannak az eszközén, és amikor szinkronizálja őket partnerével, végpontok között titkosítva továbbítódnak. Google AdMob-ot használunk nem invazív szalaghirdetések megjelenítésére a kiegészítő képernyőkön, és Apple/Google számlázást az alkalmazáson belüli vásárlások feldolgozására. A Sentry-t csak akkor használjuk, ha egy adott buildben kifejezetten engedélyezve van a hibajelentéshez. Teljes GDPR jogai vannak, beleértve a hozzáférést, törlést és adathordozhatóságot — ezek többsége közvetlenül az alkalmazásban gyakorolható.</p>
+<p>Bejegyzései tartalmát nem tároljuk szervereinken. Üzenetei, fotói, hangjegyzetek, hangulatjelentések és címkék titkosítva vannak az eszközén, és amikor szinkronizálja őket partnerével, végpontok között titkosítva továbbítódnak. A Mote teljes mértékben használható fiók létrehozása nélkül; az Apple-lel vagy Google-lal történő bejelentkezés opcionális, és lehetővé teszi a Prémium jogosultság szinkronizálását, valamint a titkosított felhő-biztonsági mentés helyreállítását az Ön eszközein — a felhő-biztonsági mentés tartalmát soha nem kapjuk meg titkosítatlanul. Google AdMob-ot használunk nem invazív szalaghirdetések megjelenítésére a kiegészítő képernyőkön, és Apple/Google számlázást az alkalmazáson belüli vásárlások feldolgozására. A Sentry-t csak akkor használjuk, ha egy adott buildben kifejezetten engedélyezve van a hibajelentéshez. Teljes GDPR jogai vannak, beleértve a hozzáférést, törlést és adathordozhatóságot — ezek többsége közvetlenül az alkalmazásban gyakorolható.</p>
 <h2>3. Az általunk kezelt adatok</h2>
 <h3>3.1 Kizárólag helyi adatok</h3>
 <p>Az Ön által hozzáadott bejegyzések, üzenetek, címkék, hangulatjelentések, fotók és hangjegyzetek <strong>helyileg az eszközén</strong> titkosított formában tárolódnak (MMKV egy eszközről származtatott kulccsal, amelyet az Apple Keychain / Android Keystore tárol). Amikor szinkronizálja a párosított partnere eszközével, a tartalom <strong>végpontok között titkosított</strong> lesz az egyes eszközökön generált <code>tweetnacl</code> kulcsok használatával — a Mote fejlesztője nem olvashatja bejegyzéseit.</p>
@@ -124,13 +124,33 @@
 <p>Minden engedélyt kontextuálisan kérünk. Bármely engedélyt megtagadhatja, és továbbra is használhatja az alapvető funkciókat (adott esetben).</p>
 <h3>3.7 Amit NEM gyűjtünk</h3>
 <ul>
-<li>Neve, e-mail címe, telefonszáma, címe (nincs szükség fiókra).</li>
+<li>Neve, telefonszáma vagy címe — az alapvető használathoz nincs szükség fiókra. Ha úgy dönt, hogy bejelentkezik az Apple-lel vagy a Google-lal, a szolgáltató megoszthatja velünk az e-mail címét; lásd a 3.8. szakaszt.</li>
 <li>Névjegyzék, naptár, SMS, hívásnaplók.</li>
 <li>Pontos helymeghatározás.</li>
 <li>Alkalmazáson kívüli böngészési előzmények.</li>
 <li>Biometrikus adatok (a Face ID / Touch ID kizárólag rendszer szintű zárolásként használatos, és soha nem hagyja el az eszközét).</li>
 <li>Egészségügyi, pénzügyi vagy bankkártya adatok.</li>
 </ul>
+<h3>3.8 Opcionális fiók és bejelentkezés (Apple / Google)</h3>
+<p>A Mote fiók létrehozása vagy bejelentkezés nélkül is használható. A párosítás és az alapvető elismerési folyamat továbbra is elérhető anonim módon. A bejelentkezés opcionális, és a Prémium jogosultság szinkronizálására, valamint a titkosított felhő-biztonsági mentés eszközök közötti helyreállítására szolgál.</p>
+<p>Amikor az Apple-lel vagy a Google-lal történő bejelentkezést választja:</p>
+<ul>
+<li>az Apple vagy a Google hitelesíti Önt, és egy azonosító tokent küld a Mote-nak;</li>
+<li>a Mote szolgáltatás ellenőrzi ezt a tokent, és létrehoz egy belső felhasználói azonosítót;</li>
+<li>a szolgáltató megadhatja az e-mail címét. Az Apple esetében ez lehet egy Apple magánközvetítő (private relay) cím, ha az „E-mail elrejtése” lehetőséget választotta;</li>
+<li>a Mote egy aláírt munkamenet-JWT-t ad vissza. Az alkalmazás a tokent az operációs rendszer biztonságos tárolójában tárolja, és kizárólag hitelesített Mote kérésekhez használja.</li>
+</ul>
+<p>A munkamenet-JWT 30 napig érvényes, és az utolsó hét napban megújítható. A kijelentkezés eltávolítja az eszközön tárolt munkamenetet. A kijelentkezés nem törli a szerveroldali fiókrekordot vagy a titkosított felhő-biztonsági mentést.</p>
+<p>A Mote nem kapja meg az Ön Apple vagy Google jelszavát.</p>
+<h3>3.9 Titkosított felhő-biztonsági mentés (Prémium)</h3>
+<p>A felhő-biztonsági mentés opcionális, és jogosult Prémium előfizetést, bejelentkezést, párosítást és megerősített helyreállítási kifejezést igényel. Feltöltés előtt az alkalmazás a helyreállítási kifejezésből származtatott kulccsal titkosítja a biztonsági mentést az eszközön. A szolgáltatás a belső Mote felhasználói azonosítóhoz kapcsolt titkosított szöveget kap; a helyreállítási kifejezést vagy a titkosítatlan biztonsági mentést nem kapja meg.</p>
+<p>A titkosított felhő-biztonsági mentés tartalmazhatja a pár helyreállításához szükséges párosítási helyreállítási anyagot, a Mote-ban használt megjelenítendő nevet és titkosított kulcsanyagot. Nem tartalmazza az Ön Apple vagy Google jelszavát. Egy új feltöltés lecseréli az adott Mote fiók aktuális biztonsági mentését.</p>
+<p>Őrizze meg biztonságosan a helyreállítási kifejezést. A titkosított felhő-biztonsági mentés nélküle nem állítható helyre.</p>
+<h3>3.10 Kijelentkezés vs. fiók törlése</h3>
+<p>A helyi munkamenet-JWT 30 nap után lejár, hacsak nem újítja meg, és eltávolításra kerül az eszközről, amikor kijelentkezik. A szolgáltatói kapcsolat, a belső felhasználói rekord, a jogosultsági rekord és az aktuális titkosított felhő-biztonsági mentés mindaddig megmarad, amíg Ön nem használja a <strong>Fiók törlése</strong> funkciót, vagy nem kéri a támogatástól azok törlését.</p>
+<p>A <strong>Kijelentkezés</strong> csak a helyi munkamenetet távolítja el, és letiltja a felhő-biztonsági mentést az adott eszközön. Ez nem fiók törlési művelet.</p>
+<p>A <strong>Fiók törlése</strong>, online használva, hitelesített törlési kérést küld a Mote szolgáltatásnak, majd törli a helyi fiókot, a titkosítási anyagot és az alkalmazás adatait. Ha az eszköz offline volt, vagy a kérést nem lehetett megerősíteni, vegye fel a kapcsolatot a <a href="mailto:mail@macsiem.dev">mail@macsiem.dev</a> címmel a szerveroldali törlés megerősítéséhez.</p>
+<p>Az alkalmazás eltávolítása az operációs rendszer működésének megfelelően törli az alkalmazáson belüli helyi adatokat, de önmagában nem garantálja a bejelentkezett szerverfiók vagy a titkosított biztonsági mentés törlését.</p>
 <h2>4. Miért kezeljük ezeket az adatokat (célok)</h2>
 <ul>
 <li><strong>Az alkalmazás futtatása az eszközén</strong> — a helyi tárolás és (adott esetben) a titkosítás lehetővé teszi, hogy adatai a munkamenetek között is megmaradjanak.</li>
@@ -138,6 +158,7 @@
 <li><strong>Stabilitás javítása</strong> — a Sentry diagnosztika segít kijavítani az Ön használatát befolyásoló összeomlásokat.</li>
 <li><strong>Az ingyenes szint fenntartása</strong> — az AdMob nem invazív hirdetéseket szolgáltat, hogy finanszírozza azokat a felhasználókat, akik nem vásárolnak prémiumot.</li>
 <li><strong>Vásárlások feldolgozása</strong> — az Apple / Google számlázás teljesíti az Ön által megvásárolni kívánt prémium jogosultságokat.</li>
+<li><strong>Jogosultság és felhő-biztonsági mentés szinkronizálása az eszközök között</strong> — azoknak a felhasználóknak, akik a bejelentkezést választják, a Prémium jogosultság szinkronizálása és az opcionális titkosított felhő-biztonsági mentés helyreállítása lehetővé teszi a párosítás és a beállítások visszaállítását egy új eszközön.</li>
 </ul>
 <h2>5. Jogalap (GDPR 6. cikk)</h2>
 <p>Az Európai Gazdasági Térségben, az Egyesült Királyságban és Svájcban élő felhasználók számára:</p>
@@ -145,6 +166,7 @@
 <li><strong>Szerződés teljesítése</strong> (GDPR 6. cikk (1) bekezdés b) pontja) — az alkalmazás futtatása, szinkronizálás a partnerével, vásárlásainak feldolgozása.</li>
 <li><strong>Jogos érdek</strong> (GDPR 6. cikk (1) bekezdés f) pontja) — Sentry diagnosztika, csalás / visszaélés megelőzése, nem személyre szabott hirdetések. Érdekünk a stabilitás javítása és az ingyenes szint fenntartása; ez nem írja felül az Ön alapvető jogait.</li>
 <li><strong>Hozzájárulás</strong> (GDPR 6. cikk (1) bekezdés a) pontja) — személyre szabott hirdetések, ahol Ön hozzájárulását adja az ATT prompton (iOS) vagy az alkalmazáson belüli preferenciákon keresztül. Bármikor visszavonhatja hozzájárulását anélkül, hogy az befolyásolná a korábbi adatkezelést.</li>
+<li><strong>Hozzájárulás / szerződéses választás opcionális funkciókhoz</strong> (GDPR 6. cikk (1) bekezdés a) és b) pontja) — az Apple-lel vagy Google-lal történő bejelentkezés és a titkosított felhő-biztonsági mentés használata olyan opcionális műveletek, amelyeket Ön saját döntése alapján végez. A kapcsolódó adatkezelés az Ön által választott funkció eredményeként létrejövő szerződésen, vagy az Ön hozzájárulásán alapul; ezt bármikor visszavonhatja a kijelentkezéssel vagy a fiókja törlésével.</li>
 <li><strong>Jogi kötelezettség</strong> (GDPR 6. cikk (1) bekezdés c) pontja) — csak akkor, ha hatóságok jogszerű kérésére válaszolnunk kell.</li>
 </ul>
 <h2>6. Címzettek (akikkel adatokat osztunk meg)</h2>
@@ -152,7 +174,9 @@
 <table>
 <thead><tr><th>Címzett</th><th>Cél</th><th>Adatkategória</th><th>Adatvédelmi szabályzat</th></tr></thead>
 <tbody>
-<tr><td>Cloudflare, Inc.</td><td>Párosítási továbbító (titkosított kézfogás + efemer E2E üzenetek)</td><td>Véletlenszerű páros azonosító, titkosított blob</td><td><a href="https://www.cloudflare.com/privacypolicy/">https://www.cloudflare.com/privacypolicy/</a></td></tr>
+<tr><td>Cloudflare, Inc.</td><td>Párosítási továbbító; opcionális fiók-/munkamenet-szolgáltatás; jogosultság-szinkronizálás; titkosított felhő-biztonsági mentés tárolása</td><td>Véletlenszerű páros azonosító, titkosított blob, munkamenet-azonosító, titkosított biztonsági mentés titkosított szövege (csak ha bejelentkezik és felhő-biztonsági mentést használ)</td><td><a href="https://www.cloudflare.com/privacypolicy/">https://www.cloudflare.com/privacypolicy/</a></td></tr>
+<tr><td>Apple Inc. (Sign in with Apple)</td><td>Opcionális fiókhitelesítés</td><td>Azonosító token, e-mail cím (lehet Apple private relay cím)</td><td><a href="https://www.apple.com/legal/privacy/">https://www.apple.com/legal/privacy/</a></td></tr>
+<tr><td>Google LLC (Google Sign-In)</td><td>Opcionális fiókhitelesítés</td><td>Azonosító token, e-mail cím</td><td><a href="https://policies.google.com/privacy">https://policies.google.com/privacy</a></td></tr>
 <tr><td>Google LLC (AdMob)</td><td>Hirdetések megjelenítése</td><td>Hirdetési azonosító, eszköz- és hirdetési metrikák</td><td><a href="https://policies.google.com/privacy">https://policies.google.com/privacy</a></td></tr>
 <tr><td>Meta Platforms, Inc. (Meta Audience Network)</td><td>Hirdetések megjelenítése</td><td>Hirdetési azonosító, eszköz- és hirdetési metrikák</td><td><a href="https://www.facebook.com/privacy/policy/">https://www.facebook.com/privacy/policy/</a></td></tr>
 <tr><td>Unity Technologies (Unity Ads)</td><td>Hirdetések megjelenítése</td><td>Hirdetési azonosító, eszköz- és hirdetési metrikák</td><td><a href="https://unity.com/legal/privacy-policy">https://unity.com/legal/privacy-policy</a></td></tr>
@@ -180,13 +204,16 @@
 <tr><td>Hirdetési azonosító</td><td>Google AdMob rendszerek</td><td>A Google adatmegőrzési szabályzata szerint (általában legfeljebb 14 hónap hirdetési metrikák esetén)</td></tr>
 <tr><td>Sentry összeomlási adatok</td><td>Sentry rendszerek</td><td>Az eseménytől számított legfeljebb 90 napig</td></tr>
 <tr><td>IAP vásárlási token / nyugta</td><td>Az Ön eszköze + Apple / Google</td><td>Amíg el nem távolítja; az Apple / Google a saját szabályzataik szerint őrzik meg a tranzakciós rekordokat</td></tr>
+<tr><td>Munkamenet-JWT</td><td>Az Ön eszköze (biztonságos tároló)</td><td>Legfeljebb 30 nap, az utolsó 7 napban megújítható; kijelentkezéskor törlődik</td></tr>
+<tr><td>Szolgáltatói kapcsolat, belső fiókrekord, jogosultsági rekord</td><td>Mote backend (Cloudflare)</td><td>Amíg Ön nem használja a Fiók törlése funkciót, vagy nem kéri a támogatástól a törlést</td></tr>
+<tr><td>Titkosított felhő-biztonsági mentés</td><td>Mote backend (Cloudflare)</td><td>Amíg Ön nem törli a fiókját, nem kér törlést, vagy egy új biztonsági mentés le nem cseréli</td></tr>
 </tbody></table>
 <h2>9. Az Ön jogai (GDPR 15–22. cikk)</h2>
 <p>A személyes adataira vonatkozóan a következő jogai vannak:</p>
 <ul>
 <li><strong>Hozzáférési jog (GDPR 15. cikk)</strong> — megerősítés arról, hogy kezeljük-e az adatait, és azok másolata. Adatainak nagy része már az eszközén van; exportálja az alkalmazásból, vagy írjon nekünk a többiért.</li>
 <li><strong>Helyesbítéshez való jog (GDPR 16. cikk)</strong> — pontatlan adatok helyesbítése. Az adatokat közvetlenül az alkalmazásban szerkesztheti.</li>
-<li><strong>Törléshez való jog / „elfeledtetéshez való jog” (GDPR 17. cikk)</strong> — minden adat törlése a Beállítások → „Összes adat törlése” menüpontban, vagy az alkalmazás eltávolításával. A párosítási továbbító adatai automatikusan lejárnak.</li>
+<li><strong>Törléshez való jog / „elfeledtetéshez való jog” (GDPR 17. cikk)</strong> — minden adat törlése a Beállítások → „Összes adat törlése” menüpontban, vagy az alkalmazás eltávolításával. A párosítási továbbító adatai automatikusan lejárnak. Ha rendelkezik opcionális fiókkal (Apple-lel vagy Google-lal bejelentkezve), használja a Beállítások → „Fiók törlése” menüpontot, hogy eltávolítsa szervereinkről a szolgáltatói kapcsolatot, a belső fiókrekordot, a jogosultsági rekordot és a titkosított felhő-biztonsági mentést, valamint a helyi adatokat is — ez különbözik a „Kijelentkezéstől”, amely csak a helyi munkamenetet törli. Ha a törlési kérést offline állapotban nem lehet megerősíteni, vegye fel a kapcsolatot a <a href="mailto:mail@macsiem.dev">mail@macsiem.dev</a> címmel a szerveroldali törlés megerősítéséhez.</li>
 <li><strong>Adatkezelés korlátozásához való jog (GDPR 18. cikk)</strong> — ideiglenes leállítás kérése; írjon nekünk.</li>
 <li><strong>Adathordozhatósághoz való jog (GDPR 20. cikk)</strong> — Beállítások → „Adatok exportálása” menüponttal JSON / Markdown csomagot hozhat létre.</li>
 <li><strong>Tiltakozáshoz való jog (GDPR 21. cikk)</strong> — tiltakozás a jogos érdeken alapuló adatkezelés ellen, különösen a profilozó típusú hirdetések esetében. A személyre szabott hirdetéseket letilthatja az alkalmazás beállításaiban vagy a rendszervezérlőkön keresztül.</li>
@@ -206,7 +233,7 @@
 <li><strong>Végpontok közötti titkosítás továbbítás közben</strong> — a párok közötti üzenetek <code>tweetnacl</code> (X25519 + XSalsa20-Poly1305) titkosítást használnak. Minden eszköz saját kulcspárt generál; a privát kulcsok soha nem hagyják el az eszközt.</li>
 <li><strong>Szállítási biztonság</strong> — minden hálózati hívás HTTPS / TLS 1.2+ protokollt használ.</li>
 <li><strong>Adatminimalizálás</strong> — csak azt gyűjtjük, ami a felsorolt célokhoz szükséges.</li>
-<li><strong>Nincs biztonsági mentés szervereinkre</strong> — bejegyzései nem kerülnek biztonsági mentésre a Mote infrastruktúrájába. Az opcionális rendszer szintű biztonsági mentések (iCloud Backup iOS-en, Auto Backup Androidon) teljes mértékben az Ön ellenőrzése alatt maradnak.</li>
+<li><strong>Biztonsági mentések</strong> — bejegyzései alapértelmezés szerint nem kerülnek biztonsági mentésre a Mote infrastruktúrájába. Ha bejelentkezik, és jogosult Prémium előfizetéssel rendelkezik, opcionálisan engedélyezheti a titkosított felhő-biztonsági mentést (lásd a 3.9. szakaszt); az alkalmazás feltöltés előtt titkosítja a biztonsági mentést az eszközén, és a Mote nem tudja elolvasni annak tartalmát. Az opcionális rendszer szintű biztonsági mentések (iCloud Backup iOS-en, Auto Backup Androidon) ettől függetlenül teljes mértékben az Ön ellenőrzése alatt maradnak.</li>
 </ul>
 <p>Egyetlen rendszer sem 100%-ban biztonságos; kérjük, tartsa naprakészen eszközét és használjon erős eszközzárakat.</p>
 <h2>13. Alkalmazáskövetési átláthatóság (iOS) és hirdetési azonosító</h2>

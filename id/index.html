@@ -70,14 +70,14 @@
     </div>
 
 <h1>Kebijakan Privasi — Mote</h1>
-<p>Terakhir diperbarui: 2026-05-06 · Tanggal berlaku: 2026-05-06</p>
+<p>Terakhir diperbarui: 2026-07-16 · Tanggal berlaku: 2026-05-06</p>
 <h2>1. Siapa kami</h2>
 <p><strong>Mote</strong> adalah aplikasi seluler untuk pasangan yang membantu berbagi momen apresiasi sehari-hari antar mitra. Privasi adalah fondasi produk ini: data <strong>dienkripsi ujung ke ujung</strong>, aplikasi ini <strong>mengutamakan offline</strong>, dan sebagian besar konten tidak pernah meninggalkan perangkat Anda dalam bentuk yang dapat dibaca oleh siapa pun selain Anda dan pasangan Anda.</p>
 <p><strong>Pengontrol data:</strong> Maciej Siemiński — pengembang Mote. <strong>Kontak:</strong> <a href="mailto:mail@macsiem.dev">mail@macsiem.dev</a></p>
 <p>Untuk versi aplikasi yang didistribusikan melalui Google Play, pengendali data adalah LICENCEPRO POLSKA Sp. z o.o., ul. Huculska 6, 00-730 Warszawa, Polska.</p>
 <p>Kebijakan Privasi ini menjelaskan data pribadi apa yang Mote proses, bagaimana, mengapa, dan hak-hak apa yang Anda miliki.</p>
 <h2>2. Ringkasan bahasa sederhana</h2>
-<p>Kami tidak menyimpan konten entri Anda di server kami. Pesan, foto, catatan suara, check-in suasana hati, dan tag Anda dienkripsi di perangkat Anda dan, saat disinkronkan dengan pasangan Anda, dienkripsi ujung ke ujung saat transit. Kami menggunakan Google AdMob untuk iklan banner yang tidak mengganggu di layar tambahan dan penagihan Apple/Google untuk memproses pembelian dalam aplikasi. Sentry hanya digunakan ketika secara eksplisit diaktifkan dalam build untuk melaporkan kerusakan. Anda memiliki hak GDPR penuh termasuk akses, penghapusan, dan portabilitas — sebagian besar dapat dilaksanakan langsung di aplikasi.</p>
+<p>Kami tidak menyimpan konten entri Anda di server kami. Pesan, foto, catatan suara, check-in suasana hati, dan tag Anda dienkripsi di perangkat Anda dan, saat disinkronkan dengan pasangan Anda, dienkripsi ujung ke ujung saat transit. Mote dapat digunakan sepenuhnya tanpa membuat akun; masuk dengan Apple atau Google bersifat opsional dan memungkinkan sinkronisasi hak Premium serta pemulihan cadangan cloud terenkripsi di seluruh perangkat Anda — kami tidak pernah menerima konten cadangan cloud Anda dalam bentuk tidak terenkripsi. Kami menggunakan Google AdMob untuk iklan banner yang tidak mengganggu di layar tambahan dan penagihan Apple/Google untuk memproses pembelian dalam aplikasi. Sentry hanya digunakan ketika secara eksplisit diaktifkan dalam build untuk melaporkan kerusakan. Anda memiliki hak GDPR penuh termasuk akses, penghapusan, dan portabilitas — sebagian besar dapat dilaksanakan langsung di aplikasi.</p>
 <h2>3. Data yang kami proses</h2>
 <h3>3.1 Data khusus lokal</h3>
 <p>Entri, pesan, tag, check-in suasana hati, foto, dan catatan suara yang Anda tambahkan disimpan <strong>secara lokal di perangkat Anda</strong> dalam bentuk terenkripsi (MMKV dengan kunci turunan perangkat yang disimpan di Apple Keychain / Android Keystore). Saat disinkronkan dengan perangkat pasangan Anda yang terpasang, konten dienkripsi <strong>ujung ke ujung</strong> menggunakan kunci <code>tweetnacl</code> yang dibuat di setiap perangkat — pengembang Mote tidak dapat membaca entri Anda.</p>
@@ -124,13 +124,33 @@
 <p>Setiap izin diminta secara kontekstual. Anda dapat menolak izin apa pun dan tetap menggunakan fitur inti (jika berlaku).</p>
 <h3>3.7 Apa yang TIDAK kami kumpulkan</h3>
 <ul>
-<li>Nama, email, nomor telepon, alamat Anda (tidak diperlukan akun).</li>
+<li>Nama, nomor telepon, atau alamat Anda — tidak diperlukan akun untuk penggunaan inti. Jika Anda memilih untuk masuk dengan Apple atau Google, penyedia dapat membagikan alamat email kepada kami; lihat bagian 3.8.</li>
 <li>Daftar kontak, kalender, SMS, log panggilan.</li>
 <li>Lokasi yang tepat.</li>
 <li>Riwayat penjelajahan di luar aplikasi.</li>
 <li>Data biometrik (Face ID / Touch ID hanya digunakan sebagai kunci tingkat sistem dan tidak pernah meninggalkan perangkat Anda).</li>
 <li>Data kesehatan, keuangan, atau kartu pembayaran.</li>
 </ul>
+<h3>3.8 Akun dan masuk opsional (Apple / Google)</h3>
+<p>Mote dapat digunakan tanpa membuat akun atau masuk. Pemasangan dan alur apresiasi inti tetap tersedia secara anonim. Masuk bersifat opsional dan digunakan untuk sinkronisasi hak Premium serta pemulihan cadangan cloud terenkripsi di berbagai perangkat.</p>
+<p>Saat Anda memilih untuk Masuk dengan Apple atau Masuk dengan Google:</p>
+<ul>
+<li>Apple atau Google mengautentikasi Anda dan mengirimkan token identitas ke Mote;</li>
+<li>layanan Mote memverifikasi token tersebut dan membuat ID pengguna internal;</li>
+<li>penyedia dapat memberikan alamat email Anda. Dengan Apple, ini bisa berupa alamat private relay Apple jika Anda memilih Sembunyikan Email Saya;</li>
+<li>Mote mengembalikan JWT sesi yang ditandatangani. Aplikasi menyimpan token tersebut di penyimpanan aman sistem operasi dan hanya menggunakannya untuk permintaan Mote yang terautentikasi.</li>
+</ul>
+<p>JWT sesi berlaku selama 30 hari dan dapat diperbarui selama tujuh hari terakhirnya. Keluar (sign out) menghapus sesi yang tersimpan di perangkat. Keluar tidak menghapus rekaman akun sisi server atau cadangan cloud terenkripsi.</p>
+<p>Mote tidak menerima kata sandi Apple atau Google Anda.</p>
+<h3>3.9 Cadangan cloud terenkripsi (Premium)</h3>
+<p>Cadangan cloud bersifat opsional dan memerlukan hak Premium yang memenuhi syarat, status masuk, pemasangan, dan frasa pemulihan yang telah dikonfirmasi. Sebelum diunggah, aplikasi mengenkripsi cadangan di perangkat menggunakan kunci yang diturunkan dari frasa pemulihan. Layanan menerima ciphertext yang terkait dengan ID pengguna internal Mote; layanan tidak menerima frasa pemulihan atau cadangan teks biasa.</p>
+<p>Cadangan cloud terenkripsi dapat berisi materi pemulihan pemasangan yang diperlukan untuk memulihkan pasangan, nama tampilan yang digunakan di dalam Mote, dan materi kunci terenkripsi. Cadangan ini tidak berisi kata sandi Apple atau Google Anda. Unggahan baru akan menggantikan cadangan terkini untuk akun Mote tersebut.</p>
+<p>Simpan frasa pemulihan dengan aman. Cadangan cloud terenkripsi tidak dapat dipulihkan tanpanya.</p>
+<h3>3.10 Keluar vs. penghapusan akun</h3>
+<p>JWT sesi lokal kedaluwarsa setelah 30 hari kecuali diperbarui, dan dihapus dari perangkat saat Anda keluar. Tautan penyedia, rekaman pengguna internal, rekaman hak, dan cadangan cloud terenkripsi saat ini tetap disimpan sampai Anda menggunakan <strong>Hapus akun</strong> atau meminta dukungan untuk menghapusnya.</p>
+<p><strong>Keluar</strong> hanya menghapus sesi lokal dan menonaktifkan cadangan cloud di perangkat tersebut. Ini bukan tindakan penghapusan akun.</p>
+<p><strong>Hapus akun</strong>, saat digunakan dalam keadaan online, mengirimkan permintaan penghapusan yang terautentikasi ke layanan Mote, lalu membersihkan akun lokal, materi enkripsi, dan data aplikasi. Jika perangkat sedang offline atau permintaan tidak dapat dikonfirmasi, hubungi <a href="mailto:mail@macsiem.dev">mail@macsiem.dev</a> untuk mengonfirmasi penghapusan sisi server.</p>
+<p>Menghapus instalasi aplikasi menghapus data lokal aplikasi sesuai cara kerja sistem operasi, tetapi tidak dengan sendirinya menjamin penghapusan akun server yang sedang masuk atau cadangan terenkripsi.</p>
 <h2>4. Mengapa kami memproses data ini (tujuan)</h2>
 <ul>
 <li><strong>Menjalankan aplikasi di perangkat Anda</strong> — penyimpanan lokal dan (jika ada) enkripsi memungkinkan data Anda bertahan antar sesi.</li>
@@ -138,6 +158,7 @@
 <li><strong>Meningkatkan stabilitas</strong> — diagnostik Sentry membantu memperbaiki kerusakan yang memengaruhi penggunaan Anda.</li>
 <li><strong>Mempertahankan tingkatan gratis</strong> — AdMob menampilkan iklan yang tidak mengganggu untuk mendanai pengguna yang tidak membeli premium.</li>
 <li><strong>Memproses pembelian</strong> — penagihan Apple / Google memenuhi hak premium yang Anda pilih untuk dibeli.</li>
+<li><strong>Menyinkronkan hak dan cadangan cloud di berbagai perangkat</strong> — bagi pengguna yang memilih untuk masuk, sinkronisasi hak Premium dan pemulihan cadangan cloud terenkripsi opsional memungkinkan Anda memulihkan pemasangan dan pengaturan Anda di perangkat baru.</li>
 </ul>
 <h2>5. Dasar hukum (GDPR Article 6)</h2>
 <p>Untuk pengguna di Wilayah Ekonomi Eropa, Britania Raya, dan Swiss:</p>
@@ -145,6 +166,7 @@
 <li><strong>Pelaksanaan kontrak</strong> (GDPR Art. 6(1)(b)) — menjalankan aplikasi, menyinkronkan dengan pasangan Anda, memproses pembelian Anda.</li>
 <li><strong>Kepentingan sah</strong> (GDPR Art. 6(1)(f)) — diagnostik Sentry, pencegahan penipuan / penyalahgunaan, periklanan non-personalisasi. Kepentingan kami adalah meningkatkan stabilitas dan mempertahankan tingkatan gratis; ini tidak mengesampingkan hak-hak dasar Anda.</li>
 <li><strong>Persetujuan</strong> (GDPR Art. 6(1)(a)) — periklanan personalisasi, di mana Anda memberikan persetujuan melalui perintah ATT (iOS) atau preferensi dalam aplikasi. Anda dapat menarik persetujuan kapan saja tanpa memengaruhi pemrosesan sebelumnya.</li>
+<li><strong>Persetujuan / pilihan kontraktual untuk fitur opsional</strong> (GDPR Art. 6(1)(a) and (b)) — masuk dengan Apple atau Google dan menggunakan cadangan cloud terenkripsi adalah tindakan opsional yang Anda pilih untuk dilakukan. Pemrosesan terkait didasarkan pada kontrak yang timbul untuk fitur yang Anda pilih, atau persetujuan Anda; Anda dapat menarik kembali kapan saja dengan keluar atau menghapus akun Anda.</li>
 <li><strong>Kewajiban hukum</strong> (GDPR Art. 6(1)(c)) — hanya ketika kami harus menanggapi permintaan yang sah dari pihak berwenang.</li>
 </ul>
 <h2>6. Penerima (dengan siapa kami berbagi data)</h2>
@@ -152,7 +174,9 @@
 <table>
 <thead><tr><th>Penerima</th><th>Tujuan</th><th>Kategori data</th><th>Kebijakan privasi</th></tr></thead>
 <tbody>
-<tr><td>Cloudflare, Inc.</td><td>Relai pemasangan (jabat tangan terenkripsi + pesan E2E sementara)</td><td>ID pasangan acak, blob terenkripsi</td><td><a href="https://www.cloudflare.com/privacypolicy/">https://www.cloudflare.com/privacypolicy/</a></td></tr>
+<tr><td>Cloudflare, Inc.</td><td>Relai pemasangan; layanan akun/sesi opsional; sinkronisasi hak; penyimpanan cadangan cloud terenkripsi</td><td>ID pasangan acak, blob terenkripsi, pengidentifikasi sesi, ciphertext cadangan terenkripsi (hanya jika Anda masuk dan menggunakan cadangan cloud)</td><td><a href="https://www.cloudflare.com/privacypolicy/">https://www.cloudflare.com/privacypolicy/</a></td></tr>
+<tr><td>Apple Inc. (Sign in with Apple)</td><td>Autentikasi akun opsional</td><td>Token identitas, alamat email (dapat berupa alamat private relay Apple)</td><td><a href="https://www.apple.com/legal/privacy/">https://www.apple.com/legal/privacy/</a></td></tr>
+<tr><td>Google LLC (Google Sign-In)</td><td>Autentikasi akun opsional</td><td>Token identitas, alamat email</td><td><a href="https://policies.google.com/privacy">https://policies.google.com/privacy</a></td></tr>
 <tr><td>Google LLC (AdMob)</td><td>Menayangkan iklan</td><td>ID Iklan, metrik perangkat &amp; iklan</td><td><a href="https://policies.google.com/privacy">https://policies.google.com/privacy</a></td></tr>
 <tr><td>Meta Platforms, Inc. (Meta Audience Network)</td><td>Menayangkan iklan</td><td>ID Iklan, metrik perangkat &amp; iklan</td><td><a href="https://www.facebook.com/privacy/policy/">https://www.facebook.com/privacy/policy/</a></td></tr>
 <tr><td>Unity Technologies (Unity Ads)</td><td>Menayangkan iklan</td><td>ID Iklan, metrik perangkat &amp; iklan</td><td><a href="https://unity.com/legal/privacy-policy">https://unity.com/legal/privacy-policy</a></td></tr>
@@ -180,13 +204,16 @@
 <tr><td>ID Iklan</td><td>Sistem Google AdMob</td><td>Sesuai kebijakan retensi Google (biasanya hingga 14 bulan untuk metrik iklan)</td></tr>
 <tr><td>Data kerusakan Sentry</td><td>Sistem Sentry</td><td>Hingga 90 hari sejak kejadian</td></tr>
 <tr><td>Token pembelian IAP / tanda terima</td><td>Perangkat Anda + Apple / Google</td><td>Sampai Anda menghapus instalasi; Apple / Google menyimpan catatan transaksi sesuai kebijakan mereka sendiri</td></tr>
+<tr><td>JWT sesi</td><td>Perangkat Anda (penyimpanan aman)</td><td>Hingga 30 hari, dapat diperbarui selama 7 hari terakhir; dihapus saat Anda keluar</td></tr>
+<tr><td>Tautan penyedia, rekaman akun internal, rekaman hak</td><td>Backend Mote (Cloudflare)</td><td>Sampai Anda menggunakan Hapus akun atau meminta dukungan untuk menghapusnya</td></tr>
+<tr><td>Cadangan cloud terenkripsi</td><td>Backend Mote (Cloudflare)</td><td>Sampai Anda menghapus akun, meminta penghapusan, atau cadangan baru menggantikannya</td></tr>
 </tbody></table>
 <h2>9. Hak Anda (GDPR Art. 15–22)</h2>
 <p>Anda memiliki hak-hak berikut terkait data pribadi Anda:</p>
 <ul>
 <li><strong>Hak akses (GDPR Art. 15)</strong> — konfirmasi apakah kami memproses data Anda dan salinannya. Sebagian besar data Anda sudah ada di perangkat Anda; ekspor dari aplikasi atau hubungi kami untuk sisanya.</li>
 <li><strong>Hak untuk perbaikan (GDPR Art. 16)</strong> — memperbaiki data yang tidak akurat. Edit data langsung di aplikasi.</li>
-<li><strong>Hak untuk penghapusan / "hak untuk dilupakan" (GDPR Art. 17)</strong> — hapus semua data melalui Pengaturan → "Hapus semua data", atau dengan menghapus instalasi aplikasi. Data relai pasangan kedaluwarsa secara otomatis.</li>
+<li><strong>Hak untuk penghapusan / "hak untuk dilupakan" (GDPR Art. 17)</strong> — hapus semua data melalui Pengaturan → "Hapus semua data", atau dengan menghapus instalasi aplikasi. Data relai pasangan kedaluwarsa secara otomatis. Jika Anda memiliki akun opsional (masuk dengan Apple atau Google), gunakan Pengaturan → "Hapus akun" untuk menghapus tautan penyedia, rekaman akun internal, rekaman hak, dan cadangan cloud terenkripsi dari server kami serta data lokal — ini berbeda dari "Keluar", yang hanya menghapus sesi lokal. Jika permintaan penghapusan tidak dapat dikonfirmasi saat offline, hubungi <a href="mailto:mail@macsiem.dev">mail@macsiem.dev</a> untuk mengonfirmasi penghapusan sisi server.</li>
 <li><strong>Hak untuk membatasi pemrosesan (GDPR Art. 18)</strong> — meminta penghentian sementara; hubungi kami.</li>
 <li><strong>Hak atas portabilitas data (GDPR Art. 20)</strong> — Pengaturan → "Ekspor data" menghasilkan bundel JSON / Markdown.</li>
 <li><strong>Hak untuk keberatan (GDPR Art. 21)</strong> — keberatan terhadap pemrosesan berdasarkan kepentingan sah, terutama iklan bergaya profil. Nonaktifkan iklan personalisasi di pengaturan aplikasi atau melalui kontrol sistem.</li>
@@ -206,7 +233,7 @@
 <li><strong>Enkripsi ujung ke ujung saat transit</strong> — pesan pasangan-ke-pasangan menggunakan <code>tweetnacl</code> (X25519 + XSalsa20-Poly1305). Setiap perangkat menghasilkan pasangan kuncinya sendiri; kunci privat tidak pernah meninggalkan perangkat.</li>
 <li><strong>Keamanan transportasi</strong> — semua panggilan jaringan menggunakan HTTPS / TLS 1.2+.</li>
 <li><strong>Minimisasi</strong> — kami hanya mengumpulkan apa yang diperlukan untuk tujuan yang tercantum.</li>
-<li><strong>Tidak ada cadangan ke server kami</strong> — entri Anda tidak dicadangkan ke infrastruktur Mote. Cadangan tingkat sistem opsional (iCloud Backup di iOS, Auto Backup di Android) sepenuhnya berada di bawah kendali Anda.</li>
+<li><strong>Cadangan</strong> — entri Anda secara default tidak dicadangkan ke infrastruktur Mote. Jika Anda masuk dan memiliki hak Premium yang memenuhi syarat, Anda dapat secara opsional mengaktifkan cadangan cloud terenkripsi (lihat bagian 3.9); aplikasi mengenkripsi cadangan di perangkat Anda sebelum diunggah, dan Mote tidak dapat membaca isinya. Cadangan tingkat sistem opsional (iCloud Backup di iOS, Auto Backup di Android) tetap sepenuhnya berada di bawah kendali Anda terlepas dari hal ini.</li>
 </ul>
 <p>Tidak ada sistem yang 100% aman; harap perbarui perangkat Anda dan gunakan kunci perangkat yang kuat.</p>
 <h2>13. App Tracking Transparency (iOS) dan ID Iklan</h2>

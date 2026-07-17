@@ -70,14 +70,14 @@
     </div>
 
 <h1>Politique de confidentialité — Mote</h1>
-<p>Dernière mise à jour : 2026-05-06 · Date d'entrée en vigueur : 2026-05-06</p>
+<p>Dernière mise à jour : 2026-07-16 · Date d'entrée en vigueur : 2026-05-06</p>
 <h2>1. Qui sommes-nous</h2>
 <p><strong>Mote</strong> est une application mobile pour couples qui aide à partager des moments d'appréciation quotidiens entre partenaires. La confidentialité est le fondement du produit : les données sont <strong>chiffrées de bout en bout</strong>, l'application est <strong>conçue pour fonctionner hors ligne en priorité</strong>, et la plupart du contenu ne quitte jamais votre appareil sous une forme lisible par quiconque autre que vous et votre partenaire.</p>
 <p><strong>Responsable du traitement des données :</strong> Maciej Siemiński — le développeur de Mote. <strong>Contact :</strong> <a href="mailto:mail@macsiem.dev">mail@macsiem.dev</a></p>
 <p>Pour la version de l'application distribuée via Google Play, le responsable du traitement des données est LICENCEPRO POLSKA Sp. z o.o., ul. Huculska 6, 00-730 Warszawa, Polska.</p>
 <p>Cette Politique de confidentialité explique quelles données personnelles Mote traite, comment, pourquoi, et quels sont vos droits.</p>
 <h2>2. Résumé en langage clair</h2>
-<p>Nous ne stockons pas le contenu de vos entrées sur nos serveurs. Vos messages, photos, notes vocales, enregistrements d'humeur et tags sont chiffrés sur votre appareil et, lorsqu'ils sont synchronisés avec votre partenaire, chiffrés de bout en bout pendant le transit. Nous utilisons Google AdMob pour des publicités non invasives (bannières) sur les écrans auxiliaires et la facturation Apple/Google pour traiter les achats intégrés. Sentry est utilisé uniquement lorsqu'il est explicitement activé dans une version pour signaler les plantages. Vous disposez de tous les droits RGPD, y compris l'accès, la suppression et la portabilité — la plupart étant exerçables directement dans l'application.</p>
+<p>Nous ne stockons pas le contenu de vos entrées sur nos serveurs. Vos messages, photos, notes vocales, enregistrements d'humeur et tags sont chiffrés sur votre appareil et, lorsqu'ils sont synchronisés avec votre partenaire, chiffrés de bout en bout pendant le transit. Mote peut être utilisé entièrement sans créer de compte ; la connexion avec Apple ou Google est facultative et permet la synchronisation du droit Premium ainsi que la récupération de la sauvegarde chiffrée dans le cloud sur vos appareils — nous ne recevons jamais le contenu de votre sauvegarde cloud non chiffré. Nous utilisons Google AdMob pour des publicités non invasives (bannières) sur les écrans auxiliaires et la facturation Apple/Google pour traiter les achats intégrés. Sentry est utilisé uniquement lorsqu'il est explicitement activé dans une version pour signaler les plantages. Vous disposez de tous les droits RGPD, y compris l'accès, la suppression et la portabilité — la plupart étant exerçables directement dans l'application.</p>
 <h2>3. Données que nous traitons</h2>
 <h3>3.1 Données uniquement locales</h3>
 <p>Les entrées, messages, tags, enregistrements d'humeur, photos et notes vocales que vous ajoutez sont stockés <strong>localement sur votre appareil</strong> sous forme chiffrée (MMKV avec une clé dérivée de l'appareil conservée dans Apple Keychain / Android Keystore). Lorsqu'il est synchronisé avec l'appareil de votre partenaire appairé, le contenu est <strong>chiffré de bout en bout</strong> à l'aide de clés <code>tweetnacl</code> générées sur chaque appareil — le développeur de Mote ne peut pas lire vos entrées.</p>
@@ -124,13 +124,33 @@
 <p>Chaque permission est demandée contextuellement. Vous pouvez refuser toute permission et toujours utiliser les fonctionnalités principales (le cas échéant).</p>
 <h3>3.7 Ce que nous ne collectons PAS</h3>
 <ul>
-<li>Votre nom, e-mail, numéro de téléphone, adresse (aucun compte n'est requis).</li>
+<li>Votre nom, numéro de téléphone ou adresse — aucun compte n'est requis pour l'utilisation de base. Si vous choisissez de vous connecter avec Apple ou Google, le fournisseur peut nous communiquer une adresse e-mail ; voir la section 3.8.</li>
 <li>Liste de contacts, calendrier, SMS, journaux d'appels.</li>
 <li>Localisation précise.</li>
 <li>Historique de navigation en dehors de l'application.</li>
 <li>Données biométriques (Face ID / Touch ID est utilisé uniquement comme verrouillage au niveau du système et ne quitte jamais votre appareil).</li>
 <li>Données de santé, financières ou de carte de paiement.</li>
 </ul>
+<h3>3.8 Compte et connexion facultatifs (Apple / Google)</h3>
+<p>Mote peut être utilisé sans créer de compte ni se connecter. L'appairage et le flux principal d'appréciation restent disponibles de manière anonyme. La connexion est facultative et sert à la synchronisation du droit Premium et à la récupération de la sauvegarde chiffrée dans le cloud sur plusieurs appareils.</p>
+<p>Lorsque vous choisissez de vous connecter avec Apple ou avec Google :</p>
+<ul>
+<li>Apple ou Google vous authentifie et envoie à Mote un jeton d'identité ;</li>
+<li>le service Mote vérifie ce jeton et crée un identifiant utilisateur interne ;</li>
+<li>le fournisseur peut communiquer votre adresse e-mail. Avec Apple, il peut s'agir d'une adresse de relais privé (private relay) si vous avez sélectionné "Masquer mon e-mail" ;</li>
+<li>Mote renvoie un JWT de session signé. L'application stocke le jeton dans le stockage sécurisé du système d'exploitation et ne l'utilise que pour les requêtes Mote authentifiées.</li>
+</ul>
+<p>Le JWT de session est valable 30 jours et peut être renouvelé pendant ses sept derniers jours de validité. La déconnexion supprime la session stockée sur l'appareil. La déconnexion ne supprime pas l'enregistrement du compte côté serveur ni la sauvegarde chiffrée dans le cloud.</p>
+<p>Mote ne reçoit pas votre mot de passe Apple ou Google.</p>
+<h3>3.9 Sauvegarde chiffrée dans le cloud (Premium)</h3>
+<p>La sauvegarde dans le cloud est facultative et nécessite un droit Premium éligible, une connexion, un appairage et une phrase de récupération confirmée. Avant l'envoi, l'application chiffre la sauvegarde sur l'appareil à l'aide d'une clé dérivée de la phrase de récupération. Le service reçoit un texte chiffré associé à l'identifiant utilisateur interne de Mote ; il ne reçoit ni la phrase de récupération, ni la sauvegarde en clair.</p>
+<p>La sauvegarde chiffrée dans le cloud peut contenir le matériel de récupération d'appairage nécessaire pour restaurer la paire, le nom d'affichage utilisé dans Mote et du matériel de clé chiffré. Elle ne contient pas votre mot de passe Apple ou Google. Un nouvel envoi remplace la sauvegarde actuelle de ce compte Mote.</p>
+<p>Conservez la phrase de récupération en lieu sûr. La sauvegarde chiffrée dans le cloud ne peut pas être restaurée sans elle.</p>
+<h3>3.10 Déconnexion et suppression du compte</h3>
+<p>Le JWT de session local expire après 30 jours s'il n'est pas renouvelé et est supprimé de l'appareil lorsque vous vous déconnectez. Le lien avec le fournisseur, l'enregistrement de compte interne, l'enregistrement de droit et la sauvegarde chiffrée dans le cloud actuelle sont conservés jusqu'à ce que vous utilisiez <strong>Supprimer le compte</strong> ou demandiez au support de les supprimer.</p>
+<p><strong>Se déconnecter</strong> ne fait que supprimer la session locale et désactive la sauvegarde dans le cloud sur cet appareil. Il ne s'agit pas d'une action de suppression de compte.</p>
+<p><strong>Supprimer le compte</strong>, utilisé en ligne, envoie une demande de suppression authentifiée au service Mote, puis efface le compte local, le matériel de chiffrement et les données de l'application. Si l'appareil était hors ligne ou si la demande n'a pas pu être confirmée, contactez <a href="mailto:mail@macsiem.dev">mail@macsiem.dev</a> pour confirmer la suppression côté serveur.</p>
+<p>La désinstallation de l'application supprime les données locales de l'application selon le fonctionnement du système d'exploitation, mais ne garantit pas à elle seule la suppression d'un compte serveur connecté ou d'une sauvegarde chiffrée.</p>
 <h2>4. Pourquoi nous traitons ces données (finalités)</h2>
 <ul>
 <li><strong>Faire fonctionner l'application sur votre appareil</strong> — le stockage local et (le cas échéant) le chiffrement permettent à vos données de persister entre les sessions.</li>
@@ -138,6 +158,7 @@
 <li><strong>Améliorer la stabilité</strong> — les diagnostics Sentry aident à corriger les plantages qui affectent votre utilisation.</li>
 <li><strong>Maintenir le niveau gratuit</strong> — AdMob diffuse des publicités non invasives pour financer les utilisateurs qui n'achètent pas la version premium.</li>
 <li><strong>Traiter les achats</strong> — la facturation Apple / Google satisfait les droits premium que vous choisissez d'acheter.</li>
+<li><strong>Synchroniser le droit et la sauvegarde dans le cloud entre les appareils</strong> — pour les utilisateurs qui choisissent de se connecter, la synchronisation du droit Premium et la récupération facultative de la sauvegarde chiffrée dans le cloud permettent de restaurer votre appairage et vos paramètres sur un nouvel appareil.</li>
 </ul>
 <h2>5. Base juridique (Art. 6 RGPD)</h2>
 <p>Pour les utilisateurs de l'Espace Économique Européen, du Royaume-Uni et de la Suisse :</p>
@@ -145,6 +166,7 @@
 <li><strong>Exécution d'un contrat</strong> (Art. 6, paragraphe 1, point b) — faire fonctionner l'application, synchroniser avec votre partenaire, traiter vos achats.</li>
 <li><strong>Intérêt légitime</strong> (Art. 6, paragraphe 1, point f) — diagnostics Sentry, prévention de la fraude / des abus, publicité non personnalisée. Notre intérêt est d'améliorer la stabilité et de maintenir le niveau gratuit ; cela ne l'emporte pas sur vos droits fondamentaux.</li>
 <li><strong>Consentement</strong> (Art. 6, paragraphe 1, point a) — publicité personnalisée, lorsque vous accordez votre consentement via l'invite ATT (iOS) ou la préférence intégrée à l'application. Vous pouvez retirer votre consentement à tout moment sans affecter le traitement antérieur.</li>
+<li><strong>Consentement / choix contractuel pour les fonctionnalités facultatives</strong> (Art. 6, paragraphe 1, points a et b) — se connecter avec Apple ou Google et utiliser la sauvegarde chiffrée dans le cloud sont des actions facultatives que vous choisissez d'entreprendre. Le traitement associé repose sur le contrat résultant de la fonctionnalité que vous avez choisie, ou sur votre consentement ; vous pouvez le retirer à tout moment en vous déconnectant ou en supprimant votre compte.</li>
 <li><strong>Obligation légale</strong> (Art. 6, paragraphe 1, point c) — uniquement lorsque nous devons répondre à une demande légale des autorités.</li>
 </ul>
 <h2>6. Destinataires (avec qui nous partageons des données)</h2>
@@ -152,7 +174,9 @@
 <table>
 <thead><tr><th>Destinataire</th><th>Finalité</th><th>Catégorie de données</th><th>Politique de confidentialité</th></tr></thead>
 <tbody>
-<tr><td>Cloudflare, Inc.</td><td>Relais d'appairage (établissement de liaison chiffré + messages E2E éphémères)</td><td>ID de paire aléatoire, blob chiffré</td><td><a href="https://www.cloudflare.com/privacypolicy/">https://www.cloudflare.com/privacypolicy/</a></td></tr>
+<tr><td>Cloudflare, Inc.</td><td>Relais d'appairage ; service de compte/session facultatif ; synchronisation du droit ; stockage de la sauvegarde chiffrée dans le cloud</td><td>ID de paire aléatoire, blob chiffré, identifiant de session, texte chiffré de la sauvegarde (uniquement si vous vous connectez et utilisez la sauvegarde dans le cloud)</td><td><a href="https://www.cloudflare.com/privacypolicy/">https://www.cloudflare.com/privacypolicy/</a></td></tr>
+<tr><td>Apple Inc. (Sign in with Apple)</td><td>Authentification de compte facultative</td><td>Jeton d'identité, adresse e-mail (peut être une adresse de relais privé Apple)</td><td><a href="https://www.apple.com/legal/privacy/">https://www.apple.com/legal/privacy/</a></td></tr>
+<tr><td>Google LLC (Google Sign-In)</td><td>Authentification de compte facultative</td><td>Jeton d'identité, adresse e-mail</td><td><a href="https://policies.google.com/privacy">https://policies.google.com/privacy</a></td></tr>
 <tr><td>Google LLC (AdMob)</td><td>Diffuser des publicités</td><td>Identifiant publicitaire, métriques d'appareil et publicitaires</td><td><a href="https://policies.google.com/privacy">https://policies.google.com/privacy</a></td></tr>
 <tr><td>Meta Platforms, Inc. (Meta Audience Network)</td><td>Diffuser des publicités</td><td>Identifiant publicitaire, métriques d'appareil et publicitaires</td><td><a href="https://www.facebook.com/privacy/policy/">https://www.facebook.com/privacy/policy/</a></td></tr>
 <tr><td>Unity Technologies (Unity Ads)</td><td>Diffuser des publicités</td><td>Identifiant publicitaire, métriques d'appareil et publicitaires</td><td><a href="https://unity.com/legal/privacy-policy">https://unity.com/legal/privacy-policy</a></td></tr>
@@ -180,13 +204,16 @@
 <tr><td>Identifiant publicitaire</td><td>Systèmes Google AdMob</td><td>Selon la politique de rétention de Google (généralement jusqu'à 14 mois pour les métriques publicitaires)</td></tr>
 <tr><td>Données de plantage Sentry</td><td>Systèmes Sentry</td><td>Jusqu'à 90 jours à compter de l'événement</td></tr>
 <tr><td>Jeton / reçu d'achat IAP</td><td>Votre appareil + Apple / Google</td><td>Jusqu'à la désinstallation ; Apple / Google conservent les enregistrements de transaction selon leurs propres politiques</td></tr>
+<tr><td>JWT de session</td><td>Votre appareil (stockage sécurisé)</td><td>Jusqu'à 30 jours, renouvelable pendant les 7 derniers jours ; supprimé lors de la déconnexion</td></tr>
+<tr><td>Lien avec le fournisseur, enregistrement de compte interne, enregistrement de droit</td><td>Backend Mote (Cloudflare)</td><td>Jusqu'à ce que vous utilisiez Supprimer le compte ou demandiez au support de le supprimer</td></tr>
+<tr><td>Sauvegarde chiffrée dans le cloud</td><td>Backend Mote (Cloudflare)</td><td>Jusqu'à la suppression de votre compte, une demande de suppression, ou son remplacement par une nouvelle sauvegarde</td></tr>
 </tbody></table>
 <h2>9. Vos droits (Art. 15–22 RGPD)</h2>
 <p>Vous disposez des droits suivants concernant vos données personnelles :</p>
 <ul>
 <li><strong>Droit d'accès (Art. 15 RGPD)</strong> — confirmation si nous traitons vos données et une copie de celles-ci. La plupart de vos données sont déjà sur votre appareil ; exportez-les depuis l'application ou écrivez-nous pour le reste.</li>
 <li><strong>Droit de rectification (Art. 16 RGPD)</strong> — corriger les données inexactes. Modifiez les données directement dans l'application.</li>
-<li><strong>Droit à l'effacement / "droit à l'oubli" (Art. 17 RGPD)</strong> — supprimer toutes les données via Paramètres → "Effacer toutes les données", ou en désinstallant l'application. Les données du relais d'appairage expirent automatiquement.</li>
+<li><strong>Droit à l'effacement / "droit à l'oubli" (Art. 17 RGPD)</strong> — supprimer toutes les données via Paramètres → "Effacer toutes les données", ou en désinstallant l'application. Les données du relais d'appairage expirent automatiquement. Si vous disposez d'un compte facultatif (connecté avec Apple ou Google), utilisez Paramètres → "Supprimer le compte" pour supprimer de nos serveurs le lien avec le fournisseur, l'enregistrement de compte interne, l'enregistrement de droit et la sauvegarde chiffrée dans le cloud, ainsi que les données locales — ceci est distinct de la "Déconnexion", qui ne fait qu'effacer la session locale. Si la demande de suppression ne peut pas être confirmée hors ligne, contactez <a href="mailto:mail@macsiem.dev">mail@macsiem.dev</a> pour confirmer la suppression côté serveur.</li>
 <li><strong>Droit à la limitation du traitement (Art. 18 RGPD)</strong> — demander une suspension temporaire ; écrivez-nous.</li>
 <li><strong>Droit à la portabilité des données (Art. 20 RGPD)</strong> — Paramètres → "Exporter les données" produit un pack JSON / Markdown.</li>
 <li><strong>Droit d'opposition (Art. 21 RGPD)</strong> — s'opposer au traitement basé sur l'intérêt légitime, en particulier les publicités de type profilage. Désactivez les publicités personnalisées dans les paramètres de l'application ou via les contrôles du système.</li>
@@ -206,7 +233,7 @@
 <li><strong>Chiffrement de bout en bout en transit</strong> — les messages d'appareil à appareil utilisent <code>tweetnacl</code> (X25519 + XSalsa20-Poly1305). Chaque appareil génère sa propre paire de clés ; les clés privées ne quittent jamais l'appareil.</li>
 <li><strong>Sécurité du transport</strong> — tous les appels réseau utilisent HTTPS / TLS 1.2+.</li>
 <li><strong>Minimisation</strong> — nous collectons uniquement ce qui est nécessaire aux finalités énumérées.</li>
-<li><strong>Pas de sauvegardes sur nos serveurs</strong> — vos entrées ne sont pas sauvegardées sur l'infrastructure de Mote. Les sauvegardes facultatives au niveau du système (Sauvegarde iCloud sur iOS, Sauvegarde automatique sur Android) restent entièrement sous votre contrôle.</li>
+<li><strong>Sauvegardes</strong> — vos entrées ne sont pas sauvegardées sur l'infrastructure de Mote par défaut. Si vous vous connectez et disposez d'un droit Premium éligible, vous pouvez activer facultativement la sauvegarde chiffrée dans le cloud (voir la section 3.9) ; l'application chiffre la sauvegarde sur votre appareil avant l'envoi, et Mote ne peut pas lire son contenu. Les sauvegardes facultatives au niveau du système (Sauvegarde iCloud sur iOS, Sauvegarde automatique sur Android) restent en tout état de cause entièrement sous votre contrôle.</li>
 </ul>
 <p>Aucun système n'est sécurisé à 100 % ; veuillez maintenir votre appareil à jour et utiliser des verrous d'appareil robustes.</p>
 <h2>13. Transparence du suivi des applications (iOS) et Identifiant publicitaire</h2>

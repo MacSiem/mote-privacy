@@ -70,14 +70,14 @@
     </div>
 
 <h1>Personvernerklæring — Mote</h1>
-<p>Sist oppdatert: 2026-05-06 · Ikrafttredelsesdato: 2026-05-06</p>
+<p>Sist oppdatert: 2026-07-16 · Ikrafttredelsesdato: 2026-05-06</p>
 <h2>1. Hvem vi er</h2>
 <p><strong>Mote</strong> er en mobilapp for par som hjelper til med å dele hverdagsøyeblikk av takknemlighet mellom partnere. Personvern er produktets grunnlag: data er <strong>ende-til-ende-kryptert</strong>, appen er <strong>offline-først</strong>, og det meste av innholdet forlater aldri enheten din i en form som kan leses av andre enn deg og partneren din.</p>
 <p><strong>Behandlingsansvarlig:</strong> Maciej Siemiński — utvikleren av Mote. <strong>Kontakt:</strong> <a href="mailto:mail@macsiem.dev">mail@macsiem.dev</a></p>
 <p>For versjonen av appen distribuert via Google Play, er datakontrolleren LICENCEPRO POLSKA Sp. z o.o., ul. Huculska 6, 00-730 Warszawa, Polska.</p>
 <p>Denne personvernerklæringen forklarer hvilke personopplysninger Mote behandler, hvordan, hvorfor, og hvilke rettigheter du har.</p>
 <h2>2. Oppsummering på enkelt språk</h2>
-<p>Vi lagrer ikke innholdet i dine oppføringer på våre servere. Dine meldinger, bilder, talenotater, stemningssjekker og tagger er kryptert på enheten din og, når de synkroniseres med partneren din, ende-til-ende-kryptert under overføring. Vi bruker Google AdMob for ikke-påtrengende bannerannonser på hjelpeskjermer og Apple/Google-fakturering for å behandle kjøp i appen. Sentry brukes kun når det er eksplisitt aktivert i en byggversjon for å rapportere krasj. Du har fulle GDPR-rettigheter, inkludert innsyn, sletting og dataportabilitet — de fleste kan utøves direkte i appen.</p>
+<p>Vi lagrer ikke innholdet i dine oppføringer på våre servere. Dine meldinger, bilder, talenotater, stemningssjekker og tagger er kryptert på enheten din og, når de synkroniseres med partneren din, ende-til-ende-kryptert under overføring. Mote kan brukes fullt ut uten å opprette en konto; innlogging med Apple eller Google er valgfritt og muliggjør synkronisering av Premium-rettigheter og gjenoppretting av kryptert sikkerhetskopi i skyen på tvers av enhetene dine — vi mottar aldri innholdet i sikkerhetskopien din i skyen ukryptert. Vi bruker Google AdMob for ikke-påtrengende bannerannonser på hjelpeskjermer og Apple/Google-fakturering for å behandle kjøp i appen. Sentry brukes kun når det er eksplisitt aktivert i en byggversjon for å rapportere krasj. Du har fulle GDPR-rettigheter, inkludert innsyn, sletting og dataportabilitet — de fleste kan utøves direkte i appen.</p>
 <h2>3. Data vi behandler</h2>
 <h3>3.1 Kun lokale data</h3>
 <p>Oppføringer, meldinger, tagger, stemningssjekker, bilder og talenotater du legger til, lagres <strong>lokalt på enheten din</strong> i kryptert form (MMKV med en enhetsgenerert nøkkel lagret i Apple Keychain / Android Keystore). Når det synkroniseres med den sammenkoblede partnerens enhet, er innholdet <strong>ende-til-ende-kryptert</strong> ved hjelp av <code>tweetnacl</code>-nøkler generert på hver enhet — Mote's utvikler kan ikke lese dine oppføringer.</p>
@@ -124,13 +124,33 @@
 <p>Hver tillatelse blir forespurt kontekstuelt. Du kan nekte enhver tillatelse og fortsatt bruke kjernefunksjonene (der det er relevant).</p>
 <h3>3.7 Hva vi IKKE samler inn</h3>
 <ul>
-<li>Ditt navn, e-post, telefonnummer, adresse (ingen konto er påkrevd).</li>
+<li>Ditt navn, telefonnummer eller adresse — ingen konto er påkrevd for kjernebruk. Hvis du velger å logge inn med Apple eller Google, kan leverandøren dele en e-postadresse med oss; se avsnitt 3.8.</li>
 <li>Kontaktliste, kalender, SMS, anropslogger.</li>
 <li>Nøyaktig posisjon.</li>
 <li>Nettleserhistorikk utenfor appen.</li>
 <li>Biometriske data (Face ID / Touch ID brukes kun som en systemnivå-lås og forlater aldri enheten din).</li>
 <li>Helse-, finans- eller betalingskortdata.</li>
 </ul>
+<h3>3.8 Valgfri konto og innlogging (Apple / Google)</h3>
+<p>Mote kan brukes uten å opprette eller logge inn på en konto. Paring og kjerneflyten for verdsettelse forblir tilgjengelig anonymt. Innlogging er valgfritt og brukes til synkronisering av Premium-rettigheter og gjenoppretting av kryptert sikkerhetskopi i skyen på tvers av enheter.</p>
+<p>Når du velger Logg inn med Apple eller Logg inn med Google:</p>
+<ul>
+<li>autentiserer Apple eller Google deg og sender Mote et identitetstoken;</li>
+<li>verifiserer Mote-tjenesten dette tokenet og oppretter en intern bruker-ID;</li>
+<li>kan leverandøren oppgi e-postadressen din. Med Apple kan dette være en Apple private-relay-adresse hvis du valgte Skjul min e-post;</li>
+<li>returnerer Mote et signert økt-JWT-token. Appen lagrer tokenet i operativsystemets sikre lagring og bruker det kun til autentiserte Mote-forespørsler.</li>
+</ul>
+<p>Økt-JWT-en er gyldig i 30 dager og kan fornyes i løpet av de siste sju dagene. Utlogging fjerner økten som er lagret på enheten. Utlogging sletter ikke kontoposten på serveren eller den krypterte sikkerhetskopien i skyen.</p>
+<p>Mote mottar ikke passordet ditt for Apple eller Google.</p>
+<h3>3.9 Kryptert sikkerhetskopi i skyen (Premium)</h3>
+<p>Sikkerhetskopi i skyen er valgfritt og krever en kvalifiserende Premium-rettighet, innlogging, paring og en bekreftet gjenopprettingsfrase. Før opplasting krypterer appen sikkerhetskopien på enheten ved hjelp av en nøkkel utledet fra gjenopprettingsfrasen. Tjenesten mottar chiffertekst knyttet til den interne Mote-bruker-ID-en; den mottar verken gjenopprettingsfrasen eller sikkerhetskopien i klartekst.</p>
+<p>Den krypterte sikkerhetskopien i skyen kan inneholde paringens gjenopprettingsmateriale som trengs for å gjenopprette paret, visningsnavnet som brukes i Mote, og kryptert nøkkelmateriale. Den inneholder ikke passordet ditt for Apple eller Google. En ny opplasting erstatter den gjeldende sikkerhetskopien for den Mote-kontoen.</p>
+<p>Oppbevar gjenopprettingsfrasen trygt. Den krypterte sikkerhetskopien i skyen kan ikke gjenopprettes uten den.</p>
+<h3>3.10 Utlogging vs. sletting av konto</h3>
+<p>Den lokale økt-JWT-en utløper etter 30 dager med mindre den fornyes, og fjernes fra enheten når du logger ut. Leverandørkoblingen, den interne brukerposten, rettighetsposten og den gjeldende krypterte sikkerhetskopien i skyen beholdes til du bruker <strong>Slett konto</strong> eller ber support om å slette dem.</p>
+<p><strong>Logg ut</strong> fjerner kun den lokale økten og deaktiverer sikkerhetskopi i skyen på den enheten. Det er ikke en handling for sletting av konto.</p>
+<p><strong>Slett konto</strong>, brukt mens du er tilkoblet internett, sender en autentisert slettingsforespørsel til Mote-tjenesten og fjerner deretter den lokale kontoen, krypteringsmaterialet og appdataene. Hvis enheten var offline eller forespørselen ikke kunne bekreftes, kontakt <a href="mailto:mail@macsiem.dev">mail@macsiem.dev</a> for å bekrefte sletting på serversiden.</p>
+<p>Avinstallering av appen fjerner appens lokale data i henhold til operativsystemet, men garanterer ikke i seg selv sletting av en pålogget serverkonto eller kryptert sikkerhetskopi.</p>
 <h2>4. Hvorfor vi behandler disse dataene (formål)</h2>
 <ul>
 <li><strong>Kjøre appen på enheten din</strong> — lokal lagring og (der det er til stede) kryptering lar dataene dine vedvare mellom økter.</li>
@@ -138,6 +158,7 @@
 <li><strong>Forbedre stabilitet</strong> — Sentry-diagnostikk hjelper med å fikse krasj som påvirker din bruk.</li>
 <li><strong>Opprettholde gratisversjonen</strong> — AdMob leverer ikke-påtrengende annonser for å finansiere brukere som ikke kjøper premium.</li>
 <li><strong>Behandle kjøp</strong> — Apple / Google-fakturering oppfyller premiumrettigheter du velger å kjøpe.</li>
+<li><strong>Synkronisere rettigheter og sikkerhetskopi i skyen på tvers av enheter</strong> — for brukere som velger å logge inn, lar synkronisering av Premium-rettigheter og valgfri gjenoppretting av kryptert sikkerhetskopi i skyen deg gjenopprette paringen og innstillingene dine på en ny enhet.</li>
 </ul>
 <h2>5. Rettslig grunnlag (GDPR artikkel 6)</h2>
 <p>For brukere i Det europeiske økonomiske samarbeidsområdet, Storbritannia og Sveits:</p>
@@ -145,6 +166,7 @@
 <li><strong>Oppfyllelse av en kontrakt</strong> (GDPR artikkel 6(1)(b)) — kjøre appen, synkronisere med partneren din, behandle kjøpene dine.</li>
 <li><strong>Berettiget interesse</strong> (GDPR artikkel 6(1)(f)) — Sentry-diagnostikk, forebygging av svindel / misbruk, ikke-personlig tilpasset annonsering. Vår interesse er å forbedre stabiliteten og opprettholde gratisversjonen; dette overstyrer ikke dine grunnleggende rettigheter.</li>
 <li><strong>Samtykke</strong> (GDPR artikkel 6(1)(a)) — personlig tilpasset annonsering, der du gir samtykke via ATT-forespørselen (iOS) eller app-innstillinger. Du kan trekke tilbake samtykket når som helst uten å påvirke tidligere behandling.</li>
+<li><strong>Samtykke / avtalevalg for valgfrie funksjoner</strong> (GDPR artikkel 6(1)(a) og (b)) — innlogging med Apple eller Google og bruk av kryptert sikkerhetskopi i skyen er valgfrie handlinger du velger å utføre. Den tilknyttede behandlingen er basert på den resulterende avtalen for funksjonen du har valgt, eller ditt samtykke; du kan trekke deg når som helst ved å logge ut eller slette kontoen din.</li>
 <li><strong>Rettslig forpliktelse</strong> (GDPR artikkel 6(1)(c)) — kun når vi må svare på en lovlig forespørsel fra myndigheter.</li>
 </ul>
 <h2>6. Mottakere (med hvem vi deler data)</h2>
@@ -152,7 +174,9 @@
 <table>
 <thead><tr><th>Mottaker</th><th>Formål</th><th>Datakategori</th><th>Personvernerklæring</th></tr></thead>
 <tbody>
-<tr><td>Cloudflare, Inc.</td><td>Paringsrelé (kryptert håndtrykk + flyktige E2E-meldinger)</td><td>Tilfeldig par-ID, kryptert blob</td><td><a href="https://www.cloudflare.com/privacypolicy/">https://www.cloudflare.com/privacypolicy/</a></td></tr>
+<tr><td>Cloudflare, Inc.</td><td>Paringsrelé; valgfri konto-/økttjeneste; synkronisering av rettigheter; lagring av kryptert sikkerhetskopi i skyen</td><td>Tilfeldig par-ID, kryptert blob, økt-ID, kryptert chiffertekst for sikkerhetskopi (kun hvis du logger inn og bruker sikkerhetskopi i skyen)</td><td><a href="https://www.cloudflare.com/privacypolicy/">https://www.cloudflare.com/privacypolicy/</a></td></tr>
+<tr><td>Apple Inc. (Sign in with Apple)</td><td>Valgfri kontoautentisering</td><td>Identitetstoken, e-postadresse (kan være en Apple private-relay-adresse)</td><td><a href="https://www.apple.com/legal/privacy/">https://www.apple.com/legal/privacy/</a></td></tr>
+<tr><td>Google LLC (Google Sign-In)</td><td>Valgfri kontoautentisering</td><td>Identitetstoken, e-postadresse</td><td><a href="https://policies.google.com/privacy">https://policies.google.com/privacy</a></td></tr>
 <tr><td>Google LLC (AdMob)</td><td>Vise annonser</td><td>Annonserings-ID, enhets- og annonsemålinger</td><td><a href="https://policies.google.com/privacy">https://policies.google.com/privacy</a></td></tr>
 <tr><td>Meta Platforms, Inc. (Meta Audience Network)</td><td>Vise annonser</td><td>Annonserings-ID, enhets- og annonsemålinger</td><td><a href="https://www.facebook.com/privacy/policy/">https://www.facebook.com/privacy/policy/</a></td></tr>
 <tr><td>Unity Technologies (Unity Ads)</td><td>Vise annonser</td><td>Annonserings-ID, enhets- og annonsemålinger</td><td><a href="https://unity.com/legal/privacy-policy">https://unity.com/legal/privacy-policy</a></td></tr>
@@ -180,13 +204,16 @@
 <tr><td>Annonserings-ID</td><td>Google AdMob-systemer</td><td>I henhold til Googles retningslinjer for oppbevaring (typisk opptil 14 måneder for annonsemålinger)</td></tr>
 <tr><td>Sentry krasjdata</td><td>Sentry-systemer</td><td>Opptil 90 dager fra hendelsen</td></tr>
 <tr><td>IAP kjøpstoken / kvittering</td><td>Din enhet + Apple / Google</td><td>Til du avinstallerer; Apple / Google beholder transaksjonsposter i henhold til deres egne retningslinjer</td></tr>
+<tr><td>Økt-JWT</td><td>Din enhet (sikker lagring)</td><td>Opptil 30 dager, kan fornyes i løpet av de siste 7 dagene; fjernes når du logger ut</td></tr>
+<tr><td>Leverandørkobling, intern kontopost, rettighetspost</td><td>Mote-backend (Cloudflare)</td><td>Til du bruker Slett konto eller ber support om å slette den</td></tr>
+<tr><td>Kryptert sikkerhetskopi i skyen</td><td>Mote-backend (Cloudflare)</td><td>Til du sletter kontoen din, ber om sletting, eller en ny sikkerhetskopi erstatter den</td></tr>
 </tbody></table>
 <h2>9. Dine rettigheter (GDPR artikkel 15–22)</h2>
 <p>Du har følgende rettigheter angående dine personopplysninger:</p>
 <ul>
 <li><strong>Rett til innsyn (GDPR artikkel 15)</strong> — bekreftelse på om vi behandler dataene dine og en kopi av dem. Det meste av dataene dine er allerede på enheten din; eksporter fra appen eller skriv til oss for resten.</li>
 <li><strong>Rett til retting (GDPR artikkel 16)</strong> — rette unøyaktige data. Rediger data direkte i appen.</li>
-<li><strong>Rett til sletting / "rett til å bli glemt" (GDPR artikkel 17)</strong> — slette alle data via Innstillinger → "Slett alle data", eller ved å avinstallere appen. Paringsrelédata utløper automatisk.</li>
+<li><strong>Rett til sletting / "rett til å bli glemt" (GDPR artikkel 17)</strong> — slett alle data via Innstillinger → "Slett alle data", eller ved å avinstallere appen. Paringsrelédata utløper automatisk. Hvis du har en valgfri konto (logget inn med Apple eller Google), bruk Innstillinger → "Slett konto" for å fjerne leverandørkoblingen, den interne kontoposten, rettighetsposten og den krypterte sikkerhetskopien i skyen fra serverne våre, i tillegg til lokale data — dette er en annen handling enn "Logg ut", som kun tømmer den lokale økten. Hvis slettingsforespørselen ikke kan bekreftes mens du er offline, kontakt <a href="mailto:mail@macsiem.dev">mail@macsiem.dev</a> for å bekrefte sletting på serversiden.</li>
 <li><strong>Rett til begrensning av behandling (GDPR artikkel 18)</strong> — be om midlertidig stans; skriv til oss.</li>
 <li><strong>Rett til dataportabilitet (GDPR artikkel 20)</strong> — Innstillinger → "Eksporter data" produserer en JSON / Markdown-pakke.</li>
 <li><strong>Rett til å protestere (GDPR artikkel 21)</strong> — protestere mot behandling basert på berettiget interesse, spesielt annonser basert på profilering. Deaktiver personlig tilpassede annonser i appinnstillinger eller via systemkontroller.</li>

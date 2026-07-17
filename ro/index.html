@@ -70,14 +70,14 @@
     </div>
 
 <h1>Politica de confidențialitate — Mote</h1>
-<p>Ultima actualizare: 2026-05-06 · Data intrării în vigoare: 2026-05-06</p>
+<p>Ultima actualizare: 2026-07-16 · Data intrării în vigoare: 2026-05-06</p>
 <h2>1. Cine suntem</h2>
 <p><strong>Mote</strong> este o aplicație mobilă pentru cupluri care ajută la împărtășirea momentelor cotidiene de apreciere între parteneri. Confidențialitatea este fundamentul produsului: datele sunt <strong>end-to-end encrypted</strong>, aplicația este <strong>offline-first</strong>, iar majoritatea conținutului nu părăsește niciodată dispozitivul dvs. într-o formă lizibilă de oricine altcineva în afară de dvs. și partenerul dvs.</p>
 <p><strong>Operator de date:</strong> Maciej Siemiński — dezvoltatorul Mote. <strong>Contact:</strong> <a href="mailto:mail@macsiem.dev">mail@macsiem.dev</a></p>
 <p>Pentru versiunea aplicației distribuită prin Google Play, operatorul de date este LICENCEPRO POLSKA Sp. z o.o., ul. Huculska 6, 00-730 Warszawa, Polska.</p>
 <p>Această Politică de confidențialitate explică ce date cu caracter personal procesează Mote, cum, de ce și ce drepturi aveți.</p>
 <h2>2. Rezumat în limbaj simplu</h2>
-<p>Nu stocăm conținutul intrărilor dvs. pe serverele noastre. Mesajele, fotografiile, notele vocale, verificările de dispoziție și etichetele dvs. sunt criptate pe dispozitivul dvs. și, atunci când sunt sincronizate cu partenerul dvs., sunt end-to-end encrypted în tranzit. Utilizăm Google AdMob pentru reclame banner neinvazive pe ecranele auxiliare și sistemul de facturare Apple/Google pentru a procesa achizițiile în aplicație. Sentry este utilizat numai atunci când este activat explicit într-o versiune pentru a raporta erorile. Aveți drepturi complete conform RGPD, inclusiv acces, ștergere și portabilitate — majoritatea exercitabile direct în aplicație.</p>
+<p>Nu stocăm conținutul intrărilor dvs. pe serverele noastre. Mesajele, fotografiile, notele vocale, verificările de dispoziție și etichetele dvs. sunt criptate pe dispozitivul dvs. și, atunci când sunt sincronizate cu partenerul dvs., sunt end-to-end encrypted în tranzit. Mote poate fi utilizat integral fără a crea un cont; autentificarea cu Apple sau Google este opțională și permite sincronizarea dreptului Premium și recuperarea copiei de rezervă criptate din cloud pe toate dispozitivele dvs. — nu primim niciodată conținutul copiei dvs. de rezervă din cloud în formă necriptată. Utilizăm Google AdMob pentru reclame banner neinvazive pe ecranele auxiliare și sistemul de facturare Apple/Google pentru a procesa achizițiile în aplicație. Sentry este utilizat numai atunci când este activat explicit într-o versiune pentru a raporta erorile. Aveți drepturi complete conform RGPD, inclusiv acces, ștergere și portabilitate — majoritatea exercitabile direct în aplicație.</p>
 <h2>3. Datele pe care le procesăm</h2>
 <h3>3.1 Date stocate doar local</h3>
 <p>Intrările, mesajele, etichetele, verificările de dispoziție, fotografiile și notele vocale pe care le adăugați sunt stocate <strong>local pe dispozitivul dvs.</strong> sub formă criptată (MMKV cu o cheie derivată de pe dispozitiv, păstrată în Apple Keychain / Android Keystore). Când sunt sincronizate cu dispozitivul partenerului dvs. asociat, conținutul este <strong>end-to-end encrypted</strong> utilizând chei <code>tweetnacl</code> generate pe fiecare dispozitiv — dezvoltatorul Mote nu vă poate citi intrările.</p>
@@ -124,13 +124,33 @@
 <p>Fiecare permisiune este solicitată contextual. Puteți refuza orice permisiune și totuși utiliza funcționalitățile de bază (acolo unde este cazul).</p>
 <h3>3.7 Ce NU colectăm</h3>
 <ul>
-<li>Numele, e-mailul, numărul de telefon, adresa dvs. (nu este necesar un cont).</li>
+<li>Numele, numărul de telefon sau adresa dvs. — nu este necesar niciun cont pentru utilizarea de bază. Dacă alegeți să vă autentificați cu Apple sau Google, furnizorul poate partaja o adresă de e-mail cu noi; consultați secțiunea 3.8.</li>
 <li>Lista de contacte, calendarul, SMS-urile, jurnalele de apeluri.</li>
 <li>Locația precisă.</li>
 <li>Istoricul de navigare în afara aplicației.</li>
 <li>Date biometrice (Face ID / Touch ID este utilizat doar ca blocare la nivel de sistem și nu părăsește niciodată dispozitivul dvs.).</li>
 <li>Date de sănătate, financiare sau ale cardului de plată.</li>
 </ul>
+<h3>3.8 Cont și autentificare opționale (Apple / Google)</h3>
+<p>Mote poate fi utilizat fără a crea sau a vă autentifica într-un cont. Asocierea și fluxul de bază de apreciere rămân disponibile în mod anonim. Autentificarea este opțională și este utilizată pentru sincronizarea dreptului Premium și recuperarea copiei de rezervă criptate din cloud pe mai multe dispozitive.</p>
+<p>Când alegeți Autentificare cu Apple sau Autentificare cu Google:</p>
+<ul>
+<li>Apple sau Google vă autentifică și trimite către Mote un token de identitate;</li>
+<li>serviciul Mote verifică acest token și creează un ID intern de utilizator;</li>
+<li>furnizorul poate furniza adresa dvs. de e-mail. În cazul Apple, aceasta poate fi o adresă Apple private relay dacă ați selectat Ascunde adresa mea de e-mail;</li>
+<li>Mote returnează un JWT de sesiune semnat. Aplicația stochează tokenul în stocarea securizată a sistemului de operare și îl utilizează doar pentru solicitările autentificate către Mote.</li>
+</ul>
+<p>JWT-ul de sesiune este valabil timp de 30 de zile și poate fi reînnoit în ultimele șapte zile. Deconectarea elimină sesiunea stocată pe dispozitiv. Deconectarea nu șterge înregistrarea contului de pe server sau copia de rezervă criptată din cloud.</p>
+<p>Mote nu primește parola dvs. Apple sau Google.</p>
+<h3>3.9 Copie de rezervă criptată în cloud (Premium)</h3>
+<p>Copia de rezervă în cloud este opțională și necesită un drept Premium eligibil, autentificare, asociere și o frază de recuperare confirmată. Înainte de încărcare, aplicația criptează copia de rezervă pe dispozitiv utilizând o cheie derivată din fraza de recuperare. Serviciul primește text cifrat asociat cu ID-ul intern de utilizator Mote; acesta nu primește fraza de recuperare sau copia de rezervă în text simplu.</p>
+<p>Copia de rezervă criptată din cloud poate conține materialul de recuperare pentru asociere necesar pentru a restabili perechea, numele afișat utilizat în Mote și materialul de cheie criptat. Nu conține parola dvs. Apple sau Google. O nouă încărcare înlocuiește copia de rezervă curentă pentru acel cont Mote.</p>
+<p>Păstrați fraza de recuperare în siguranță. Copia de rezervă criptată din cloud nu poate fi restabilită fără aceasta.</p>
+<h3>3.10 Deconectare versus ștergerea contului</h3>
+<p>JWT-ul local de sesiune expiră după 30 de zile, cu excepția cazului în care este reînnoit, și este eliminat de pe dispozitiv atunci când vă deconectați. Legătura cu furnizorul, înregistrarea internă a utilizatorului, înregistrarea dreptului și copia de rezervă criptată curentă din cloud sunt păstrate până când utilizați <strong>Șterge contul</strong> sau solicitați asistenței să le șteargă.</p>
+<p><strong>Deconectare</strong> elimină doar sesiunea locală și dezactivează copia de rezervă din cloud pe acel dispozitiv. Nu este o acțiune de ștergere a contului.</p>
+<p><strong>Șterge contul</strong>, utilizat în timp ce sunteți online, trimite o solicitare de ștergere autentificată către serviciul Mote și apoi șterge contul local, materialul de criptare și datele aplicației. Dacă dispozitivul a fost offline sau solicitarea nu a putut fi confirmată, contactați <a href="mailto:mail@macsiem.dev">mail@macsiem.dev</a> pentru a confirma ștergerea de pe server.</p>
+<p>Dezinstalarea aplicației elimină datele locale ale aplicației în funcție de sistemul de operare, dar nu garantează prin ea însăși ștergerea unui cont de server autentificat sau a unei copii de rezervă criptate.</p>
 <h2>4. De ce prelucrăm aceste date (scopuri)</h2>
 <ul>
 <li><strong>Rularea aplicației pe dispozitivul dvs.</strong> — stocarea locală și (acolo unde este prezentă) criptarea permit datelor dvs. să persiste între sesiuni.</li>
@@ -138,6 +158,7 @@
 <li><strong>Îmbunătățirea stabilității</strong> — diagnosticele Sentry ajută la remedierea blocărilor care afectează utilizarea dvs.</li>
 <li><strong>Susținerea nivelului gratuit</strong> — AdMob livrează reclame neinvazive pentru a finanța utilizatorii care nu cumpără versiunea premium.</li>
 <li><strong>Procesarea achizițiilor</strong> — sistemul de facturare Apple / Google îndeplinește drepturile premium pe care alegeți să le cumpărați.</li>
+<li><strong>Sincronizarea dreptului și a copiei de rezervă din cloud pe mai multe dispozitive</strong> — pentru utilizatorii care aleg să se autentifice, sincronizarea dreptului Premium și recuperarea opțională a copiei de rezervă criptate din cloud vă permit să restabiliți asocierea și setările pe un dispozitiv nou.</li>
 </ul>
 <h2>5. Temei juridic (Art. 6 RGPD)</h2>
 <p>Pentru utilizatorii din Spațiul Economic European, Regatul Unit și Elveția:</p>
@@ -145,6 +166,7 @@
 <li><strong>Executarea unui contract</strong> (Art. 6 alin. (1) lit. (b) RGPD) — rularea aplicației, sincronizarea cu partenerul dvs., procesarea achizițiilor dvs.</li>
 <li><strong>Interes legitim</strong> (Art. 6 alin. (1) lit. (f) RGPD) — diagnostice Sentry, prevenirea fraudei/abuzului, publicitate nepersonalizată. Interesul nostru este îmbunătățirea stabilității și susținerea nivelului gratuit; acest lucru nu prevalează asupra drepturilor dvs. fundamentale.</li>
 <li><strong>Consimțământ</strong> (Art. 6 alin. (1) lit. (a) RGPD) — publicitate personalizată, unde acordați consimțământul prin intermediul solicitării ATT (iOS) sau prin preferința din aplicație. Puteți retrage consimțământul în orice moment, fără a afecta prelucrarea anterioară.</li>
+<li><strong>Consimțământ / alegere contractuală pentru funcții opționale</strong> (Art. 6 alin. (1) lit. (a) și (b) RGPD) — autentificarea cu Apple sau Google și utilizarea copiei de rezervă criptate din cloud sunt acțiuni opționale pe care alegeți să le efectuați. Prelucrarea aferentă se bazează pe contractul rezultat pentru funcția selectată sau pe consimțământul dvs.; vă puteți retrage oricând consimțământul, deconectându-vă sau ștergându-vă contul.</li>
 <li><strong>Obligație legală</strong> (Art. 6 alin. (1) lit. (c) RGPD) — numai atunci când trebuie să răspundem unei solicitări legale din partea autorităților.</li>
 </ul>
 <h2>6. Destinatari (cu cine partajăm datele)</h2>
@@ -152,7 +174,9 @@
 <table>
 <thead><tr><th>Destinatar</th><th>Scop</th><th>Categoria de date</th><th>Politica de confidențialitate</th></tr></thead>
 <tbody>
-<tr><td>Cloudflare, Inc.</td><td>Releu de asociere (handshake criptat + mesaje E2E efemere)</td><td>ID de pereche aleatoriu, blob criptat</td><td><a href="https://www.cloudflare.com/privacypolicy/">https://www.cloudflare.com/privacypolicy/</a></td></tr>
+<tr><td>Cloudflare, Inc.</td><td>Releu de asociere; serviciu opțional de cont/sesiune; sincronizarea dreptului; stocarea copiei de rezervă criptate din cloud</td><td>ID de pereche aleatoriu, blob criptat, identificator de sesiune, text cifrat al copiei de rezervă criptate (numai dacă vă autentificați și utilizați copia de rezervă din cloud)</td><td><a href="https://www.cloudflare.com/privacypolicy/">https://www.cloudflare.com/privacypolicy/</a></td></tr>
+<tr><td>Apple Inc. (Sign in with Apple)</td><td>Autentificare opțională a contului</td><td>Token de identitate, adresă de e-mail (poate fi o adresă Apple private relay)</td><td><a href="https://www.apple.com/legal/privacy/">https://www.apple.com/legal/privacy/</a></td></tr>
+<tr><td>Google LLC (Google Sign-In)</td><td>Autentificare opțională a contului</td><td>Token de identitate, adresă de e-mail</td><td><a href="https://policies.google.com/privacy">https://policies.google.com/privacy</a></td></tr>
 <tr><td>Google LLC (AdMob)</td><td>Difuzare reclame</td><td>Advertising ID, valori dispozitiv și reclame</td><td><a href="https://policies.google.com/privacy">https://policies.google.com/privacy</a></td></tr>
 <tr><td>Meta Platforms, Inc. (Meta Audience Network)</td><td>Difuzare reclame</td><td>Advertising ID, valori dispozitiv și reclame</td><td><a href="https://www.facebook.com/privacy/policy/">https://www.facebook.com/privacy/policy/</a></td></tr>
 <tr><td>Unity Technologies (Unity Ads)</td><td>Difuzare reclame</td><td>Advertising ID, valori dispozitiv și reclame</td><td><a href="https://unity.com/legal/privacy-policy">https://unity.com/legal/privacy-policy</a></td></tr>
@@ -180,13 +204,16 @@
 <tr><td>Advertising ID</td><td>Sisteme Google AdMob</td><td>Conform politicii de păstrare a Google (de obicei până la 14 luni pentru valorile reclamelor)</td></tr>
 <tr><td>Date de blocare Sentry</td><td>Sisteme Sentry</td><td>Până la 90 de zile de la eveniment</td></tr>
 <tr><td>Token / chitanță de achiziție IAP</td><td>Dispozitivul dvs. + Apple / Google</td><td>Până la dezinstalare; Apple / Google păstrează înregistrările tranzacțiilor conform propriilor politici</td></tr>
+<tr><td>JWT de sesiune</td><td>Dispozitivul dvs. (stocare securizată)</td><td>Până la 30 de zile, se poate reînnoi în ultimele 7 zile; eliminat la deconectare</td></tr>
+<tr><td>Legătura cu furnizorul, înregistrarea internă a contului, înregistrarea dreptului</td><td>Backend Mote (Cloudflare)</td><td>Până când utilizați Șterge contul sau solicitați asistenței să îl șteargă</td></tr>
+<tr><td>Copie de rezervă criptată din cloud</td><td>Backend Mote (Cloudflare)</td><td>Până când vă ștergeți contul, solicitați ștergerea sau o nouă copie de rezervă o înlocuiește</td></tr>
 </tbody></table>
 <h2>9. Drepturile dumneavoastră (Art. 15–22 RGPD)</h2>
 <p>Aveți următoarele drepturi în ceea ce privește datele dumneavoastră cu caracter personal:</p>
 <ul>
 <li><strong>Dreptul de acces (Art. 15 RGPD)</strong> — confirmarea dacă prelucrăm datele dvs. și o copie a acestora. Majoritatea datelor dvs. sunt deja pe dispozitivul dvs.; exportați din aplicație sau scrieți-ne pentru restul.</li>
 <li><strong>Dreptul la rectificare (Art. 16 RGPD)</strong> — corectarea datelor inexacte. Editați datele direct în aplicație.</li>
-<li><strong>Dreptul la ștergere / "dreptul de a fi uitat" (Art. 17 RGPD)</strong> — ștergeți toate datele prin Setări → "Șterge toate datele" sau prin dezinstalarea aplicației. Datele releului de asociere expiră automat.</li>
+<li><strong>Dreptul la ștergere / "dreptul de a fi uitat" (Art. 17 RGPD)</strong> — ștergeți toate datele prin Setări → "Șterge toate datele" sau prin dezinstalarea aplicației. Datele releului de asociere expiră automat. Dacă aveți un cont opțional (autentificat cu Apple sau Google), utilizați Setări → "Șterge contul" pentru a elimina de pe serverele noastre legătura cu furnizorul, înregistrarea internă a contului, înregistrarea dreptului și copia de rezervă criptată din cloud, precum și datele locale — aceasta este diferită de „Deconectare", care șterge doar sesiunea locală. Dacă solicitarea de ștergere nu poate fi confirmată offline, contactați <a href="mailto:mail@macsiem.dev">mail@macsiem.dev</a> pentru a confirma ștergerea de pe server.</li>
 <li><strong>Dreptul la restricționarea prelucrării (Art. 18 RGPD)</strong> — solicitați o oprire temporară; scrieți-ne.</li>
 <li><strong>Dreptul la portabilitatea datelor (Art. 20 RGPD)</strong> — Setări → "Exportă date" produce un pachet JSON / Markdown.</li>
 <li><strong>Dreptul la opoziție (Art. 21 RGPD)</strong> — opuneți-vă prelucrării bazate pe interes legitim, în special reclamelor de tip profiling. Dezactivați reclamele personalizate în setările aplicației sau prin controalele sistemului.</li>
@@ -206,7 +233,7 @@
 <li><strong>End-to-end encryption în tranzit</strong> — mesajele peer-to-peer utilizează <code>tweetnacl</code> (X25519 + XSalsa20-Poly1305). Fiecare dispozitiv generează propria pereche de chei; cheile private nu părăsesc niciodată dispozitivul.</li>
 <li><strong>Securitatea transportului</strong> — toate apelurile de rețea utilizează HTTPS / TLS 1.2+.</li>
 <li><strong>Minimizare</strong> — colectăm doar ceea ce este necesar pentru scopurile enumerate.</li>
-<li><strong>Fără backup-uri pe serverele noastre</strong> — intrările dvs. nu sunt salvate pe infrastructura Mote. Backup-urile opționale la nivel de sistem (iCloud Backup pe iOS, Auto Backup pe Android) rămân în întregime sub controlul dvs.</li>
+<li><strong>Copii de rezervă</strong> — intrările dvs. nu sunt salvate implicit pe infrastructura Mote. Dacă vă autentificați și aveți un drept Premium eligibil, puteți activa opțional copia de rezervă criptată din cloud (consultați secțiunea 3.9); aplicația criptează copia de rezervă pe dispozitivul dvs. înainte de încărcare, iar Mote nu poate citi conținutul acesteia. Copiile de rezervă opționale la nivel de sistem (iCloud Backup pe iOS, Auto Backup pe Android) rămân în întregime sub controlul dvs., indiferent de aceasta.</li>
 </ul>
 <p>Niciun sistem nu este 100% sigur; vă rugăm să vă mențineți dispozitivul actualizat și să utilizați blocări puternice ale dispozitivului.</p>
 <h2>13. App Tracking Transparency (iOS) și Advertising ID</h2>

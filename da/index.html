@@ -70,14 +70,14 @@
     </div>
 
 <h1>Privatlivspolitik — Mote</h1>
-<p>Sidst opdateret: 2026-05-06 · Ikrafttrædelsesdato: 2026-05-06</p>
+<p>Sidst opdateret: 2026-07-16 · Ikrafttrædelsesdato: 2026-05-06</p>
 <h2>1. Hvem vi er</h2>
 <p><strong>Mote</strong> er en mobilapp til par, der hjælper med at dele daglige øjeblikke af værdsættelse mellem partnere. Privatliv er fundamentet for produktet: data er <strong>ende-til-ende-krypteret</strong>, appen er <strong>offline-først</strong>, og det meste indhold forlader aldrig din enhed i en form, der er læsbar af andre end dig og din partner.</p>
 <p><strong>Dataansvarlig:</strong> Maciej Siemiński — udvikleren af Mote. <strong>Kontakt:</strong> <a href="mailto:mail@macsiem.dev">mail@macsiem.dev</a></p>
 <p>For versionen af appen distribueret via Google Play er datakontrolløren LICENCEPRO POLSKA Sp. z o.o., ul. Huculska 6, 00-730 Warszawa, Polska.</p>
 <p>Denne privatlivspolitik forklarer, hvilke personoplysninger Mote behandler, hvordan, hvorfor, og hvilke rettigheder du har.</p>
 <h2>2. Kortfattet resumé</h2>
-<p>Vi gemmer ikke indholdet af dine indlæg på vores servere. Dine beskeder, fotos, stemmememoer, stemningsregistreringer og tags er krypteret på din enhed og, når de synkroniseres med din partner, ende-til-ende-krypteret under overførslen. Vi bruger Google AdMob til ikke-invasive bannerannoncer på hjælpeskærme og Apple/Google-fakturering til at behandle køb i appen. Sentry bruges kun, når det er udtrykkeligt aktiveret i en build for at rapportere nedbrud. Du har fulde GDPR-rettigheder, herunder adgang, sletning og dataportabilitet — de fleste kan udøves direkte i appen.</p>
+<p>Vi gemmer ikke indholdet af dine indlæg på vores servere. Dine beskeder, fotos, stemmememoer, stemningsregistreringer og tags er krypteret på din enhed og, når de synkroniseres med din partner, ende-til-ende-krypteret under overførslen. Mote kan bruges fuldt ud uden at oprette en konto; login med Apple eller Google er valgfrit og muliggør synkronisering af Premium-rettigheder og gendannelse af krypteret cloud-backup på tværs af dine enheder — vi modtager aldrig indholdet af din cloud-backup ukrypteret. Vi bruger Google AdMob til ikke-invasive bannerannoncer på hjælpeskærme og Apple/Google-fakturering til at behandle køb i appen. Sentry bruges kun, når det er udtrykkeligt aktiveret i en build for at rapportere nedbrud. Du har fulde GDPR-rettigheder, herunder adgang, sletning og dataportabilitet — de fleste kan udøves direkte i appen.</p>
 <h2>3. Data vi behandler</h2>
 <h3>3.1 Kun lokalt lagrede data</h3>
 <p>Indlæg, beskeder, tags, stemningsregistreringer, fotos og stemmememoer, du tilføjer, gemmes <strong>lokalt på din enhed</strong> i krypteret form (MMKV med en enhedsafledt nøgle opbevaret i Apple Nøglering / Android Keystore). Når indholdet synkroniseres med din partners enhed, er det <strong>ende-til-ende-krypteret</strong> ved hjælp af <code>tweetnacl</code>-nøgler genereret på hver enhed – Motes udvikler kan ikke læse dine indlæg.</p>
@@ -124,13 +124,33 @@
 <p>Hver tilladelse anmodes kontekstuelt. Du kan nægte enhver tilladelse og stadig bruge kernefunktionerne (hvor relevant).</p>
 <h3>3.7 Hvad vi IKKE indsamler</h3>
 <ul>
-<li>Dit navn, e-mail, telefonnummer, adresse (ingen konto er påkrævet).</li>
+<li>Dit navn, telefonnummer eller adresse — ingen konto er påkrævet til grundlæggende brug. Hvis du vælger at logge ind med Apple eller Google, kan udbyderen dele en e-mailadresse med os; se afsnit 3.8.</li>
 <li>Kontaktliste, kalender, SMS, opkaldslister.</li>
 <li>Præcis placering.</li>
 <li>Browserhistorik uden for appen.</li>
 <li>Biometriske data (Face ID / Touch ID bruges kun som en systemniveau-lås og forlader aldrig din enhed).</li>
 <li>Sundheds-, finans- eller betalingskortdata.</li>
 </ul>
+<h3>3.8 Valgfri konto og login (Apple / Google)</h3>
+<p>Mote kan bruges uden at oprette eller logge ind på en konto. Parring og det grundlæggende værdsættelsesforløb forbliver tilgængelige anonymt. Login er valgfrit og bruges til synkronisering af Premium-rettigheder og gendannelse af krypteret cloud-backup på tværs af enheder.</p>
+<p>Når du vælger Log ind med Apple eller Log ind med Google:</p>
+<ul>
+<li>Apple eller Google godkender dig og sender Mote et identitetstoken;</li>
+<li>Mote-tjenesten verificerer dette token og opretter et internt bruger-ID;</li>
+<li>udbyderen kan levere din e-mailadresse. Med Apple kan dette være en Apple private-relay-adresse, hvis du valgte Skjul min mail;</li>
+<li>Mote returnerer et signeret sessions-JWT. Appen gemmer tokenet i operativsystemets sikre lagring og bruger det kun til godkendte Mote-anmodninger.</li>
+</ul>
+<p>Sessions-JWT'et er gyldigt i 30 dage og kan fornyes i løbet af de sidste syv dage. Log ud fjerner sessionen, der er gemt på enheden. Log ud sletter ikke kontooptegnelsen på serveren eller den krypterede cloud-backup.</p>
+<p>Mote modtager ikke din adgangskode til Apple eller Google.</p>
+<h3>3.9 Krypteret cloud-backup (Premium)</h3>
+<p>Cloud-backup er valgfri og kræver en gyldig Premium-rettighed, login, parring og en bekræftet gendannelsessætning. Før upload krypterer appen backuppen på enheden ved hjælp af en nøgle afledt af gendannelsessætningen. Tjenesten modtager ciffertekst tilknyttet det interne Mote-bruger-ID; den modtager ikke gendannelsessætningen eller backuppen i klartekst.</p>
+<p>Den krypterede cloud-backup kan indeholde det parringsgendannelsesmateriale, der kræves for at gendanne parret, det visningsnavn, der bruges i Mote, og krypteret nøglemateriale. Den indeholder ikke din adgangskode til Apple eller Google. En ny upload erstatter den nuværende backup for den pågældende Mote-konto.</p>
+<p>Opbevar gendannelsessætningen sikkert. Den krypterede cloud-backup kan ikke gendannes uden den.</p>
+<h3>3.10 Log ud vs. sletning af konto</h3>
+<p>Det lokale sessions-JWT udløber efter 30 dage, medmindre det fornyes, og fjernes fra enheden, når du logger ud. Udbyderforbindelsen, den interne brugerpost, rettighedsposten og den nuværende krypterede cloud-backup opbevares, indtil du bruger <strong>Slet konto</strong> eller beder support om at slette dem.</p>
+<p><strong>Log ud</strong> fjerner kun den lokale session og deaktiverer cloud-backup på den pågældende enhed. Det er ikke en kontosletningshandling.</p>
+<p><strong>Slet konto</strong>, brugt mens du er online, sender en godkendt sletningsanmodning til Mote-tjenesten og rydder derefter den lokale konto, krypteringsmateriale og appdata. Hvis enheden var offline, eller anmodningen ikke kunne bekræftes, kontakt <a href="mailto:mail@macsiem.dev">mail@macsiem.dev</a> for at bekræfte sletning på serversiden.</p>
+<p>Afinstallation af appen fjerner app-lokale data i overensstemmelse med operativsystemet, men garanterer ikke i sig selv sletning af en logget-ind serverkonto eller krypteret backup.</p>
 <h2>4. Hvorfor vi behandler disse data (formål)</h2>
 <ul>
 <li><strong>Kør appen på din enhed</strong> — lokal lagring og (hvor tilgængeligt) kryptering lader dine data bevares mellem sessioner.</li>
@@ -138,6 +158,7 @@
 <li><strong>Forbedre stabilitet</strong> — Sentry-diagnostik hjælper med at rette nedbrud, der påvirker din brug.</li>
 <li><strong>Oprethold den gratis version</strong> — AdMob leverer ikke-invasive annoncer for at finansiere brugere, der ikke køber premium.</li>
 <li><strong>Behandl køb</strong> — Apple / Google-fakturering opfylder premium-rettigheder, du vælger at købe.</li>
+<li><strong>Synkroniser rettighed og cloud-backup på tværs af enheder</strong> — for brugere, der vælger at logge ind, giver synkronisering af Premium-rettigheder og valgfri krypteret cloud-backup-gendannelse dig mulighed for at gendanne din parring og indstillinger på en ny enhed.</li>
 </ul>
 <h2>5. Retsgrundlag (GDPR artikel 6)</h2>
 <p>For brugere i Det Europæiske Økonomiske Samarbejdsområde, Storbritannien og Schweiz:</p>
@@ -145,6 +166,7 @@
 <li><strong>Opfyldelse af en kontrakt</strong> (GDPR artikel 6, stk. 1, litra b)) — drift af appen, synkronisering med din partner, behandling af dine køb.</li>
 <li><strong>Legitim interesse</strong> (GDPR artikel 6, stk. 1, litra f)) — Sentry-diagnostik, forebyggelse af svig/misbrug, ikke-personlig annoncering. Vores interesse er at forbedre stabiliteten og opretholde den gratis version; dette tilsidesætter ikke dine grundlæggende rettigheder.</li>
 <li><strong>Samtykke</strong> (GDPR artikel 6, stk. 1, litra a)) — personlig annoncering, hvor du giver samtykke via ATT-prompten (iOS) eller indstillinger i appen. Du kan til enhver tid trække samtykke tilbage uden at påvirke tidligere behandling.</li>
+<li><strong>Samtykke / kontraktvalg for valgfrie funktioner</strong> (GDPR artikel 6, stk. 1, litra a) og b)) — login med Apple eller Google og brug af krypteret cloud-backup er valgfrie handlinger, du vælger at foretage. Den relaterede behandling er baseret på den resulterende kontrakt for den funktion, du valgte, eller dit samtykke; du kan til enhver tid trække dig tilbage ved at logge ud eller slette din konto.</li>
 <li><strong>Retlig forpligtelse</strong> (GDPR artikel 6, stk. 1, litra c)) — kun når vi skal reagere på en lovlig anmodning fra myndighederne.</li>
 </ul>
 <h2>6. Modtagere (med hvem vi deler data)</h2>
@@ -152,7 +174,9 @@
 <table>
 <thead><tr><th>Modtager</th><th>Formål</th><th>Datakategori</th><th>Privatlivspolitik</th></tr></thead>
 <tbody>
-<tr><td>Cloudflare, Inc.</td><td>Parringsserver (krypteret håndtryk + flygtige E2E-beskeder)</td><td>Tilfældigt par-ID, krypteret blob</td><td><a href="https://www.cloudflare.com/privacypolicy/">https://www.cloudflare.com/privacypolicy/</a></td></tr>
+<tr><td>Cloudflare, Inc.</td><td>Parringsserver; valgfri konto-/sessionstjeneste; rettighedssynkronisering; opbevaring af krypteret cloud-backup</td><td>Tilfældigt par-ID, krypteret blob, sessions-identifikator, krypteret backup-ciffertekst (kun hvis du logger ind og bruger cloud-backup)</td><td><a href="https://www.cloudflare.com/privacypolicy/">https://www.cloudflare.com/privacypolicy/</a></td></tr>
+<tr><td>Apple Inc. (Sign in with Apple)</td><td>Valgfri kontogodkendelse</td><td>Identitetstoken, e-mailadresse (kan være en Apple private-relay-adresse)</td><td><a href="https://www.apple.com/legal/privacy/">https://www.apple.com/legal/privacy/</a></td></tr>
+<tr><td>Google LLC (Google Sign-In)</td><td>Valgfri kontogodkendelse</td><td>Identitetstoken, e-mailadresse</td><td><a href="https://policies.google.com/privacy">https://policies.google.com/privacy</a></td></tr>
 <tr><td>Google LLC (AdMob)</td><td>Vis annoncer</td><td>Annonce-ID, enheds- og annoncemetrik</td><td><a href="https://policies.google.com/privacy">https://policies.google.com/privacy</a></td></tr>
 <tr><td>Meta Platforms, Inc. (Meta Audience Network)</td><td>Vis annoncer</td><td>Annonce-ID, enheds- og annoncemetrik</td><td><a href="https://www.facebook.com/privacy/policy/">https://www.facebook.com/privacy/policy/</a></td></tr>
 <tr><td>Unity Technologies (Unity Ads)</td><td>Vis annoncer</td><td>Annonce-ID, enheds- og annoncemetrik</td><td><a href="https://unity.com/legal/privacy-policy">https://unity.com/legal/privacy-policy</a></td></tr>
@@ -180,13 +204,16 @@
 <tr><td>Annonce-ID</td><td>Google AdMob-systemer</td><td>I henhold til Googles opbevaringspolitik (typisk op til 14 måneder for annoncemetrik)</td></tr>
 <tr><td>Sentry nedbrudsdata</td><td>Sentry-systemer</td><td>Op til 90 dage fra hændelsen</td></tr>
 <tr><td>IAP-købstoken / kvittering</td><td>Din enhed + Apple / Google</td><td>Indtil du afinstallerer; Apple / Google opbevarer transaktionsoptegnelser i henhold til deres egne politikker</td></tr>
+<tr><td>Sessions-JWT</td><td>Din enhed (sikker lagring)</td><td>Op til 30 dage, kan fornyes i løbet af de sidste 7 dage; fjernes når du logger ud</td></tr>
+<tr><td>Udbyderforbindelse, intern kontopost, rettighedspost</td><td>Mote-backend (Cloudflare)</td><td>Indtil du bruger Slet konto eller beder support om at slette den</td></tr>
+<tr><td>Krypteret cloud-backup</td><td>Mote-backend (Cloudflare)</td><td>Indtil du sletter din konto, anmoder om sletning, eller en ny backup erstatter den</td></tr>
 </tbody></table>
 <h2>9. Dine rettigheder (GDPR artikel 15–22)</h2>
 <p>Du har følgende rettigheder vedrørende dine personoplysninger:</p>
 <ul>
 <li><strong>Ret til indsigt (GDPR artikel 15)</strong> — bekræftelse af, om vi behandler dine data, og en kopi heraf. De fleste af dine data er allerede på din enhed; eksporter fra appen eller skriv til os for resten.</li>
 <li><strong>Ret til berigtigelse (GDPR artikel 16)</strong> — rette unøjagtige data. Rediger data direkte i appen.</li>
-<li><strong>Ret til sletning / "retten til at blive glemt" (GDPR artikel 17)</strong> — slet alle data via Indstillinger → "Slet alle data", eller ved at afinstallere appen. Parringsserverdata udløber automatisk.</li>
+<li><strong>Ret til sletning / "retten til at blive glemt" (GDPR artikel 17)</strong> — slet alle data via Indstillinger → "Slet alle data", eller ved at afinstallere appen. Parringsserverdata udløber automatisk. Hvis du har en valgfri konto (logget ind med Apple eller Google), skal du bruge Indstillinger → "Slet konto" for at fjerne din udbyderforbindelse, interne kontopost, rettighedspost og krypterede cloud-backup fra vores servere samt lokale data — dette adskiller sig fra "Log ud", som kun rydder den lokale session. Hvis sletningsanmodningen ikke kan bekræftes offline, kontakt <a href="mailto:mail@macsiem.dev">mail@macsiem.dev</a> for at bekræfte sletning på serversiden.</li>
 <li><strong>Ret til begrænsning af behandling (GDPR artikel 18)</strong> — anmod om et midlertidigt stop; skriv til os.</li>
 <li><strong>Ret til dataportabilitet (GDPR artikel 20)</strong> — Indstillinger → "Eksporter data" genererer en JSON / Markdown-pakke.</li>
 <li><strong>Ret til indsigelse (GDPR artikel 21)</strong> — gøre indsigelse mod behandling baseret på legitim interesse, især profilbaserede annoncer. Deaktiver personaliserede annoncer i appindstillinger eller via systemkontroller.</li>
@@ -206,7 +233,7 @@
 <li><strong>Ende-til-ende-kryptering under overførsel</strong> — par-til-par-beskeder bruger <code>tweetnacl</code> (X25519 + XSalsa20-Poly1305). Hver enhed genererer sit eget nøglepar; private nøgler forlader aldrig enheden.</li>
 <li><strong>Transportsikkerhed</strong> — alle netværkskald bruger HTTPS / TLS 1.2+.</li>
 <li><strong>Minimering</strong> — vi indsamler kun det, der er nødvendigt for de listede formål.</li>
-<li><strong>Ingen sikkerhedskopier til vores servere</strong> — dine indlæg sikkerhedskopieres ikke til Mote-infrastruktur. Valgfrie sikkerhedskopier på systemniveau (iCloud Backup på iOS, Auto Backup på Android) forbliver udelukkende under din kontrol.</li>
+<li><strong>Sikkerhedskopier</strong> — dine indlæg sikkerhedskopieres som standard ikke til Mote-infrastruktur. Hvis du logger ind og har en gyldig Premium-rettighed, kan du valgfrit aktivere krypteret cloud-backup (se afsnit 3.9); appen krypterer backuppen på din enhed før upload, og Mote kan ikke læse dens indhold. Valgfrie sikkerhedskopier på systemniveau (iCloud Backup på iOS, Auto Backup på Android) forbliver under alle omstændigheder udelukkende under din kontrol.</li>
 </ul>
 <p>Intet system er 100% sikkert; hold venligst din enhed opdateret og brug stærke enhedslåse.</p>
 <h2>13. App Tracking Transparency (iOS) og Annonce-ID</h2>

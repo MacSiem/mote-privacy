@@ -70,14 +70,14 @@
     </div>
 
 <h1>隐私政策 — Mote</h1>
-<p>最后更新日期：2026-05-06 · 生效日期：2026-05-06</p>
+<p>最后更新日期：2026-07-16 · 生效日期：2026-05-06</p>
 <h2>1. 我们是谁</h2>
 <p><strong>Mote</strong> 是一款情侣移动应用，旨在帮助伴侣之间分享日常的感激时刻。隐私是产品的基石：数据是<strong>端到端加密</strong>的，应用是<strong>离线优先</strong>的，并且大部分内容不会以您和您的伴侣之外的任何人可读的形式离开您的设备。</p>
 <p><strong>数据控制者：</strong> Maciej Siemiński — Mote 的开发者。 <strong>联系方式：</strong> <a href="mailto:mail@macsiem.dev">mail@macsiem.dev</a></p>
 <p>对于通过 Google Play 分发的应用版本，数据控制者为 LICENCEPRO POLSKA Sp. z o.o., ul. Huculska 6, 00-730 Warszawa, Polska。</p>
 <p>本隐私政策解释了 Mote 处理哪些个人数据，如何处理，为何处理以及您拥有哪些权利。</p>
 <h2>2. 简明摘要</h2>
-<p>我们不会在我们的服务器上存储您的日记内容。您的消息、照片、语音备忘录、心情签到和标签会在您的设备上加密，并在与您的伴侣同步时进行传输中的端到端加密。我们使用 Google AdMob 在辅助屏幕上显示非侵入性横幅广告，并使用 Apple/Google 账单处理应用内购买。Sentry 仅在构建中明确启用以报告崩溃时使用。您拥有完整的 GDPR 权利，包括访问、删除和可移植性——其中大部分可直接在应用中行使。</p>
+<p>我们不会在我们的服务器上存储您的日记内容。您的消息、照片、语音备忘录、心情签到和标签会在您的设备上加密，并在与您的伴侣同步时进行传输中的端到端加密。无需创建账户，Mote 即可完整使用；使用 Apple 或 Google 登录是可选的，可实现 Premium 权益跨设备同步以及加密云备份的恢复——我们绝不会以未加密的形式获取您的云备份内容。我们使用 Google AdMob 在辅助屏幕上显示非侵入性横幅广告，并使用 Apple/Google 账单处理应用内购买。Sentry 仅在构建中明确启用以报告崩溃时使用。您拥有完整的 GDPR 权利，包括访问、删除和可移植性——其中大部分可直接在应用中行使。</p>
 <h2>3. 我们处理的数据</h2>
 <h3>3.1 仅限本地数据</h3>
 <p>您添加的日记、消息、标签、心情签到、照片和语音备忘录以加密形式（使用 Apple Keychain / Android Keystore 中保存的设备派生密钥的 MMKV）<strong>本地存储在您的设备上</strong>。当与您配对的伴侣设备同步时，内容会使用在每台设备上生成的 <code>tweetnacl</code> 密钥进行<strong>端到端加密</strong> — Mote 的开发者无法读取您的日记。</p>
@@ -124,13 +124,33 @@
 <p>每个权限都是根据上下文请求的。您可以拒绝任何权限，并且仍然可以使用核心功能（如适用）。</p>
 <h3>3.7 我们不收集什么</h3>
 <ul>
-<li>您的姓名、电子邮件、电话号码、地址（无需账户）。</li>
+<li>您的姓名、电话号码或地址——核心功能使用无需账户。如果您选择使用 Apple 或 Google 登录，服务提供方可能会与我们共享电子邮件地址；请参阅第 3.8 节。</li>
 <li>联系人列表、日历、短信、通话记录。</li>
 <li>精确位置。</li>
 <li>应用外的浏览历史。</li>
 <li>生物识别数据（Face ID / Touch ID 仅用作系统级锁定，从不离开您的设备）。</li>
 <li>健康、财务或支付卡数据。</li>
 </ul>
+<h3>3.8 可选账户与登录（Apple / Google）</h3>
+<p>无需创建或登录账户即可使用 Mote。配对和核心感恩流程在匿名状态下仍可使用。登录是可选的，用于 Premium 权益跨设备同步以及加密云备份的恢复。</p>
+<p>当您选择使用 Apple 登录或使用 Google 登录时：</p>
+<ul>
+<li>Apple 或 Google 会对您进行身份验证，并向 Mote 发送一个身份令牌；</li>
+<li>Mote 服务会验证该令牌并创建一个内部用户 ID；</li>
+<li>服务提供方可能会提供您的电子邮件地址。对于 Apple，如果您启用了隐藏邮件地址功能，这可能是一个 Apple 转发地址；</li>
+<li>Mote 会返回一个已签名的会话 JWT。应用会将该令牌存储在操作系统的安全存储中，且仅用于经过身份验证的 Mote 请求。</li>
+</ul>
+<p>会话 JWT 有效期为 30 天，并可在最后七天内刷新。登出会移除设备上存储的会话。登出不会删除服务器端的账户记录或加密云备份。</p>
+<p>Mote 不会获取您的 Apple 或 Google 密码。</p>
+<h3>3.9 加密云备份（Premium）</h3>
+<p>云备份是可选的，需要符合条件的 Premium 权益、登录、配对以及已确认的恢复口令。上传前，应用会使用从恢复口令派生的密钥在设备上对备份进行加密。服务端接收到的是与内部 Mote 用户 ID 关联的密文；它不会接收恢复口令或明文备份。</p>
+<p>加密云备份可能包含恢复配对所需的配对恢复材料、Mote 中使用的显示名称以及加密的密钥材料。它不包含您的 Apple 或 Google 密码。新的上传会替换该 Mote 账户的当前备份。</p>
+<p>请妥善保管恢复口令。没有它，加密云备份将无法恢复。</p>
+<h3>3.10 登出与账户删除的区别</h3>
+<p>本地会话 JWT 如果未刷新，将在 30 天后过期，并在您登出时从设备中移除。服务提供方链接、内部用户记录、权益记录以及当前加密云备份将被保留，直到您使用<strong>删除账户</strong>或要求支持团队删除它们为止。</p>
+<p><strong>登出</strong>仅移除本地会话并在该设备上禁用云备份。这不是账户删除操作。</p>
+<p>在联网状态下使用<strong>删除账户</strong>会向 Mote 服务发送经过身份验证的删除请求，然后清除本地账户、加密材料和应用数据。如果设备处于离线状态或请求无法确认，请联系 <a href="mailto:mail@macsiem.dev">mail@macsiem.dev</a> 以确认服务器端已删除。</p>
+<p>卸载应用会根据操作系统删除应用本地数据，但这本身并不能保证已登录的服务器账户或加密备份被删除。</p>
 <h2>4. 我们为何处理这些数据（目的）</h2>
 <ul>
 <li><strong>在您的设备上运行应用</strong> — 本地存储和（如果存在）加密使您的数据在会话之间持续存在。</li>
@@ -138,6 +158,7 @@
 <li><strong>提高稳定性</strong> — Sentry 诊断有助于修复影响您使用的崩溃。</li>
 <li><strong>维持免费层级</strong> — AdMob 提供非侵入性广告，为不购买高级版的用户提供资金。</li>
 <li><strong>处理购买</strong> — Apple / Google 结算实现您选择购买的高级授权。</li>
+<li><strong>跨设备同步权益和云备份</strong> — 对于选择登录的用户，Premium 权益同步和可选的加密云备份恢复功能可让您在新设备上恢复配对和设置。</li>
 </ul>
 <h2>5. 法律依据 (GDPR Art. 6)</h2>
 <p>对于欧洲经济区、英国和瑞士的用户：</p>
@@ -145,6 +166,7 @@
 <li><strong>履行合同</strong> (GDPR Art. 6(1)(b)) — 运行应用、与您的伴侣同步、处理您的购买。</li>
 <li><strong>合法利益</strong> (GDPR Art. 6(1)(f)) — Sentry 诊断、欺诈/滥用预防、非个性化广告。我们的兴趣是提高稳定性并维持免费层级；这不会凌驾于您的基本权利之上。</li>
 <li><strong>同意</strong> (GDPR Art. 6(1)(a)) — 个性化广告，您通过 ATT 提示 (iOS) 或应用内偏好设置授予同意。您可以随时撤回同意，而不影响之前的处理。</li>
+<li><strong>对可选功能的同意 / 合同选择</strong> (GDPR Art. 6(1)(a) 和 (b)) — 使用 Apple 或 Google 登录以及使用加密云备份是您自主选择进行的可选操作。相关处理基于您所选功能所产生的合同，或您的同意；您可以随时通过登出或删除账户来撤回。</li>
 <li><strong>法律义务</strong> (GDPR Art. 6(1)(c)) — 仅在我们必须回应当局合法请求时。</li>
 </ul>
 <h2>6. 接收方（我们与谁共享数据）</h2>
@@ -152,7 +174,9 @@
 <table>
 <thead><tr><th>接收方</th><th>目的</th><th>数据类别</th><th>隐私政策</th></tr></thead>
 <tbody>
-<tr><td>Cloudflare, Inc.</td><td>配对中继（加密握手 + 短暂 E2E 消息）</td><td>随机配对 ID, 加密数据块</td><td><a href="https://www.cloudflare.com/privacypolicy/">https://www.cloudflare.com/privacypolicy/</a></td></tr>
+<tr><td>Cloudflare, Inc.</td><td>配对中继；可选的账户/会话服务；权益同步；加密云备份存储</td><td>随机配对 ID, 加密数据块, 会话标识符, 加密备份密文（仅当您登录并使用云备份时）</td><td><a href="https://www.cloudflare.com/privacypolicy/">https://www.cloudflare.com/privacypolicy/</a></td></tr>
+<tr><td>Apple Inc. (Sign in with Apple)</td><td>可选的账户身份验证</td><td>身份令牌, 电子邮件地址（可能是 Apple 转发地址）</td><td><a href="https://www.apple.com/legal/privacy/">https://www.apple.com/legal/privacy/</a></td></tr>
+<tr><td>Google LLC (Google Sign-In)</td><td>可选的账户身份验证</td><td>身份令牌, 电子邮件地址</td><td><a href="https://policies.google.com/privacy">https://policies.google.com/privacy</a></td></tr>
 <tr><td>Google LLC (AdMob)</td><td>提供广告</td><td>广告 ID, 设备和广告指标</td><td><a href="https://policies.google.com/privacy">https://policies.google.com/privacy</a></td></tr>
 <tr><td>Meta Platforms, Inc. (Meta Audience Network)</td><td>提供广告</td><td>广告 ID, 设备和广告指标</td><td><a href="https://www.facebook.com/privacy/policy/">https://www.facebook.com/privacy/policy/</a></td></tr>
 <tr><td>Unity Technologies (Unity Ads)</td><td>提供广告</td><td>广告 ID, 设备和广告指标</td><td><a href="https://unity.com/legal/privacy-policy">https://unity.com/legal/privacy-policy</a></td></tr>
@@ -180,13 +204,16 @@
 <tr><td>广告 ID</td><td>Google AdMob 系统</td><td>根据 Google 的保留政策（广告指标通常最多 14 个月）</td></tr>
 <tr><td>Sentry 崩溃数据</td><td>Sentry 系统</td><td>自事件发生起最多 90 天</td></tr>
 <tr><td>IAP 购买令牌 / 收据</td><td>您的设备 + Apple / Google</td><td>直到您卸载；Apple / Google 根据其自身政策保留交易记录</td></tr>
+<tr><td>会话 JWT</td><td>您的设备（安全存储）</td><td>最长 30 天，可在最后 7 天内刷新；登出时移除</td></tr>
+<tr><td>服务提供方链接、内部账户记录、权益记录</td><td>Mote 后端（Cloudflare）</td><td>直到您使用删除账户或要求支持团队删除</td></tr>
+<tr><td>加密云备份</td><td>Mote 后端（Cloudflare）</td><td>直到您删除账户、请求删除，或新备份将其替换</td></tr>
 </tbody></table>
 <h2>9. 您的权利 (GDPR Art. 15–22)</h2>
 <p>您对您的个人数据拥有以下权利：</p>
 <ul>
 <li><strong>访问权 (GDPR Art. 15)</strong> — 确认我们是否处理您的数据以及一份副本。您的大部分数据已在您的设备上；从应用中导出或写信给我们以获取其余数据。</li>
 <li><strong>纠正权 (GDPR Art. 16)</strong> — 纠正不准确的数据。直接在应用中编辑数据。</li>
-<li><strong>删除权 / “被遗忘权” (GDPR Art. 17)</strong> — 通过“设置”→“擦除所有数据”或卸载应用来删除所有数据。配对中继数据会自动过期。</li>
+<li><strong>删除权 / “被遗忘权” (GDPR Art. 17)</strong> — 通过“设置”→“擦除所有数据”或卸载应用来删除所有数据。配对中继数据会自动过期。如果您拥有可选账户（已使用 Apple 或 Google 登录），请使用“设置”→“删除账户”从我们的服务器中移除您的服务提供方链接、内部账户记录、权益记录和加密云备份，以及本地数据——这与仅清除本地会话的“登出”不同。如果离线状态下无法确认删除请求，请联系 <a href="mailto:mail@macsiem.dev">mail@macsiem.dev</a> 以确认服务器端删除。</li>
 <li><strong>限制处理权 (GDPR Art. 18)</strong> — 请求暂时停止；写信给我们。</li>
 <li><strong>数据可移植权 (GDPR Art. 20)</strong> — “设置”→“导出数据”会生成一个 JSON / Markdown 捆绑包。</li>
 <li><strong>反对权 (GDPR Art. 21)</strong> — 反对基于合法利益的处理，特别是画像式广告。在应用设置或通过系统控制禁用个性化广告。</li>
@@ -206,7 +233,7 @@
 <li><strong>传输中端到端加密</strong> — 配对消息使用 <code>tweetnacl</code> (X25519 + XSalsa20-Poly1305)。每台设备生成自己的密钥对；私钥从不离开设备。</li>
 <li><strong>传输安全</strong> — 所有网络调用均使用 HTTPS / TLS 1.2+。</li>
 <li><strong>最小化</strong> — 我们仅收集列出目的所需的数据。</li>
-<li><strong>不备份到我们的服务器</strong> — 您的日记不会备份到 Mote 基础设施。可选的系统级备份（iOS 上的 iCloud 备份，Android 上的自动备份）完全由您控制。</li>
+<li><strong>备份</strong> — 默认情况下，您的日记不会备份到 Mote 基础设施。如果您登录并拥有符合条件的 Premium 权益，您可以选择启用加密云备份（请参阅第 3.9 节）；应用会在上传前在您的设备上对备份进行加密，Mote 无法读取其内容。可选的系统级备份（iOS 上的 iCloud 备份，Android 上的自动备份）无论如何仍完全由您控制。</li>
 </ul>
 <p>没有任何系统是 100% 安全的；请保持您的设备更新并使用强设备锁。</p>
 <h2>13. 应用跟踪透明度 (iOS) 和广告 ID</h2>

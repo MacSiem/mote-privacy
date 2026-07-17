@@ -71,14 +71,14 @@
 
 <p>---</p>
 <h1>Integritetspolicy — Mote</h1>
-<p>Senast uppdaterad: 2026-05-06 · Gäller från: 2026-05-06</p>
+<p>Senast uppdaterad: 2026-07-16 · Gäller från: 2026-05-06</p>
 <h2>1. Vilka vi är</h2>
 <p><strong>Mote</strong> är en mobilapp för par som hjälper till att dela vardagliga ögonblick av uppskattning mellan partners. Sekretess är grunden för produkten: data är <strong>end-to-end-krypterad</strong>, appen är <strong>offline-först</strong>, och det mesta innehållet lämnar aldrig din enhet i en form som är läsbar av någon annan än dig och din partner.</p>
 <p><strong>Personuppgiftsansvarig:</strong> Maciej Siemiński — utvecklaren av Mote. <strong>Kontakt:</strong> <a href="mailto:mail@macsiem.dev">mail@macsiem.dev</a></p>
 <p>För versionen av appen som distribueras via Google Play är dataansvarig LICENCEPRO POLSKA Sp. z o.o., ul. Huculska 6, 00-730 Warszawa, Polska.</p>
 <p>Denna Integritetspolicy förklarar vilka personuppgifter Mote behandlar, hur, varför, och vilka rättigheter du har.</p>
 <h2>2. Sammanfattning i klartext</h2>
-<p>Vi lagrar inte innehållet i dina poster på våra servrar. Dina meddelanden, foton, röstanteckningar, humörsregistreringar och taggar krypteras på din enhet och, när de synkroniseras med din partner, är de end-to-end-krypterade under överföring. Vi använder Google AdMob för icke-påträngande bannerannonser på hjälp-skärmar och Apple/Google-fakturering för att hantera köp i appen. Sentry används endast när det är uttryckligen aktiverat i en version för att rapportera krascher. Du har fullständiga GDPR-rättigheter inklusive åtkomst, radering och dataportabilitet — de flesta kan utövas direkt i appen.</p>
+<p>Vi lagrar inte innehållet i dina poster på våra servrar. Dina meddelanden, foton, röstanteckningar, humörsregistreringar och taggar krypteras på din enhet och, när de synkroniseras med din partner, är de end-to-end-krypterade under överföring. Mote kan användas helt utan att skapa ett konto; att logga in med Apple eller Google är valfritt och möjliggör synkronisering av Premium-behörighet och återställning av krypterad molnsäkerhetskopiering mellan dina enheter — vi får aldrig tillgång till innehållet i din molnsäkerhetskopia i okrypterad form. Vi använder Google AdMob för icke-påträngande bannerannonser på hjälp-skärmar och Apple/Google-fakturering för att hantera köp i appen. Sentry används endast när det är uttryckligen aktiverat i en version för att rapportera krascher. Du har fullständiga GDPR-rättigheter inklusive åtkomst, radering och dataportabilitet — de flesta kan utövas direkt i appen.</p>
 <h2>3. Uppgifter vi behandlar</h2>
 <h3>3.1 Endast lokal data</h3>
 <p>Inlägg, meddelanden, taggar, humörsregistreringar, foton och röstanteckningar du lägger till lagras <strong>lokalt på din enhet</strong> i krypterad form (MMKV med en enhetsgenererad nyckel som förvaras i Apple Keychain / Android Keystore). När innehållet synkroniseras med din parkopplade partners enhet är det <strong>end-to-end-krypterat</strong> med <code>tweetnacl</code>-nycklar som genereras på varje enhet — Motes utvecklare kan inte läsa dina inlägg.</p>
@@ -125,13 +125,33 @@
 <p>Varje behörighet begärs kontextuellt. Du kan neka vilken behörighet som helst och ändå använda kärnfunktionerna (där det är tillämpligt).</p>
 <h3>3.7 Vad vi INTE samlar in</h3>
 <ul>
-<li>Ditt namn, e-post, telefonnummer, adress (inget konto krävs).</li>
+<li>Ditt namn, telefonnummer eller adress — inget konto krävs för grundläggande användning. Om du väljer att logga in med Apple eller Google kan leverantören dela en e-postadress med oss; se avsnitt 3.8.</li>
 <li>Kontaktlista, kalender, SMS, samtalsloggar.</li>
 <li>Exakt plats.</li>
 <li>Webbhistorik utanför appen.</li>
 <li>Biometriska data (Face ID / Touch ID används endast som ett systemlås och lämnar aldrig din enhet).</li>
 <li>Hälso-, finans- eller betalkortsdata.</li>
 </ul>
+<h3>3.8 Valfritt konto och inloggning (Apple / Google)</h3>
+<p>Mote kan användas utan att skapa eller logga in på ett konto. Parkoppling och det grundläggande uppskattningsflödet förblir tillgängliga anonymt. Inloggning är valfri och används för synkronisering av Premium-behörighet och återställning av krypterad molnsäkerhetskopiering mellan enheter.</p>
+<p>När du väljer att logga in med Apple eller logga in med Google:</p>
+<ul>
+<li>autentiserar Apple eller Google dig och skickar en identitetstoken till Mote;</li>
+<li>verifierar Mote-tjänsten den token och skapar ett internt användar-ID;</li>
+<li>kan leverantören tillhandahålla din e-postadress. Med Apple kan detta vara en Apple private-relay-adress om du valde Dölj min e-post;</li>
+<li>returnerar Mote en signerad sessions-JWT. Appen lagrar token i operativsystemets säkra lagring och använder den endast för autentiserade Mote-förfrågningar.</li>
+</ul>
+<p>Sessions-JWT:n är giltig i 30 dagar och kan förnyas under dess sista sju dagar. Att logga ut tar bort sessionen som lagras på enheten. Att logga ut raderar inte kontoposten på serversidan eller den krypterade molnsäkerhetskopian.</p>
+<p>Mote tar inte emot ditt Apple- eller Google-lösenord.</p>
+<h3>3.9 Krypterad molnsäkerhetskopiering (Premium)</h3>
+<p>Molnsäkerhetskopiering är valfri och kräver en berättigad Premium-behörighet, inloggning, parkoppling och en bekräftad återställningsfras. Före uppladdning krypterar appen säkerhetskopian på enheten med en nyckel som härleds från återställningsfrasen. Tjänsten tar emot chiffertext kopplad till det interna Mote-användar-ID:t; den tar inte emot återställningsfrasen eller säkerhetskopian i klartext.</p>
+<p>Den krypterade molnsäkerhetskopian kan innehålla det parkopplingsåterställningsmaterial som krävs för att återställa paret, det visningsnamn som används i Mote och krypterat nyckelmaterial. Den innehåller inte ditt Apple- eller Google-lösenord. En ny uppladdning ersätter den aktuella säkerhetskopian för det Mote-kontot.</p>
+<p>Förvara återställningsfrasen säkert. Den krypterade molnsäkerhetskopian kan inte återställas utan den.</p>
+<h3>3.10 Utloggning kontra radering av konto</h3>
+<p>Den lokala sessions-JWT:n upphör efter 30 dagar om den inte förnyas och tas bort från enheten när du loggar ut. Leverantörskopplingen, den interna användarposten, behörighetsposten och den aktuella krypterade molnsäkerhetskopian behålls tills du använder <strong>Radera konto</strong> eller ber supporten att radera dem.</p>
+<p><strong>Logga ut</strong> tar endast bort den lokala sessionen och inaktiverar molnsäkerhetskopiering på den enheten. Det är inte en åtgärd för radering av konto.</p>
+<p><strong>Radera konto</strong>, använt medan du är online, skickar en autentiserad raderingsförfrågan till Mote-tjänsten och rensar sedan det lokala kontot, krypteringsmaterialet och appdata. Om enheten var offline eller förfrågan inte kunde bekräftas, kontakta <a href="mailto:mail@macsiem.dev">mail@macsiem.dev</a> för att bekräfta radering på serversidan.</p>
+<p>Att avinstallera appen tar bort applokal data enligt operativsystemet, men garanterar inte i sig radering av ett inloggat serverkonto eller en krypterad säkerhetskopia.</p>
 <h2>4. Varför vi behandlar denna data (ändamål)</h2>
 <ul>
 <li><strong>Driva appen på din enhet</strong> — lokal lagring och (där det förekommer) kryptering låter din data bestå mellan sessioner.</li>
@@ -139,6 +159,7 @@
 <li><strong>Förbättra stabiliteten</strong> — Sentry-diagnostik hjälper till att åtgärda krascher som påverkar din användning.</li>
 <li><strong>Upprätthålla gratistjänsten</strong> — AdMob levererar icke-påträngande annonser för att finansiera användare som inte köper premium.</li>
 <li><strong>Behandla köp</strong> — Apple / Google-fakturering uppfyller premiumbehörigheter du väljer att köpa.</li>
+<li><strong>Synkronisera behörighet och molnsäkerhetskopiering mellan enheter</strong> — för användare som väljer att logga in möjliggör synkronisering av Premium-behörighet och valfri krypterad molnsäkerhetskopiering återställning av din parkoppling och dina inställningar på en ny enhet.</li>
 </ul>
 <h2>5. Rättslig grund (artikel 6 i GDPR)</h2>
 <p>För användare inom Europeiska ekonomiska samarbetsområdet, Storbritannien och Schweiz:</p>
@@ -146,6 +167,7 @@
 <li><strong>Uppfyllande av avtal</strong> (artikel 6.1 b) — att driva appen, synkronisera med din partner, behandla dina köp.</li>
 <li><strong>Berättigat intresse</strong> (artikel 6.1 f) — Sentry-diagnostik, förebyggande av bedrägeri/missbruk, icke-personaliserad annonsering. Vårt intresse är att förbättra stabiliteten och upprätthålla gratistjänsten; detta åsidosätter inte dina grundläggande rättigheter.</li>
 <li><strong>Samtycke</strong> (artikel 6.1 a) — personaliserad annonsering, där du ger samtycke via ATT-prompten (iOS) eller inställningar i appen. Du kan när som helst återkalla samtycke utan att det påverkar tidigare behandling.</li>
+<li><strong>Samtycke / avtalsval för valfria funktioner</strong> (artikel 6.1 a och b) — att logga in med Apple eller Google och att använda krypterad molnsäkerhetskopiering är valfria åtgärder som du själv väljer att vidta. Den relaterade behandlingen baseras på det avtal som uppstår för den funktion du valt, eller ditt samtycke; du kan när som helst dra dig ur genom att logga ut eller radera ditt konto.</li>
 <li><strong>Rättslig förpliktelse</strong> (artikel 6.1 c) — endast när vi måste svara på en laglig begäran från myndigheter.</li>
 </ul>
 <h2>6. Mottagare (som vi delar data med)</h2>
@@ -153,7 +175,9 @@
 <table>
 <thead><tr><th>Mottagare</th><th>Syfte</th><th>Datakategori</th><th>Integritetspolicy</th></tr></thead>
 <tbody>
-<tr><td>Cloudflare, Inc.</td><td>Parkopplingsrelä (krypterat handskakning + tillfälliga E2E-meddelanden)</td><td>Slumpmässigt par-ID, krypterad blob</td><td><a href="https://www.cloudflare.com/privacypolicy/">https://www.cloudflare.com/privacypolicy/</a></td></tr>
+<tr><td>Cloudflare, Inc.</td><td>Parkopplingsrelä; valfri konto-/sessionstjänst; synkronisering av behörighet; krypterad molnsäkerhetskopieringslagring</td><td>Slumpmässigt par-ID, krypterad blob, sessions-ID, krypterad säkerhetskopiechiffertext (endast om du loggar in och använder molnsäkerhetskopiering)</td><td><a href="https://www.cloudflare.com/privacypolicy/">https://www.cloudflare.com/privacypolicy/</a></td></tr>
+<tr><td>Apple Inc. (Sign in with Apple)</td><td>Valfri kontoautentisering</td><td>Identitetstoken, e-postadress (kan vara en Apple private-relay-adress)</td><td><a href="https://www.apple.com/legal/privacy/">https://www.apple.com/legal/privacy/</a></td></tr>
+<tr><td>Google LLC (Google Sign-In)</td><td>Valfri kontoautentisering</td><td>Identitetstoken, e-postadress</td><td><a href="https://policies.google.com/privacy">https://policies.google.com/privacy</a></td></tr>
 <tr><td>Google LLC (AdMob)</td><td>Visa annonser</td><td>Annonserings-ID, enhets- och annonsmätvärden</td><td><a href="https://policies.google.com/privacy">https://policies.google.com/privacy</a></td></tr>
 <tr><td>Meta Platforms, Inc. (Meta Audience Network)</td><td>Visa annonser</td><td>Annonserings-ID, enhets- och annonsmätvärden</td><td><a href="https://www.facebook.com/privacy/policy/">https://www.facebook.com/privacy/policy/</a></td></tr>
 <tr><td>Unity Technologies (Unity Ads)</td><td>Visa annonser</td><td>Annonserings-ID, enhets- och annonsmätvärden</td><td><a href="https://unity.com/legal/privacy-policy">https://unity.com/legal/privacy-policy</a></td></tr>
@@ -181,13 +205,16 @@
 <tr><td>Annonserings-ID</td><td>Google AdMob-system</td><td>Enligt Googles lagringspolicy (typiskt upp till 14 månader för annonsmätvärden)</td></tr>
 <tr><td>Sentry kraschdata</td><td>Sentry-system</td><td>Upp till 90 dagar från händelsen</td></tr>
 <tr><td>IAP-köptoken / kvitto</td><td>Din enhet + Apple / Google</td><td>Tills du avinstallerar; Apple / Google behåller transaktionshistorik enligt sina egna policyer</td></tr>
+<tr><td>Sessions-JWT</td><td>Din enhet (säker lagring)</td><td>Upp till 30 dagar, förnybar under de sista 7 dagarna; tas bort när du loggar ut</td></tr>
+<tr><td>Leverantörskoppling, intern kontopost, behörighetspost</td><td>Mote-backend (Cloudflare)</td><td>Tills du använder Radera konto eller ber supporten att radera den</td></tr>
+<tr><td>Krypterad molnsäkerhetskopiering</td><td>Mote-backend (Cloudflare)</td><td>Tills du raderar ditt konto, begär radering, eller en ny säkerhetskopia ersätter den</td></tr>
 </tbody></table>
 <h2>9. Dina rättigheter (artikel 15–22 i GDPR)</h2>
 <p>Du har följande rättigheter gällande dina personuppgifter:</p>
 <ul>
 <li><strong>Rätt till tillgång (artikel 15)</strong> — bekräftelse om vi behandlar dina uppgifter och en kopia av dem. Det mesta av din data finns redan på din enhet; exportera från appen eller skriv till oss för resten.</li>
 <li><strong>Rätt till rättelse (artikel 16)</strong> — korrigera felaktiga uppgifter. Redigera data direkt i appen.</li>
-<li><strong>Rätt till radering / "rätten att bli bortglömd" (artikel 17)</strong> — radera all data via Inställningar → "Radera all data", eller genom att avinstallera appen. Parkopplingsrelädata upphör automatiskt.</li>
+<li><strong>Rätt till radering / "rätten att bli bortglömd" (artikel 17)</strong> — radera all data via Inställningar → "Radera all data", eller genom att avinstallera appen. Parkopplingsrelädata upphör automatiskt. Om du har ett valfritt konto (inloggat med Apple eller Google), använd Inställningar → "Radera konto" för att ta bort din leverantörskoppling, interna kontopost, behörighetspost och krypterade molnsäkerhetskopia från våra servrar samt lokal data — detta skiljer sig från "Logga ut", som endast rensar den lokala sessionen. Om raderingsförfrågan inte kan bekräftas offline, kontakta <a href="mailto:mail@macsiem.dev">mail@macsiem.dev</a> för att bekräfta radering på serversidan.</li>
 <li><strong>Rätt till begränsning av behandling (artikel 18)</strong> — begär ett tillfälligt uppehåll; skriv till oss.</li>
 <li><strong>Rätt till dataportabilitet (artikel 20)</strong> — Inställningar → "Exportera data" producerar ett JSON / Markdown-paket.</li>
 <li><strong>Rätt att invända (artikel 21)</strong> — invända mot behandling baserad på berättigat intresse, särskilt annonser i profileringsstil. Inaktivera personaliserade annonser i appinställningar eller via systemkontroller.</li>
@@ -207,7 +234,7 @@
 <li><strong>End-to-end-kryptering under överföring</strong> — par-till-par-meddelanden använder <code>tweetnacl</code> (X25519 + XSalsa20-Poly1305). Varje enhet genererar sitt eget nyckelpar; privata nycklar lämnar aldrig enheten.</li>
 <li><strong>Transportsäkerhet</strong> — alla nätverksanrop använder HTTPS / TLS 1.2+.</li>
 <li><strong>Minimering</strong> — vi samlar endast in det som krävs för de angivna ändamålen.</li>
-<li><strong>Inga säkerhetskopior till våra servrar</strong> — dina inlägg säkerhetskopieras inte till Motes infrastruktur. Valfria säkerhetskopior på systemnivå (iCloud Backup på iOS, Auto Backup på Android) förblir helt under din kontroll.</li>
+<li><strong>Säkerhetskopior</strong> — dina inlägg säkerhetskopieras som standard inte till Motes infrastruktur. Om du loggar in och har en berättigad Premium-behörighet kan du valfritt aktivera krypterad molnsäkerhetskopiering (se avsnitt 3.9); appen krypterar säkerhetskopian på din enhet före uppladdning, och Mote kan inte läsa dess innehåll. Valfria säkerhetskopior på systemnivå (iCloud Backup på iOS, Auto Backup på Android) förblir helt under din kontroll oavsett detta.</li>
 </ul>
 <p>Inget system är 100% säkert; vänligen håll din enhet uppdaterad och använd starka enhetslås.</p>
 <h2>13. App Tracking Transparency (iOS) och Annonserings-ID</h2>

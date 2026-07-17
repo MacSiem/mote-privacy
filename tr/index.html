@@ -70,14 +70,14 @@
     </div>
 
 <h1>Gizlilik Politikası — Mote</h1>
-<p>Son güncelleme: 2026-05-06 · Yürürlük tarihi: 2026-05-06</p>
+<p>Son güncelleme: 2026-07-16 · Yürürlük tarihi: 2026-05-06</p>
 <h2>1. Kim olduğumuz</h2>
 <p><strong>Mote</strong>, çiftler için, partnerler arasında günlük takdir anlarını paylaşmaya yardımcı olan bir mobil uygulamadır. Gizlilik, ürünün temelidir: veriler <strong>uçtan uca şifrelidir</strong>, uygulama <strong>öncelikle çevrimdışı çalışır</strong> ve içeriğin çoğu, sizin ve partneriniz dışında hiç kimse tarafından okunabilir bir biçimde cihazınızdan asla ayrılmaz.</p>
 <p><strong>Veri sorumlusu:</strong> Maciej Siemiński — Mote'un geliştiricisi. <strong>İletişim:</strong> <a href="mailto:mail@macsiem.dev">mail@macsiem.dev</a></p>
 <p>Google Play aracılığıyla dağıtılan uygulama sürümü için veri denetleyicisi LICENCEPRO POLSKA Sp. z o.o., ul. Huculska 6, 00-730 Warszawa, Polska'dır.</p>
 <p>Bu Gizlilik Politikası, Mote'un hangi kişisel verileri, nasıl, neden işlediğini ve sizin hangi haklara sahip olduğunuzu açıklamaktadır.</p>
 <h2>2. Basit dille özet</h2>
-<p>Girdilerinizin içeriğini sunucularımızda saklamıyoruz. Mesajlarınız, fotoğraflarınız, sesli notlarınız, ruh hali kontrol girişleriniz ve etiketleriniz cihazınızda şifrelenir ve partnerinizle senkronize edildiğinde, aktarım sırasında uçtan uca şifrelenir. Yardımcı ekranlarda rahatsız edici olmayan banner reklamlar için Google AdMob'u ve uygulama içi satın alımları işlemek için Apple/Google faturalandırmasını kullanırız. Sentry, yalnızca çökmeleri bildirmek üzere bir derlemede açıkça etkinleştirildiğinde kullanılır. Erişim, silme ve taşınabilirlik dahil tüm GDPR haklarına sahipsiniz — çoğu doğrudan uygulama içinde kullanılabilir.</p>
+<p>Girdilerinizin içeriğini sunucularımızda saklamıyoruz. Mesajlarınız, fotoğraflarınız, sesli notlarınız, ruh hali kontrol girişleriniz ve etiketleriniz cihazınızda şifrelenir ve partnerinizle senkronize edildiğinde, aktarım sırasında uçtan uca şifrelenir. Mote, hesap oluşturmadan tamamen kullanılabilir; Apple veya Google ile oturum açmak isteğe bağlıdır ve Premium yetkilendirme senkronizasyonu ile cihazlarınız arasında şifreli bulut yedeği kurtarmayı etkinleştirir — bulut yedeğinizin içeriğini asla şifresi çözülmüş olarak almayız. Yardımcı ekranlarda rahatsız edici olmayan banner reklamlar için Google AdMob'u ve uygulama içi satın alımları işlemek için Apple/Google faturalandırmasını kullanırız. Sentry, yalnızca çökmeleri bildirmek üzere bir derlemede açıkça etkinleştirildiğinde kullanılır. Erişim, silme ve taşınabilirlik dahil tüm GDPR haklarına sahipsiniz — çoğu doğrudan uygulama içinde kullanılabilir.</p>
 <h2>3. İşlediğimiz veriler</h2>
 <h3>3.1 Yalnızca yerel veriler</h3>
 <p>Eklediğiniz girdiler, mesajlar, etiketler, ruh hali kontrol girişleri, fotoğraflar ve sesli notlar, <strong>yerel olarak cihazınızda</strong> şifreli biçimde (Apple Keychain / Android Keystore'da tutulan, cihazdan türetilmiş bir anahtarla MMKV) saklanır. Eşleşmiş partnerinizin cihazıyla senkronize edildiğinde, içerik her cihazda oluşturulan <code>tweetnacl</code> anahtarları kullanılarak <strong>uçtan uca şifrelenir</strong> — Mote'un geliştiricisi girdilerinizi okuyamaz.</p>
@@ -124,13 +124,33 @@
 <p>Her izin durumsal olarak istenir. Herhangi bir izni reddedebilir ve yine de temel özellikleri kullanabilirsiniz (uygulanabildiği yerlerde).</p>
 <h3>3.7 Toplamadığımız veriler</h3>
 <ul>
-<li>Adınız, e-posta adresiniz, telefon numaranız, adresiniz (hesap gerekmez).</li>
+<li>Adınızı, telefon numaranızı veya adresinizi — temel kullanım için hesap gerekmez. Apple veya Google ile oturum açmayı seçerseniz, sağlayıcı bizimle bir e-posta adresi paylaşabilir; bkz. bölüm 3.8.</li>
 <li>Kişi listesi, takvim, SMS, arama kayıtları.</li>
 <li>Hassas konum.</li>
 <li>Uygulama dışındaki göz atma geçmişi.</li>
 <li>Biyometrik veriler (Face ID / Touch ID yalnızca sistem düzeyinde bir kilit olarak kullanılır ve cihazınızdan asla ayrılmaz).</li>
 <li>Sağlık, finansal veya ödeme kartı verileri.</li>
 </ul>
+<h3>3.8 İsteğe bağlı hesap ve oturum açma (Apple / Google)</h3>
+<p>Mote, hesap oluşturmadan veya oturum açmadan kullanılabilir. Eşleştirme ve temel takdir akışı anonim olarak kullanılabilir durumda kalır. Oturum açma isteğe bağlıdır ve Premium yetkilendirme senkronizasyonu ile cihazlar arasında şifreli bulut yedeği kurtarma için kullanılır.</p>
+<p>Apple ile Oturum Aç veya Google ile Oturum Aç'ı seçtiğinizde:</p>
+<ul>
+<li>Apple veya Google sizi kimlik doğrulamasından geçirir ve Mote'a bir kimlik jetonu gönderir;</li>
+<li>Mote hizmeti bu jetonu doğrular ve dahili bir kullanıcı kimliği oluşturur;</li>
+<li>sağlayıcı e-posta adresinizi sağlayabilir. Apple ile bu, Hide My Email'i seçtiyseniz bir Apple private-relay adresi olabilir;</li>
+<li>Mote imzalı bir oturum JWT'si döndürür. Uygulama, jetonu işletim sisteminin güvenli deposunda saklar ve yalnızca kimliği doğrulanmış Mote istekleri için kullanır.</li>
+</ul>
+<p>Oturum JWT'si 30 gün geçerlidir ve son yedi günü içinde yenilenebilir. Oturumu kapatmak, cihazda depolanan oturumu kaldırır. Oturumu kapatmak, sunucu tarafındaki hesap kaydını veya şifreli bulut yedeğini silmez.</p>
+<p>Mote, Apple veya Google şifrenizi almaz.</p>
+<h3>3.9 Şifreli bulut yedeği (Premium)</h3>
+<p>Bulut yedeği isteğe bağlıdır ve uygun bir Premium yetkilendirme, oturum açma, eşleştirme ve onaylanmış bir kurtarma cümlesi gerektirir. Yüklemeden önce, uygulama yedeği cihazda kurtarma cümlesinden türetilen bir anahtar kullanarak şifreler. Hizmet, dahili Mote kullanıcı kimliğiyle ilişkilendirilmiş şifreli metni alır; kurtarma cümlesini veya düz metin yedeği almaz.</p>
+<p>Şifreli bulut yedeği, çifti geri yüklemek için gereken eşleştirme kurtarma materyalini, Mote içinde kullanılan görünen adı ve şifreli anahtar materyalini içerebilir. Apple veya Google şifrenizi içermez. Yeni bir yükleme, o Mote hesabı için mevcut yedeğin yerini alır.</p>
+<p>Kurtarma cümlesini güvenli tutun. Şifreli bulut yedeği onsuz geri yüklenemez.</p>
+<h3>3.10 Oturumu kapatma ile hesap silme karşılaştırması</h3>
+<p>Yerel oturum JWT'si, yenilenmedikçe 30 gün sonra sona erer ve oturumu kapattığınızda cihazdan kaldırılır. Sağlayıcı bağlantısı, dahili kullanıcı kaydı, yetkilendirme kaydı ve mevcut şifreli bulut yedeği, siz <strong>Hesabı sil</strong>'i kullanana veya destekten silmelerini isteyene kadar saklanır.</p>
+<p><strong>Oturumu kapat</strong> yalnızca yerel oturumu kaldırır ve o cihazda bulut yedeğini devre dışı bırakır. Bu bir hesap silme işlemi değildir.</p>
+<p>Çevrimiçiyken kullanılan <strong>Hesabı sil</strong>, Mote hizmetine kimliği doğrulanmış bir silme isteği gönderir ve ardından yerel hesabı, şifreleme materyalini ve uygulama verilerini temizler. Cihaz çevrimdışıysa veya istek onaylanamadıysa, sunucu tarafı silme işlemini onaylamak için <a href="mailto:mail@macsiem.dev">mail@macsiem.dev</a> adresiyle iletişime geçin.</p>
+<p>Uygulamayı kaldırmak, işletim sistemine göre uygulama yerel verilerini kaldırır, ancak tek başına oturum açılmış bir sunucu hesabının veya şifreli yedeğin silinmesini garanti etmez.</p>
 <h2>4. Bu verileri neden işliyoruz (amaçlar)</h2>
 <ul>
 <li><strong>Uygulamayı cihazınızda çalıştırmak</strong> — yerel depolama ve (varsa) şifreleme, verilerinizin oturumlar arasında kalıcı olmasını sağlar.</li>
@@ -138,6 +158,7 @@
 <li><strong>Stabiliteyi iyileştirmek</strong> — Sentry tanıları, kullanımınızı etkileyen çökmeleri düzeltmeye yardımcı olur.</li>
 <li><strong>Ücretsiz katmanı sürdürmek</strong> — AdMob, premium satın almayan kullanıcıları finanse etmek için rahatsız edici olmayan reklamlar sunar.</li>
 <li><strong>Satın alımları işlemek</strong> — Apple / Google faturalandırması, satın almayı seçtiğiniz premium yetkilendirmeleri yerine getirir.</li>
+<li><strong>Cihazlar arasında yetkilendirme ve bulut yedeğini senkronize etme</strong> — oturum açmayı seçen kullanıcılar için Premium yetkilendirme senkronizasyonu ve isteğe bağlı şifreli bulut yedeği kurtarma, eşleştirmenizi ve ayarlarınızı yeni bir cihazda geri yüklemenizi sağlar.</li>
 </ul>
 <h2>5. Hukuki dayanak (GDPR Art. 6)</h2>
 <p>Avrupa Ekonomik Alanı, Birleşik Krallık ve İsviçre'deki kullanıcılar için:</p>
@@ -145,6 +166,7 @@
 <li><strong>Sözleşmenin ifası</strong> (GDPR Art. 6(1)(b)) — uygulamayı çalıştırma, partnerinizle senkronize etme, satın almalarınızı işleme.</li>
 <li><strong>Meşru menfaat</strong> (GDPR Art. 6(1)(f)) — Sentry tanıları, dolandırıcılık/kötüye kullanımı önleme, kişiselleştirilmemiş reklamcılık. Amacımız stabiliteyi iyileştirmek ve ücretsiz katmanı sürdürmektir; bu, temel haklarınızı geçersiz kılmaz.</li>
 <li><strong>Rıza</strong> (GDPR Art. 6(1)(a)) — kişiselleştirilmiş reklamcılık, burada ATT istemi (iOS) veya uygulama içi tercih aracılığıyla rıza verirsiniz. Önceden yapılan işlemleri etkilemeksizin rızanızı istediğiniz zaman geri çekebilirsiniz.</li>
+<li><strong>İsteğe bağlı özellikler için rıza / sözleşmeye dayalı seçim</strong> (GDPR Art. 6(1)(a) ve (b)) — Apple veya Google ile oturum açmak ve şifreli bulut yedeği kullanmak, kendi seçiminizle gerçekleştirdiğiniz isteğe bağlı eylemlerdir. İlgili işleme, seçtiğiniz özellik için ortaya çıkan sözleşmeye veya rızanıza dayanır; oturumu kapatarak veya hesabınızı silerek istediğiniz zaman geri çekebilirsiniz.</li>
 <li><strong>Yasal yükümlülük</strong> (GDPR Art. 6(1)(c)) — yalnızca yetkililerden gelen yasal bir talebe yanıt vermemiz gerektiğinde.</li>
 </ul>
 <h2>6. Alıcılar (verileri kimlerle paylaşıyoruz)</h2>
@@ -152,7 +174,9 @@
 <table>
 <thead><tr><th>Alıcı</th><th>Amaç</th><th>Veri kategorisi</th><th>Gizlilik politikası</th></tr></thead>
 <tbody>
-<tr><td>Cloudflare, Inc.</td><td>Eşleştirme rölesi (şifreli el sıkışma + geçici uçtan uca mesajlar)</td><td>Rastgele eşleştirme kimliği, şifreli blob</td><td><a href="https://www.cloudflare.com/privacypolicy/">https://www.cloudflare.com/privacypolicy/</a></td></tr>
+<tr><td>Cloudflare, Inc.</td><td>Eşleştirme rölesi; isteğe bağlı hesap/oturum hizmeti; yetkilendirme senkronizasyonu; şifreli bulut yedeği depolama</td><td>Rastgele eşleştirme kimliği, şifreli blob, oturum tanımlayıcısı, şifreli yedek metni (yalnızca oturum açar ve bulut yedeğini kullanırsanız)</td><td><a href="https://www.cloudflare.com/privacypolicy/">https://www.cloudflare.com/privacypolicy/</a></td></tr>
+<tr><td>Apple Inc. (Sign in with Apple)</td><td>İsteğe bağlı hesap kimlik doğrulaması</td><td>Kimlik jetonu, e-posta adresi (bir Apple private-relay adresi olabilir)</td><td><a href="https://www.apple.com/legal/privacy/">https://www.apple.com/legal/privacy/</a></td></tr>
+<tr><td>Google LLC (Google Sign-In)</td><td>İsteğe bağlı hesap kimlik doğrulaması</td><td>Kimlik jetonu, e-posta adresi</td><td><a href="https://policies.google.com/privacy">https://policies.google.com/privacy</a></td></tr>
 <tr><td>Google LLC (AdMob)</td><td>Reklam sunma</td><td>Advertising ID, cihaz ve reklam metrikleri</td><td><a href="https://policies.google.com/privacy">https://policies.google.com/privacy</a></td></tr>
 <tr><td>Meta Platforms, Inc. (Meta Audience Network)</td><td>Reklam sunma</td><td>Advertising ID, cihaz ve reklam metrikleri</td><td><a href="https://www.facebook.com/privacy/policy/">https://www.facebook.com/privacy/policy/</a></td></tr>
 <tr><td>Unity Technologies (Unity Ads)</td><td>Reklam sunma</td><td>Advertising ID, cihaz ve reklam metrikleri</td><td><a href="https://unity.com/legal/privacy-policy">https://unity.com/legal/privacy-policy</a></td></tr>
@@ -180,13 +204,16 @@
 <tr><td>Reklam Kimliği</td><td>Google AdMob sistemleri</td><td>Google'ın saklama politikasına göre (reklam metrikleri için genellikle 14 aya kadar)</td></tr>
 <tr><td>Sentry çökme verileri</td><td>Sentry sistemleri</td><td>Olaydan itibaren 90 güne kadar</td></tr>
 <tr><td>Uygulama İçi Satın Alma jetonu / makbuzu</td><td>Cihazınız + Apple / Google</td><td>Siz kaldırana kadar; Apple / Google, işlem kayıtlarını kendi politikalarına göre tutar</td></tr>
+<tr><td>Oturum JWT'si</td><td>Cihazınız (güvenli depolama)</td><td>En fazla 30 gün, son 7 gün içinde yenilenebilir; oturumu kapattığınızda kaldırılır</td></tr>
+<tr><td>Sağlayıcı bağlantısı, dahili hesap kaydı, yetkilendirme kaydı</td><td>Mote arka ucu (Cloudflare)</td><td>Siz Hesabı sil'i kullanana veya destekten silmelerini isteyene kadar</td></tr>
+<tr><td>Şifreli bulut yedeği</td><td>Mote arka ucu (Cloudflare)</td><td>Hesabınızı silene, silme talep edene veya yeni bir yedek onun yerini alana kadar</td></tr>
 </tbody></table>
 <h2>9. Haklarınız (GDPR Art. 15–22)</h2>
 <p>Kişisel verilerinizle ilgili aşağıdaki haklara sahipsiniz:</p>
 <ul>
 <li><strong>Erişim hakkı (GDPR Art. 15)</strong> — verilerinizi işleyip işlemediğimizin onayı ve bir kopyası. Verilerinizin çoğu zaten cihazınızdadır; uygulamanın içinden dışa aktarın veya geri kalanı için bize yazın.</li>
 <li><strong>Düzeltme hakkı (GDPR Art. 16)</strong> — yanlış verileri düzeltme. Verileri doğrudan uygulama içinde düzenleyin.</li>
-<li><strong>Silme hakkı / "unutulma hakkı" (GDPR Art. 17)</strong> — Ayarlar → "Tüm verileri sil" aracılığıyla veya uygulamayı kaldırarak tüm verileri silme. Eşleştirme röle verileri otomatik olarak sona erer.</li>
+<li><strong>Silme hakkı / "unutulma hakkı" (GDPR Art. 17)</strong> — Ayarlar → "Tüm verileri sil" aracılığıyla veya uygulamayı kaldırarak tüm verileri silme. Eşleştirme röle verileri otomatik olarak sona erer. İsteğe bağlı bir hesabınız varsa (Apple veya Google ile oturum açılmış), sağlayıcı bağlantınızı, dahili hesap kaydınızı, yetkilendirme kaydınızı ve şifreli bulut yedeğinizi sunucularımızdan ve yerel verilerinizden kaldırmak için Ayarlar → "Hesabı sil"i kullanın — bu, yalnızca yerel oturumu temizleyen "Oturumu kapat"tan farklıdır. Silme isteği çevrimdışıyken onaylanamıyorsa, sunucu tarafı silme işlemini onaylamak için <a href="mailto:mail@macsiem.dev">mail@macsiem.dev</a> adresiyle iletişime geçin.</li>
 <li><strong>İşlemeyi kısıtlama hakkı (GDPR Art. 18)</strong> — geçici bir durdurma talep etme; bize yazın.</li>
 <li><strong>Veri taşınabilirliği hakkı (GDPR Art. 20)</strong> — Ayarlar → "Verileri dışa aktar" bir JSON / Markdown paketi oluşturur.</li>
 <li><strong>İtiraz hakkı (GDPR Art. 21)</strong> — meşru menfaate dayalı işlemeye, özellikle profil oluşturma tarzı reklamlara itiraz etme. Kişiselleştirilmiş reklamları uygulama ayarlarında veya sistem kontrolleri aracılığıyla devre dışı bırakın.</li>
@@ -206,7 +233,7 @@
 <li><strong>Aktarımda uçtan uca şifreleme</strong> — eşten eşe mesajlar <code>tweetnacl</code> (X25519 + XSalsa20-Poly1305) kullanır. Her cihaz kendi anahtar çiftini oluşturur; özel anahtarlar asla cihazdan ayrılmaz.</li>
 <li><strong>Taşıma güvenliği</strong> — tüm ağ çağrıları HTTPS / TLS 1.2+ kullanır.</li>
 <li><strong>Minimizasyon</strong> — yalnızca listelenen amaçlar için gerekeni toplarız.</li>
-<li><strong>Sunucularımıza yedekleme yok</strong> — girdileriniz Mote altyapısına yedeklenmez. İsteğe bağlı sistem düzeyinde yedeklemeler (iOS'ta iCloud Backup, Android'de Auto Backup) tamamen sizin kontrolünüzde kalır.</li>
+<li><strong>Yedeklemeler</strong> — girdileriniz varsayılan olarak Mote altyapısına yedeklenmez. Oturum açarsanız ve uygun bir Premium yetkilendirmeniz varsa, isteğe bağlı olarak şifreli bulut yedeğini etkinleştirebilirsiniz (bkz. bölüm 3.9); uygulama, yedeği yüklemeden önce cihazınızda şifreler ve Mote içeriğini okuyamaz. İsteğe bağlı sistem düzeyinde yedeklemeler (iOS'ta iCloud Backup, Android'de Auto Backup) buna bakılmaksızın tamamen sizin kontrolünüzde kalır.</li>
 </ul>
 <p>Hiçbir sistem %100 güvenli değildir; lütfen cihazınızı güncel tutun ve güçlü cihaz kilitleri kullanın.</p>
 <h2>13. Uygulama İzleme Şeffaflığı (iOS) ve Reklam Kimliği</h2>

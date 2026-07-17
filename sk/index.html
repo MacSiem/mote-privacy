@@ -70,14 +70,14 @@
     </div>
 
 <h1>Zásady ochrany osobných údajov — Mote</h1>
-<p>Posledná aktualizácia: 2026-05-06 · Dátum účinnosti: 2026-05-06</p>
+<p>Posledná aktualizácia: 2026-07-16 · Dátum účinnosti: 2026-05-06</p>
 <h2>1. Kto sme</h2>
 <p><strong>Mote</strong> je mobilná aplikácia pre páry, ktorá pomáha zdieľať každodenné okamihy vďaky medzi partnermi. Ochrana súkromia je základom produktu: údaje sú <strong>šifrované end-to-end</strong>, aplikácia je <strong>offline-first</strong> a väčšina obsahu nikdy neopustí vaše zariadenie vo forme čitateľnej nikým iným okrem vás a vášho partnera.</p>
 <p><strong>Prevádzkovateľ:</strong> Maciej Siemiński — vývojár aplikácie Mote. <strong>Kontakt:</strong> <a href="mailto:mail@macsiem.dev">mail@macsiem.dev</a></p>
 <p>Pre verziu aplikácie distribuovanú cez Google Play je prevádzkovateľom údajov LICENCEPRO POLSKA Sp. z o.o., ul. Huculska 6, 00-730 Warszawa, Polska.</p>
 <p>Tieto Zásady ochrany osobných údajov vysvetľujú, aké osobné údaje Mote spracúva, ako, prečo a aké práva máte.</p>
 <h2>2. Zhrnutie v jednoduchom jazyku</h2>
-<p>Obsah vašich záznamov neuchovávame na našich serveroch. Vaše správy, fotografie, hlasové poznámky, záznamy nálady a tagy sú šifrované na vašom zariadení a pri synchronizácii s vaším partnerom sú end-to-end šifrované počas prenosu. Google AdMob používame na neinvazívne bannerové reklamy na pomocných obrazovkách a fakturáciu Apple/Google na spracovanie nákupov v aplikácii. Sentry sa používa iba vtedy, ak je explicitne povolené v zostave na hlásenie pádov. Máte plné práva podľa nariadenia GDPR vrátane prístupu, vymazania a prenositeľnosti — väčšinu z nich je možné uplatniť priamo v aplikácii.</p>
+<p>Obsah vašich záznamov neuchovávame na našich serveroch. Vaše správy, fotografie, hlasové poznámky, záznamy nálady a tagy sú šifrované na vašom zariadení a pri synchronizácii s vaším partnerom sú end-to-end šifrované počas prenosu. Mote je možné plne používať bez vytvorenia účtu; prihlásenie cez Apple alebo Google je voliteľné a umožňuje synchronizáciu nároku Premium a obnovenie šifrovanej zálohy v cloude naprieč vašimi zariadeniami — obsah vašej cloudovej zálohy nikdy nedostávame v nešifrovanej podobe. Google AdMob používame na neinvazívne bannerové reklamy na pomocných obrazovkách a fakturáciu Apple/Google na spracovanie nákupov v aplikácii. Sentry sa používa iba vtedy, ak je explicitne povolené v zostave na hlásenie pádov. Máte plné práva podľa nariadenia GDPR vrátane prístupu, vymazania a prenositeľnosti — väčšinu z nich je možné uplatniť priamo v aplikácii.</p>
 <h2>3. Údaje, ktoré spracúvame</h2>
 <h3>3.1 Iba lokálne údaje</h3>
 <p>Záznamy, správy, tagy, záznamy nálady, fotografie a hlasové poznámky, ktoré pridáte, sú uložené <strong>lokálne na vašom zariadení</strong> v šifrovanej forme (MMKV s kľúčom odvodeným od zariadenia, uloženým v Apple Keychain / Android Keystore). Pri synchronizácii so zariadením vášho spárovaného partnera je obsah <strong>end-to-end šifrovaný</strong> pomocou <code>tweetnacl</code> kľúčov vygenerovaných na každom zariadení — vývojár aplikácie Mote nemôže čítať vaše záznamy.</p>
@@ -124,13 +124,33 @@
 <p>Každé povolenie je vyžiadané kontextovo. Akékoľvek povolenie môžete zamietnuť a stále používať základné funkcie (ak je to možné).</p>
 <h3>3.7 Čo NEZHROMAŽĎUJEME</h3>
 <ul>
-<li>Vaše meno, e-mail, telefónne číslo, adresa (nevyžaduje sa žiadny účet).</li>
+<li>Vaše meno, telefónne číslo alebo adresu — na základné používanie sa nevyžaduje žiadny účet. Ak sa rozhodnete prihlásiť cez Apple alebo Google, poskytovateľ nám môže poskytnúť e-mailovú adresu; pozrite si časť 3.8.</li>
 <li>Zoznam kontaktov, kalendár, SMS, záznamy hovorov.</li>
 <li>Presná poloha.</li>
 <li>História prehliadania mimo aplikácie.</li>
 <li>Biometrické údaje (Face ID / Touch ID sa používa iba ako systémový zámok a nikdy neopustí vaše zariadenie).</li>
 <li>Údaje o zdraví, finančné údaje alebo údaje o platobnej karte.</li>
 </ul>
+<h3>3.8 Voliteľný účet a prihlásenie (Apple / Google)</h3>
+<p>Mote je možné používať bez vytvorenia účtu alebo prihlásenia sa doň. Párovanie a základný tok vyjadrovania vďaky zostávajú dostupné anonymne. Prihlásenie je voliteľné a slúži na synchronizáciu nároku Premium a obnovenie šifrovanej zálohy v cloude naprieč zariadeniami.</p>
+<p>Keď si zvolíte Prihlásenie cez Apple alebo Prihlásenie cez Google:</p>
+<ul>
+<li>Apple alebo Google vás overí a odošle aplikácii Mote token identity;</li>
+<li>služba Mote overí tento token a vytvorí interné ID používateľa;</li>
+<li>poskytovateľ môže poskytnúť vašu e-mailovú adresu. V prípade Apple to môže byť adresa Apple private relay, ak ste zvolili funkciu Skryť môj e-mail;</li>
+<li>Mote vráti podpísaný JWT token relácie. Aplikácia uloží token do bezpečného úložiska operačného systému a používa ho iba pre overené požiadavky Mote.</li>
+</ul>
+<p>JWT token relácie je platný 30 dní a môže byť obnovený počas posledných siedmich dní. Odhlásením sa odstráni relácia uložená na zariadení. Odhlásenie neodstráni záznam účtu na serveri ani šifrovanú zálohu v cloude.</p>
+<p>Mote nedostáva vaše heslo pre Apple ani Google.</p>
+<h3>3.9 Šifrovaná záloha v cloude (Premium)</h3>
+<p>Záloha v cloude je voliteľná a vyžaduje oprávnený nárok Premium, prihlásenie, spárovanie a potvrdenú obnovovaciu frázu. Pred nahratím aplikácia zašifruje zálohu na zariadení pomocou kľúča odvodeného z obnovovacej frázy. Služba dostáva šifrovaný text spojený s interným ID používateľa Mote; nedostáva obnovovaciu frázu ani zálohu v nešifrovanej podobe.</p>
+<p>Šifrovaná záloha v cloude môže obsahovať materiál na obnovenie párovania potrebný na obnovenie páru, zobrazované meno používané v aplikácii Mote a šifrovaný kľúčový materiál. Neobsahuje vaše heslo pre Apple ani Google. Nové nahratie nahradí aktuálnu zálohu pre daný účet Mote.</p>
+<p>Obnovovaciu frázu uchovávajte v bezpečí. Bez nej nie je možné šifrovanú zálohu v cloude obnoviť.</p>
+<h3>3.10 Odhlásenie oproti vymazaniu účtu</h3>
+<p>Lokálny JWT token relácie vyprší po 30 dňoch, pokiaľ nie je obnovený, a odstráni sa zo zariadenia pri odhlásení. Prepojenie s poskytovateľom, interný záznam používateľa, záznam nároku a aktuálna šifrovaná záloha v cloude sú uchovávané, kým nepoužijete možnosť <strong>Vymazať účet</strong> alebo nepožiadate podporu o ich vymazanie.</p>
+<p><strong>Odhlásenie</strong> odstráni iba lokálnu reláciu a vypne zálohovanie v cloude na danom zariadení. Nejde o akciu vymazania účtu.</p>
+<p><strong>Vymazanie účtu</strong>, použité počas pripojenia na internet, odošle overenú žiadosť o vymazanie do služby Mote a následne vymaže lokálny účet, šifrovací materiál a údaje aplikácie. Ak bolo zariadenie offline alebo žiadosť nebolo možné potvrdiť, kontaktujte <a href="mailto:mail@macsiem.dev">mail@macsiem.dev</a> na potvrdenie vymazania na strane servera.</p>
+<p>Odinštalovanie aplikácie odstráni lokálne údaje aplikácie v závislosti od operačného systému, ale samo osebe nezaručuje vymazanie prihláseného účtu na serveri ani šifrovanej zálohy.</p>
 <h2>4. Prečo spracúvame tieto údaje (účely)</h2>
 <ul>
 <li><strong>Spustenie aplikácie na vašom zariadení</strong> — lokálne úložisko a (ak je prítomné) šifrovanie umožňujú, aby vaše údaje pretrvali medzi reláciami.</li>
@@ -138,6 +158,7 @@
 <li><strong>Zlepšenie stability</strong> — diagnostika Sentry pomáha opravovať pády, ktoré ovplyvňujú vaše používanie.</li>
 <li><strong>Udržanie bezplatnej verzie</strong> — AdMob doručuje neinvazívne reklamy na financovanie používateľov, ktorí si nekupujú prémiové funkcie.</li>
 <li><strong>Spracovanie nákupov</strong> — fakturácia Apple / Google plní prémiové nároky, ktoré sa rozhodnete kúpiť.</li>
+<li><strong>Synchronizácia nároku a zálohy v cloude naprieč zariadeniami</strong> — pre používateľov, ktorí sa rozhodnú prihlásiť, synchronizácia nároku Premium a voliteľné obnovenie šifrovanej zálohy v cloude umožňujú obnoviť párovanie a nastavenia na novom zariadení.</li>
 </ul>
 <h2>5. Právny základ (článok 6 nariadenia GDPR)</h2>
 <p>Pre používateľov v Európskom hospodárskom priestore, Spojenom kráľovstve a Švajčiarsku:</p>
@@ -145,6 +166,7 @@
 <li><strong>Plnenie zmluvy</strong> (čl. 6 ods. 1 písm. b)) — spustenie aplikácie, synchronizácia s vaším partnerom, spracovanie vašich nákupov.</li>
 <li><strong>Oprávnený záujem</strong> (čl. 6 ods. 1 písm. f)) — diagnostika Sentry, prevencia podvodov / zneužitia, nepersonalizovaná reklama. Naším záujmom je zlepšenie stability a udržanie bezplatnej verzie; toto neprevažuje nad vašimi základnými právami.</li>
 <li><strong>Súhlas</strong> (čl. 6 ods. 1 písm. a)) — personalizovaná reklama, kde súhlas udeľujete prostredníctvom výzvy ATT (iOS) alebo preferencie v aplikácii. Súhlas môžete kedykoľvek odvolať bez toho, aby to ovplyvnilo predchádzajúce spracovanie.</li>
+<li><strong>Súhlas / zmluvná voľba pre voliteľné funkcie</strong> (čl. 6 ods. 1 písm. a) a b)) — prihlásenie cez Apple alebo Google a používanie šifrovanej zálohy v cloude sú voliteľné úkony, ktoré vykonávate podľa vlastného rozhodnutia. Súvisiace spracúvanie je založené na výslednej zmluve pre zvolenú funkciu alebo na vašom súhlase; súhlas môžete kedykoľvek odvolať odhlásením sa alebo vymazaním účtu.</li>
 <li><strong>Právna povinnosť</strong> (čl. 6 ods. 1 písm. c)) — iba vtedy, ak musíme reagovať na zákonnú žiadosť orgánov.</li>
 </ul>
 <h2>6. Príjemcovia (s kým zdieľame údaje)</h2>
@@ -152,7 +174,9 @@
 <table>
 <thead><tr><th>Príjemca</th><th>Účel</th><th>Kategória údajov</th><th>Zásady ochrany osobných údajov</th></tr></thead>
 <tbody>
-<tr><td>Cloudflare, Inc.</td><td>Relé pre párovanie (šifrovaný handshake + efemérne E2E správy)</td><td>Náhodné ID páru, šifrovaný blob</td><td><a href="https://www.cloudflare.com/privacypolicy/">https://www.cloudflare.com/privacypolicy/</a></td></tr>
+<tr><td>Cloudflare, Inc.</td><td>Relé pre párovanie; voliteľná služba účtu/relácie; synchronizácia nároku; uchovávanie šifrovanej zálohy v cloude</td><td>Náhodné ID páru, šifrovaný blob, identifikátor relácie, šifrovaný text zálohy (iba ak sa prihlásite a používate zálohu v cloude)</td><td><a href="https://www.cloudflare.com/privacypolicy/">https://www.cloudflare.com/privacypolicy/</a></td></tr>
+<tr><td>Apple Inc. (Sign in with Apple)</td><td>Voliteľná autentifikácia účtu</td><td>Token identity, e-mailová adresa (môže ísť o adresu Apple private relay)</td><td><a href="https://www.apple.com/legal/privacy/">https://www.apple.com/legal/privacy/</a></td></tr>
+<tr><td>Google LLC (Google Sign-In)</td><td>Voliteľná autentifikácia účtu</td><td>Token identity, e-mailová adresa</td><td><a href="https://policies.google.com/privacy">https://policies.google.com/privacy</a></td></tr>
 <tr><td>Google LLC (AdMob)</td><td>Zobrazovanie reklám</td><td>ID reklamy, metriky zariadenia a reklamy</td><td><a href="https://policies.google.com/privacy">https://policies.google.com/privacy</a></td></tr>
 <tr><td>Meta Platforms, Inc. (Meta Audience Network)</td><td>Zobrazovanie reklám</td><td>ID reklamy, metriky zariadenia a reklamy</td><td><a href="https://www.facebook.com/privacy/policy/">https://www.facebook.com/privacy/policy/</a></td></tr>
 <tr><td>Unity Technologies (Unity Ads)</td><td>Zobrazovanie reklám</td><td>ID reklamy, metriky zariadenia a reklamy</td><td><a href="https://unity.com/legal/privacy-policy">https://unity.com/legal/privacy-policy</a></td></tr>
@@ -180,13 +204,16 @@
 <tr><td>ID reklamy</td><td>Systémy Google AdMob</td><td>Podľa politiky uchovávania spoločnosti Google (zvyčajne až 14 mesiacov pre metriky reklamy)</td></tr>
 <tr><td>Údaje o páde Sentry</td><td>Systémy Sentry</td><td>Až 90 dní od udalosti</td></tr>
 <tr><td>Nákupný token / potvrdenie IAP</td><td>Vaše zariadenie + Apple / Google</td><td>Kým neodinstalujete; Apple / Google uchovávajú záznamy transakcií podľa ich vlastných zásad</td></tr>
+<tr><td>JWT token relácie</td><td>Vaše zariadenie (bezpečné úložisko)</td><td>Až 30 dní, obnoviteľný počas posledných 7 dní; odstránený pri odhlásení</td></tr>
+<tr><td>Prepojenie s poskytovateľom, interný záznam účtu, záznam nároku</td><td>Backend Mote (Cloudflare)</td><td>Kým nepoužijete možnosť Vymazať účet alebo nepožiadate podporu o jeho vymazanie</td></tr>
+<tr><td>Šifrovaná záloha v cloude</td><td>Backend Mote (Cloudflare)</td><td>Kým nevymažete svoj účet, nepožiadate o vymazanie, alebo ju nenahradí nová záloha</td></tr>
 </tbody></table>
 <h2>9. Vaše práva (články 15–22 nariadenia GDPR)</h2>
 <p>Máte nasledujúce práva týkajúce sa vašich osobných údajov:</p>
 <ul>
 <li><strong>Právo na prístup (čl. 15)</strong> — potvrdenie, či spracúvame vaše údaje, a ich kópia. Väčšina vašich údajov je už na vašom zariadení; exportujte ich z aplikácie alebo nám napíšte pre zvyšok.</li>
 <li><strong>Právo na opravu (čl. 16)</strong> — oprava nepresných údajov. Údaje upravte priamo v aplikácii.</li>
-<li><strong>Právo na vymazanie / „právo byť zabudnutý“ (čl. 17)</strong> — vymazanie všetkých údajov prostredníctvom Nastavenia → „Vymazať všetky údaje“ alebo odinštalovaním aplikácie. Údaje relé párovania automaticky vypršia.</li>
+<li><strong>Právo na vymazanie / „právo byť zabudnutý“ (čl. 17)</strong> — vymazanie všetkých údajov prostredníctvom Nastavenia → „Vymazať všetky údaje“ alebo odinštalovaním aplikácie. Údaje relé párovania automaticky vypršia. Ak máte voliteľný účet (prihlásený cez Apple alebo Google), použite Nastavenia → „Vymazať účet“ na odstránenie prepojenia s poskytovateľom, interného záznamu účtu, záznamu nároku a šifrovanej zálohy v cloude z našich serverov, ako aj lokálnych údajov — ide o inú akciu než „Odhlásenie“, ktoré vymaže iba lokálnu reláciu. Ak žiadosť o vymazanie nie je možné potvrdiť v režime offline, kontaktujte <a href="mailto:mail@macsiem.dev">mail@macsiem.dev</a> na potvrdenie vymazania na strane servera.</li>
 <li><strong>Právo na obmedzenie spracúvania (čl. 18)</strong> — požiadajte o dočasné zastavenie; napíšte nám.</li>
 <li><strong>Právo na prenosnosť údajov (čl. 20)</strong> — Nastavenia → „Exportovať údaje“ vytvorí balík JSON / Markdown.</li>
 <li><strong>Právo namietať (čl. 21)</strong> — namietať proti spracúvaniu založenému na oprávnenom záujme, najmä proti reklamám založeným na profilovaní. Zakážte personalizované reklamy v nastaveniach aplikácie alebo prostredníctvom systémových ovládacích prvkov.</li>
@@ -206,7 +233,7 @@
 <li><strong>End-to-end šifrovanie pri prenose</strong> — správy medzi pármi používajú <code>tweetnacl</code> (X25519 + XSalsa20-Poly1305). Každé zariadenie generuje vlastný pár kľúčov; súkromné kľúče nikdy neopustia zariadenie.</li>
 <li><strong>Bezpečnosť prenosu</strong> — všetky sieťové volania používajú HTTPS / TLS 1.2+.</li>
 <li><strong>Minimalizácia</strong> — zhromažďujeme len to, čo je potrebné pre uvedené účely.</li>
-<li><strong>Žiadne zálohy na naše servery</strong> — vaše záznamy nie sú zálohované na infraštruktúru Mote. Voliteľné zálohy na systémovej úrovni (iCloud Backup na iOS, Auto Backup na Android) zostávajú úplne pod vašou kontrolou.</li>
+<li><strong>Zálohy</strong> — vaše záznamy nie sú štandardne zálohované na infraštruktúru Mote. Ak sa prihlásite a máte oprávnený nárok Premium, môžete voliteľne zapnúť šifrovanú zálohu v cloude (pozrite časť 3.9); aplikácia zašifruje zálohu na vašom zariadení pred nahratím a Mote nedokáže prečítať jej obsah. Voliteľné zálohy na systémovej úrovni (iCloud Backup na iOS, Auto Backup na Android) zostávajú bez ohľadu na to úplne pod vašou kontrolou.</li>
 </ul>
 <p>Žiadny systém nie je 100% bezpečný; udržiavajte svoje zariadenie aktualizované a používajte silné zámky zariadenia.</p>
 <h2>13. Transparentnosť sledovania aplikácií (iOS) a ID reklamy</h2>

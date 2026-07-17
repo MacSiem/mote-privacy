@@ -70,14 +70,14 @@
     </div>
 
 <h1>Informativa sulla Privacy — Mote</h1>
-<p>Ultimo aggiornamento: 2026-05-06 · Data di entrata in vigore: 2026-05-06</p>
+<p>Ultimo aggiornamento: 2026-07-16 · Data di entrata in vigore: 2026-05-06</p>
 <h2>1. Chi siamo</h2>
 <p><strong>Mote</strong> è un'app mobile per coppie che aiuta a condividere momenti quotidiani di apprezzamento tra partner. La privacy è la base del prodotto: i dati sono <strong>crittografati end-to-end</strong>, l'app è <strong>offline-first</strong>, e la maggior parte dei contenuti non lascia mai il tuo dispositivo in una forma leggibile da chiunque altro se non da te e dal tuo partner.</p>
 <p><strong>Titolare del trattamento dei dati:</strong> Maciej Siemiński — lo sviluppatore di Mote. <strong>Contatto:</strong> <a href="mailto:mail@macsiem.dev">mail@macsiem.dev</a></p>
 <p>Per la versione dell'app distribuita tramite Google Play, il titolare del trattamento dei dati è LICENCEPRO POLSKA Sp. z o.o., ul. Huculska 6, 00-730 Warszawa, Polska.</p>
 <p>Questa Informativa sulla Privacy spiega quali dati personali Mote tratta, come, perché e quali diritti hai.</p>
 <h2>2. Riepilogo in linguaggio semplice</h2>
-<p>Non memorizziamo il contenuto dei tuoi inserimenti sui nostri server. I tuoi messaggi, foto, note vocali, registrazioni dell'umore e tag sono crittografati sul tuo dispositivo e, quando sincronizzati con il tuo partner, crittografati end-to-end durante il transito. Utilizziamo Google AdMob per annunci banner non invasivi su schermate ausiliarie e la fatturazione Apple/Google per elaborare gli acquisti in-app. Sentry viene utilizzato solo quando esplicitamente abilitato in una build per segnalare crash. Hai pieni diritti GDPR, inclusi accesso, cancellazione e portabilità — la maggior parte esercitabili direttamente nell'app.</p>
+<p>Non memorizziamo il contenuto dei tuoi inserimenti sui nostri server. I tuoi messaggi, foto, note vocali, check-in dell'umore e tag sono crittografati sul tuo dispositivo e, quando sincronizzati con il tuo partner, crittografati end-to-end durante il transito. Mote può essere utilizzato completamente senza creare un account; l'accesso con Apple o Google è opzionale e abilita la sincronizzazione dell'abilitazione Premium e il ripristino del backup crittografato in cloud sui tuoi dispositivi — non riceviamo mai il contenuto del tuo backup in cloud in forma non crittografata. Utilizziamo Google AdMob per annunci banner non invasivi su schermate ausiliarie e la fatturazione Apple/Google per elaborare gli acquisti in-app. Sentry viene utilizzato solo quando esplicitamente abilitato in una build per segnalare crash. Hai pieni diritti GDPR, inclusi accesso, cancellazione e portabilità — la maggior parte esercitabili direttamente nell'app.</p>
 <h2>3. Dati che trattiamo</h2>
 <h3>3.1 Dati solo locali</h3>
 <p>Inserimenti, messaggi, tag, registrazioni dell'umore, foto e note vocali che aggiungi sono archiviati <strong>localmente sul tuo dispositivo</strong> in forma crittografata (MMKV con una chiave derivata dal dispositivo e conservata in Apple Keychain / Android Keystore). Quando sincronizzati con il dispositivo del tuo partner abbinato, i contenuti sono <strong>crittografati end-to-end</strong> utilizzando le chiavi <code>tweetnacl</code> generate su ogni dispositivo — lo sviluppatore di Mote non può leggere i tuoi inserimenti.</p>
@@ -124,13 +124,33 @@
 <p>Ogni permesso viene richiesto contestualmente. Puoi negare qualsiasi permesso e continuare a utilizzare le funzionalità principali (ove applicabile).</p>
 <h3>3.7 Cosa NON raccogliamo</h3>
 <ul>
-<li>Il tuo nome, email, numero di telefono, indirizzo (nessun account è richiesto).</li>
+<li>Il tuo nome, numero di telefono o indirizzo — nessun account è richiesto per l'uso principale. Se scegli di accedere con Apple o Google, il provider potrebbe condividere con noi un indirizzo email; vedi la sezione 3.8.</li>
 <li>Elenco contatti, calendario, SMS, registri delle chiamate.</li>
 <li>Posizione precisa.</li>
 <li>Cronologia di navigazione al di fuori dell'app.</li>
 <li>Dati biometrici (Face ID / Touch ID è utilizzato solo come blocco a livello di sistema e non lascia mai il tuo dispositivo).</li>
 <li>Dati sanitari, finanziari o della carta di pagamento.</li>
 </ul>
+<h3>3.8 Account e accesso opzionali (Apple / Google)</h3>
+<p>Mote può essere utilizzato senza creare o accedere a un account. L'abbinamento e il flusso principale di apprezzamento rimangono disponibili in forma anonima. L'accesso è opzionale e viene utilizzato per la sincronizzazione dell'abilitazione Premium e il ripristino del backup crittografato in cloud sui dispositivi.</p>
+<p>Quando scegli di accedere con Apple o di accedere con Google:</p>
+<ul>
+<li>Apple o Google ti autentica e invia a Mote un token di identità;</li>
+<li>il servizio Mote verifica tale token e crea un ID utente interno;</li>
+<li>il provider potrebbe fornire il tuo indirizzo email. Con Apple, questo può essere un indirizzo Apple private-relay se hai selezionato Nascondi la mia email;</li>
+<li>Mote restituisce un JWT di sessione firmato. L'app memorizza il token nell'archiviazione sicura del sistema operativo e lo utilizza solo per le richieste autenticate a Mote.</li>
+</ul>
+<p>Il JWT di sessione è valido per 30 giorni e può essere rinnovato durante gli ultimi sette giorni. La disconnessione rimuove la sessione memorizzata sul dispositivo. La disconnessione non elimina il record dell'account lato server né il backup crittografato in cloud.</p>
+<p>Mote non riceve la tua password Apple o Google.</p>
+<h3>3.9 Backup crittografato in cloud (Premium)</h3>
+<p>Il backup in cloud è opzionale e richiede un'abilitazione Premium idonea, l'accesso, l'abbinamento e una frase di ripristino confermata. Prima del caricamento, l'app crittografa il backup sul dispositivo utilizzando una chiave derivata dalla frase di ripristino. Il servizio riceve il testo cifrato associato all'ID utente interno di Mote; non riceve la frase di ripristino né il backup in chiaro.</p>
+<p>Il backup crittografato in cloud può contenere il materiale di ripristino dell'abbinamento necessario per ripristinare la coppia, il nome visualizzato utilizzato all'interno di Mote e il materiale delle chiavi crittografato. Non contiene la tua password Apple o Google. Un nuovo caricamento sostituisce il backup corrente per quell'account Mote.</p>
+<p>Conserva la frase di ripristino in modo sicuro. Il backup crittografato in cloud non può essere ripristinato senza di essa.</p>
+<h3>3.10 Disconnessione ed eliminazione dell'account</h3>
+<p>Il JWT di sessione locale scade dopo 30 giorni se non viene rinnovato e viene rimosso dal dispositivo quando ti disconnetti. Il collegamento al provider, il record utente interno, il record di abilitazione e l'attuale backup crittografato in cloud vengono conservati fino a quando non utilizzi <strong>Elimina account</strong> o chiedi all'assistenza di eliminarli.</p>
+<p><strong>Disconnetti</strong> rimuove solo la sessione locale e disabilita il backup in cloud su quel dispositivo. Non è un'azione di eliminazione dell'account.</p>
+<p><strong>Elimina account</strong>, utilizzato mentre sei online, invia una richiesta di eliminazione autenticata al servizio Mote e poi cancella l'account locale, il materiale di crittografia e i dati dell'app. Se il dispositivo era offline o la richiesta non ha potuto essere confermata, contatta <a href="mailto:mail@macsiem.dev">mail@macsiem.dev</a> per confermare l'eliminazione lato server.</p>
+<p>La disinstallazione dell'app rimuove i dati locali dell'app in base al sistema operativo, ma non garantisce da sola l'eliminazione di un account server a cui hai effettuato l'accesso o del backup crittografato.</p>
 <h2>4. Perché trattiamo questi dati (finalità)</h2>
 <ul>
 <li><strong>Eseguire l'app sul tuo dispositivo</strong> — l'archiviazione locale e (ove presente) la crittografia consentono ai tuoi dati di persistere tra le sessioni.</li>
@@ -138,6 +158,7 @@
 <li><strong>Migliorare la stabilità</strong> — le diagnostiche di Sentry aiutano a risolvere i crash che influiscono sul tuo utilizzo.</li>
 <li><strong>Sostenere il livello gratuito</strong> — AdMob fornisce annunci non invasivi per finanziare gli utenti che non acquistano la versione premium.</li>
 <li><strong>Elaborare gli acquisti</strong> — la fatturazione Apple / Google soddisfa le abilitazioni premium che scegli di acquistare.</li>
+<li><strong>Sincronizzare l'abilitazione e il backup in cloud tra i dispositivi</strong> — per gli utenti che scelgono di accedere, la sincronizzazione dell'abilitazione Premium e il ripristino opzionale del backup crittografato in cloud consentono di ripristinare l'abbinamento e le impostazioni su un nuovo dispositivo.</li>
 </ul>
 <h2>5. Base giuridica (Art. 6 GDPR)</h2>
 <p>Per gli utenti nello Spazio Economico Europeo, nel Regno Unito e in Svizzera:</p>
@@ -145,6 +166,7 @@
 <li><strong>Esecuzione di un contratto</strong> (Art. 6, paragrafo 1, lettera b) — esecuzione dell'app, sincronizzazione con il tuo partner, elaborazione dei tuoi acquisti.</li>
 <li><strong>Legittimo interesse</strong> (Art. 6, paragrafo 1, lettera f) — diagnostiche di Sentry, prevenzione frodi / abusi, pubblicità non personalizzata. Il nostro interesse è migliorare la stabilità e sostenere il livello gratuito; questo non prevale sui tuoi diritti fondamentali.</li>
 <li><strong>Consenso</strong> (Art. 6, paragrafo 1, lettera a) — pubblicità personalizzata, dove concedi il consenso tramite il prompt ATT (iOS) o la preferenza in-app. Puoi revocare il consenso in qualsiasi momento senza pregiudicare il trattamento precedente.</li>
+<li><strong>Consenso / scelta contrattuale per le funzionalità opzionali</strong> (Art. 6, paragrafo 1, lettere a e b) — l'accesso con Apple o Google e l'utilizzo del backup crittografato in cloud sono azioni facoltative che scegli di intraprendere. Il trattamento correlato si basa sul contratto risultante per la funzionalità selezionata o sul tuo consenso; puoi revocarlo in qualsiasi momento disconnettendoti o eliminando il tuo account.</li>
 <li><strong>Obbligo legale</strong> (Art. 6, paragrafo 1, lettera c) — solo quando dobbiamo rispondere a una richiesta legittima da parte delle autorità.</li>
 </ul>
 <h2>6. Destinatari (con chi condividiamo i dati)</h2>
@@ -152,7 +174,9 @@
 <table>
 <thead><tr><th>Destinatari</th><th>Finalità</th><th>Categoria di dati</th><th>Informativa sulla privacy</th></tr></thead>
 <tbody>
-<tr><td>Cloudflare, Inc.</td><td>Relay di abbinamento (handshake crittografato + messaggi E2E effimeri)</td><td>ID di coppia casuale, blob crittografato</td><td><a href="https://www.cloudflare.com/privacypolicy/">https://www.cloudflare.com/privacypolicy/</a></td></tr>
+<tr><td>Cloudflare, Inc.</td><td>Relay di abbinamento; servizio account/sessione opzionale; sincronizzazione dell'abilitazione; archiviazione del backup crittografato in cloud</td><td>ID di coppia casuale, blob crittografato, identificatore di sessione, testo cifrato del backup crittografato (solo se accedi e utilizzi il backup in cloud)</td><td><a href="https://www.cloudflare.com/privacypolicy/">https://www.cloudflare.com/privacypolicy/</a></td></tr>
+<tr><td>Apple Inc. (Sign in with Apple)</td><td>Autenticazione account opzionale</td><td>Token di identità, indirizzo email (potrebbe essere un indirizzo Apple private-relay)</td><td><a href="https://www.apple.com/legal/privacy/">https://www.apple.com/legal/privacy/</a></td></tr>
+<tr><td>Google LLC (Google Sign-In)</td><td>Autenticazione account opzionale</td><td>Token di identità, indirizzo email</td><td><a href="https://policies.google.com/privacy">https://policies.google.com/privacy</a></td></tr>
 <tr><td>Google LLC (AdMob)</td><td>Pubblicazione di annunci</td><td>ID Pubblicitario, metriche dispositivo e annunci</td><td><a href="https://policies.google.com/privacy">https://policies.google.com/privacy</a></td></tr>
 <tr><td>Meta Platforms, Inc. (Meta Audience Network)</td><td>Pubblicazione di annunci</td><td>ID Pubblicitario, metriche dispositivo e annunci</td><td><a href="https://www.facebook.com/privacy/policy/">https://www.facebook.com/privacy/policy/</a></td></tr>
 <tr><td>Unity Technologies (Unity Ads)</td><td>Pubblicazione di annunci</td><td>ID Pubblicitario, metriche dispositivo e annunci</td><td><a href="https://unity.com/legal/privacy-policy">https://unity.com/legal/privacy-policy</a></td></tr>
@@ -180,13 +204,16 @@
 <tr><td>ID Pubblicitario</td><td>Sistemi Google AdMob</td><td>Secondo la politica di conservazione di Google (tipicamente fino a 14 mesi per le metriche pubblicitarie)</td></tr>
 <tr><td>Dati di crash Sentry</td><td>Sistemi Sentry</td><td>Fino a 90 giorni dall'evento</td></tr>
 <tr><td>Token di acquisto / ricevuta IAP</td><td>Il tuo dispositivo + Apple / Google</td><td>Fino alla disinstallazione; Apple / Google conservano i registri delle transazioni secondo le proprie politiche</td></tr>
+<tr><td>JWT di sessione</td><td>Il tuo dispositivo (archiviazione sicura)</td><td>Fino a 30 giorni, rinnovabile durante gli ultimi 7 giorni; rimosso alla disconnessione</td></tr>
+<tr><td>Collegamento al provider, record dell'account interno, record di abilitazione</td><td>Backend di Mote (Cloudflare)</td><td>Fino a quando non utilizzi Elimina account o chiedi all'assistenza di eliminarlo</td></tr>
+<tr><td>Backup crittografato in cloud</td><td>Backend di Mote (Cloudflare)</td><td>Fino all'eliminazione dell'account, alla richiesta di eliminazione o alla sostituzione con un nuovo backup</td></tr>
 </tbody></table>
 <h2>9. I tuoi diritti (Art. 15–22 GDPR)</h2>
 <p>Hai i seguenti diritti riguardo ai tuoi dati personali:</p>
 <ul>
 <li><strong>Diritto di accesso (Art. 15 GDPR)</strong> — conferma se trattiamo i tuoi dati e una copia degli stessi. La maggior parte dei tuoi dati è già sul tuo dispositivo; esporta dall'app o scrivici per il resto.</li>
 <li><strong>Diritto di rettifica (Art. 16 GDPR)</strong> — correggere dati inesatti. Modifica i dati direttamente nell'app.</li>
-<li><strong>Diritto alla cancellazione / "diritto all'oblio" (Art. 17 GDPR)</strong> — elimina tutti i dati tramite Impostazioni → "Cancella tutti i dati", o disinstallando l'app. I dati del relay di abbinamento scadono automaticamente.</li>
+<li><strong>Diritto alla cancellazione / "diritto all'oblio" (Art. 17 GDPR)</strong> — elimina tutti i dati tramite Impostazioni → "Cancella tutti i dati", o disinstallando l'app. I dati del relay di abbinamento scadono automaticamente. Se hai un account opzionale (accesso effettuato con Apple o Google), utilizza Impostazioni → "Elimina account" per rimuovere dai nostri server il collegamento al provider, il record dell'account interno, il record di abilitazione e il backup crittografato in cloud, oltre ai dati locali — questa è un'azione distinta dalla "Disconnessione", che cancella solo la sessione locale. Se la richiesta di eliminazione non può essere confermata offline, contatta <a href="mailto:mail@macsiem.dev">mail@macsiem.dev</a> per confermare l'eliminazione lato server.</li>
 <li><strong>Diritto di limitazione di trattamento (Art. 18 GDPR)</strong> — richiedere una sospensione temporanea; scrivici.</li>
 <li><strong>Diritto alla portabilità dei dati (Art. 20 GDPR)</strong> — Impostazioni → "Esporta dati" produce un pacchetto JSON / Markdown.</li>
 <li><strong>Diritto di opposizione (Art. 21 GDPR)</strong> — opporti al trattamento basato su legittimo interesse, specialmente per annunci pubblicitari di tipo profilazione. Disabilita gli annunci personalizzati nelle impostazioni dell'app o tramite i controlli di sistema.</li>
@@ -206,7 +233,7 @@
 <li><strong>Crittografia end-to-end in transito</strong> — i messaggi da coppia a coppia utilizzano <code>tweetnacl</code> (X25519 + XSalsa20-Poly1305). Ogni dispositivo genera la propria coppia di chiavi; le chiavi private non lasciano mai il dispositivo.</li>
 <li><strong>Sicurezza del trasporto</strong> — tutte le chiamate di rete utilizzano HTTPS / TLS 1.2+.</li>
 <li><strong>Minimizzazione</strong> — raccogliamo solo ciò che è richiesto per le finalità elencate.</li>
-<li><strong>Nessun backup sui nostri server</strong> — i tuoi inserimenti non sono sottoposti a backup sull'infrastruttura di Mote. I backup opzionali a livello di sistema (iCloud Backup su iOS, Auto Backup su Android) rimangono interamente sotto il tuo controllo.</li>
+<li><strong>Backup</strong> — i tuoi inserimenti non vengono sottoposti a backup sull'infrastruttura di Mote per impostazione predefinita. Se accedi e disponi di un'abilitazione Premium idonea, puoi opzionalmente attivare il backup crittografato in cloud (vedi la sezione 3.9); l'app crittografa il backup sul tuo dispositivo prima del caricamento e Mote non può leggerne il contenuto. I backup opzionali a livello di sistema (iCloud Backup su iOS, Auto Backup su Android) rimangono comunque interamente sotto il tuo controllo.</li>
 </ul>
 <p>Nessun sistema è sicuro al 100%; ti preghiamo di mantenere il tuo dispositivo aggiornato e di utilizzare blocchi dispositivo robusti.</p>
 <h2>13. App Tracking Transparency (iOS) e ID Pubblicitario</h2>
