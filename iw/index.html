@@ -77,7 +77,7 @@
 <p>עבור גרסת האפליקציה המופצת דרך Google Play, בקר הנתונים הוא LICENCEPRO POLSKA Sp. z o.o., ul. Huculska 6, 00-730 Warszawa, Polska.</p>
 <p>מדיניות פרטיות זו מסבירה אילו נתונים אישיים Mote מעבדת, כיצד, מדוע, ואילו זכויות יש לכם.</p>
 <h2>2. תקציר בשפה פשוטה</h2>
-<p>איננו מאחסנים את תוכן הרשומות שלכם בשרתינו. ההודעות, התמונות, ההודעות הקוליות, בדיקות מצב הרוח והתגים שלכם מוצפנים במכשיר שלכם, וכאשר הם מסונכרנים עם בן/בת זוגכם, הם מוצפנים מקצה לקצה בזמן ההעברה. ניתן להשתמש ב-Mote באופן מלא בלי ליצור חשבון; התחברות באמצעות Apple או Google היא אופציונלית ומאפשרת סנכרון של זכאות Premium ושחזור של גיבוי מוצפן בענן על פני המכשירים שלכם — אנו לעולם לא מקבלים את תוכן הגיבוי בענן שלכם בצורה לא מוצפנת. אנו משתמשים ב-Google AdMob עבור מודעות באנר לא פולשניות במסכים משניים ובחיוב של Apple/Google לעיבוד רכישות מתוך האפליקציה. Sentry משמש רק כאשר הוא מופעל במפורש בבנייה (build) לדיווח על קריסות. יש לכם זכויות GDPR מלאות הכוללות גישה, מחיקה וניידות — רובן ניתנות למימוש ישירות באפליקציה.</p>
+<p>איננו מאחסנים את תוכן הרשומות שלכם בשרתינו. ההודעות, התמונות, ההודעות הקוליות, בדיקות מצב הרוח והתגים שלכם מוצפנים במכשיר שלכם, וכאשר הם מסונכרנים עם בן/בת זוגכם, הם מוצפנים מקצה לקצה בזמן ההעברה. ניתן להשתמש ב-Mote באופן מלא בלי ליצור חשבון; התחברות באמצעות Apple או Google היא אופציונלית ומאפשרת סנכרון של זכאות Premium ושחזור של גיבוי מוצפן בענן על פני המכשירים שלכם — אנו לעולם לא מקבלים את תוכן הגיבוי בענן שלכם בצורה לא מוצפנת. אנו משתמשים ב-Unity Ads עבור מודעות באנר לא פולשניות במסכים משניים ובחיוב של Apple/Google לעיבוד רכישות מתוך האפליקציה. Sentry משמש רק כאשר הוא מופעל במפורש בבנייה (build) לדיווח על קריסות. יש לכם זכויות GDPR מלאות הכוללות גישה, מחיקה וניידות — רובן ניתנות למימוש ישירות באפליקציה.</p>
 <h2>3. נתונים שאנו מעבדים</h2>
 <h3>3.1 נתונים מקומיים בלבד</h3>
 <p>רשומות, הודעות, תגים, בדיקות מצב רוח, תמונות והודעות קוליות שאתם מוסיפים מאוחסנים <strong>באופן מקומי במכשיר שלכם</strong> בצורה מוצפנת (MMKV עם מפתח שמקורו במכשיר, הנשמר ב-Apple Keychain / Android Keystore). כאשר התוכן מסונכרן עם המכשיר של בן/בת זוגכם המותאם, הוא <strong>מוצפן מקצה לקצה</strong> באמצעות מפתחות <code>tweetnacl</code> הנוצרים בכל מכשיר — מפתח Mote אינו יכול לקרוא את הרשומות שלכם.</p>
@@ -97,13 +97,12 @@
 <li>גרסת אפליקציה ומספר build.</li>
 </ul>
 <p>Sentry <strong>אינה</strong> אוספת את התוכן שלכם (רשומות, קבצים, תיעוד חיסונים, תמונות, ארכיונים), שמות משתמש או מידע מזהה אישי אחר (PII). נתוני האבחון נשמרים על ידי Sentry למשך עד <strong>90 יום</strong>. בחלק מבנייני הייצור (production builds) Sentry מושבתת בכוונה (אין DSN מוגדר) — במקרה זה, אין נתוני אבחון עוזבים את המכשיר שלכם.</p>
-<h3>3.4 פרסום (AdMob)</h3>
-<p>Mote מציגה מודעות לא פולשניות במסכי הגדרות, מצב ריק (Empty state) וייצוא. המודעות נמסרות על ידי <strong>Google AdMob</strong>, ו-SDK שלה אוסף:</p>
+<h3>3.4 פרסום (Unity Ads)</h3>
+<p>Mote מציגה מודעות לא פולשניות במסכי הגדרות, מצב ריק (Empty state) וייצוא. המודעות נמסרות על ידי <strong>Unity Ads</strong>, ו-SDK שלה אוסף:</p>
 <ul>
 <li>את <strong>מזהה הפרסום</strong> (Android Advertising ID / Apple IDFA), המשותף עם Google כדי להציג מודעות;</li>
 <li>נתוני אבחון (דגם מכשיר, מיקום ברמת מדינה, שפה).</li>
 </ul>
-<p>Ads may also be served by AdMob mediation partners: Meta Platforms, Inc. (<a href="https://www.facebook.com/privacy/policy/">Meta Audience Network</a>) and Unity Technologies (<a href="https://unity.com/legal/privacy-policy">Unity Ads</a>).</p>
 <p>מצב ברירת המחדל הוא <strong>מודעות לא מותאמות אישית</strong>. ב-iOS, הנחיית App Tracking Transparency (ATT) מבקשת את הסכמתכם לפני שנעשה שימוש במזהה כלשהו לצורך מעקב; באנדרואיד אתם שולטים במזהה הפרסום תחת הגדרות המערכת. ניתן להשבית מודעות לצמיתות באמצעות ה-IAP של Lifetime / Premium.</p>
 <h3>3.5 רכישות מתוך האפליקציה (IAP)</h3>
 <p>Mote מציעה תכונות בתשלום באמצעות Apple In-App Purchase (iOS) ו-Google Play Billing (Android). כאשר אתם מבצעים רכישה:</p>
@@ -156,7 +155,7 @@
 <li><strong>הפעלת האפליקציה במכשיר שלכם</strong> — אחסון מקומי ו(במידת הצורך) הצפנה מאפשרים לנתונים שלכם להישמר בין סשנים.</li>
 <li><strong>סנכרון עם בן/בת זוגכם</strong> — ממסר ההתאמה מאפשר מסירה מקצה לקצה בזמן אמת של התוכן המוצפן שלכם.</li>
 <li><strong>שיפור היציבות</strong> — אבחוני Sentry עוזרים לתקן קריסות המשפיעות על השימוש שלכם.</li>
-<li><strong>תמיכה בשכבה החינמית</strong> — AdMob מספקת מודעות לא פולשניות למימון משתמשים שאינם רוכשים פרימיום.</li>
+<li><strong>תמיכה בשכבה החינמית</strong> — Unity Ads מספקת מודעות לא פולשניות למימון משתמשים שאינם רוכשים פרימיום.</li>
 <li><strong>עיבוד רכישות</strong> — חיוב Apple / Google ממלא זכאויות פרימיום שאתם בוחרים לרכוש.</li>
 <li><strong>סנכרון זכאות וגיבוי בענן בין מכשירים</strong> — עבור משתמשים שבוחרים להתחבר, סנכרון זכאות Premium וגיבוי מוצפן בענן אופציונלי מאפשרים לשחזר את ההתאמה וההגדרות שלכם במכשיר חדש.</li>
 </ul>
@@ -177,8 +176,6 @@
 <tr><td>Cloudflare, Inc.</td><td>ממסר התאמה; שירות חשבון/סשן אופציונלי; סנכרון זכאות; אחסון גיבוי מוצפן בענן</td><td>Random pair ID, encrypted blob, מזהה סשן, טקסט מוצפן של הגיבוי (רק אם תתחברו ותשתמשו בגיבוי בענן)</td><td><a href="https://www.cloudflare.com/privacypolicy/">https://www.cloudflare.com/privacypolicy/</a></td></tr>
 <tr><td>Apple Inc. (Sign in with Apple)</td><td>אימות חשבון אופציונלי</td><td>אסימון זהות, כתובת דוא"ל (עשויה להיות כתובת Apple Private Relay)</td><td><a href="https://www.apple.com/legal/privacy/">https://www.apple.com/legal/privacy/</a></td></tr>
 <tr><td>Google LLC (Google Sign-In)</td><td>אימות חשבון אופציונלי</td><td>אסימון זהות, כתובת דוא"ל</td><td><a href="https://policies.google.com/privacy">https://policies.google.com/privacy</a></td></tr>
-<tr><td>Google LLC (AdMob)</td><td>הצגת מודעות</td><td>Advertising ID, device &amp; ad metrics</td><td><a href="https://policies.google.com/privacy">https://policies.google.com/privacy</a></td></tr>
-<tr><td>Meta Platforms, Inc. (Meta Audience Network)</td><td>הצגת מודעות</td><td>Advertising ID, device &amp; ad metrics</td><td><a href="https://www.facebook.com/privacy/policy/">https://www.facebook.com/privacy/policy/</a></td></tr>
 <tr><td>Unity Technologies (Unity Ads)</td><td>הצגת מודעות</td><td>Advertising ID, device &amp; ad metrics</td><td><a href="https://unity.com/legal/privacy-policy">https://unity.com/legal/privacy-policy</a></td></tr>
 <tr><td>Functional Software Inc. (Sentry)</td><td>דיווח על קריסות</td><td>Stack traces, device metadata</td><td><a href="https://sentry.io/privacy/">https://sentry.io/privacy/</a></td></tr>
 <tr><td>Apple Inc. (App Store / IAP)</td><td>עיבוד רכישות מתוך האפליקציה ב-iOS</td><td>Purchase token, account-level entitlement</td><td><a href="https://www.apple.com/legal/privacy/">https://www.apple.com/legal/privacy/</a></td></tr>
@@ -201,7 +198,7 @@
 <tr><td>blob של לחיצת יד להתאמה</td><td>ממסר Cloudflare (מוצפן)</td><td>עד 24 שעות, ואז יפוג אוטומטית</td></tr>
 <tr><td>הודעות E2E בזמן אמת</td><td>ממסר Cloudflare (מוצפן)</td><td>נשמרות רק עד למסירה למכשיר המותאם, ואז נמחקות</td></tr>
 <tr><td>Random pair ID</td><td>שני המכשירים + ממסר</td><td>עד שתבטלו את ההתאמה או תמחקו את נתוני האפליקציה</td></tr>
-<tr><td>Advertising ID</td><td>מערכות Google AdMob</td><td>לפי מדיניות שמירת הנתונים של Google (בדרך כלל עד 14 חודשים למדדי מודעות)</td></tr>
+<tr><td>Advertising ID</td><td>מערכות Unity Ads</td><td>לפי מדיניות שמירת הנתונים של Unity</td></tr>
 <tr><td>Sentry crash data</td><td>מערכות Sentry</td><td>עד 90 יום מהאירוע</td></tr>
 <tr><td>IAP purchase token / receipt</td><td>המכשיר שלכם + Apple / Google</td><td>עד שתסירו את ההתקנה; Apple / Google שומרות רשומות עסקאות לפי המדיניות שלהן</td></tr>
 <tr><td>טוקן סשן JWT</td><td>המכשיר שלכם (אחסון מאובטח)</td><td>עד 30 יום, ניתן לרענון בשבעת הימים האחרונים; מוסר בעת התנתקות</td></tr>
@@ -237,8 +234,8 @@
 </ul>
 <p>אף מערכת אינה מאובטחת ב-100%; אנא עדכנו את המכשיר שלכם והשתמשו במנעולי מכשיר חזקים.</p>
 <h2>13. שקיפות מעקב אפליקציות (iOS) ומזהה פרסום</h2>
-<p>ב-iOS, לפני ש-AdMob משתמשת במזהה כלשהו לצורך מעקב, Mote מציגה את הנחיית המערכת <strong>App Tracking Transparency</strong>. אם תסרבו, Mote תציג רק מודעות לא מותאמות אישית.</p>
-<p>באנדרואיד, אתם יכולים לאפס או להגביל את מזהה הפרסום שלכם תחת <strong>הגדרות ← Google ← מודעות</strong>. בחירה ב"מחק מזהה פרסום" מונעת מ-AdMob להשתמש במזהה אישי; מודעות לא מותאמות אישית ממשיכות להיות מוצגות.</p>
+<p>ב-iOS, לפני ש-Unity Ads משתמשת במזהה כלשהו לצורך מעקב, Mote מציגה את הנחיית המערכת <strong>App Tracking Transparency</strong>. אם תסרבו, Mote תציג רק מודעות לא מותאמות אישית.</p>
+<p>באנדרואיד, אתם יכולים לאפס או להגביל את מזהה הפרסום שלכם תחת <strong>הגדרות ← Google ← מודעות</strong>. בחירה ב"מחק מזהה פרסום" מונעת מ-Unity Ads להשתמש במזהה אישי; מודעות לא מותאמות אישית ממשיכות להיות מוצגות.</p>
 <h2>14. רכישות מתוך האפליקציה</h2>
 <p>Mote מציעה את המוצרים הבאים מתוך האפליקציה באמצעות Apple App Store ו-Google Play: מנוי שנתי, פתיחה לכל החיים, קופת טיפים אופציונלית.</p>
 <p>כל נתוני התשלום מטופלים על ידי <strong>Apple Inc.</strong> (App Store / חשבון iTunes) או <strong>Google LLC</strong> (Play Billing). אנו לעולם לא רואים את מספר הכרטיס שלכם, כתובת החיוב שלכם, או את חשבון Apple ID / Google המלא שלכם. Apple ו-Google מחזירות רק אסימון רכישה אטום ומטא נתונים של זכאות שאנו משתמשים בהם כדי לפתוח תכונות. ניתן לבטל מנויים בכל עת בהגדרות iOS ← Apple ID ← מנויים או באפליקציית Google Play ← מנויים; כללי הביטול כפופים ל-Apple / Google.</p>

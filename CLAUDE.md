@@ -25,7 +25,7 @@ Canonical project memory:
 - `index.html` — root with auto-redirect to PL/EN per browser locale
 - `pl/` — Polish privacy policy
 - `en/` — English privacy policy
-- `app-ads.txt` — AdMob ads.txt declaration (added 2026-05-03; required for AdMob ads serving on Mote — publisher pub-5353750048775501, cert f08c47fec0942fa0)
+- `app-ads.txt` — Unity Ads ads.txt declaration (added 2026-05-03; required for Unity Ads ads serving on Mote — publisher pub-5353750048775501, cert f08c47fec0942fa0)
   - Format: `google.com, pub-5353750048775501, DIRECT, f08c47fec0942fa0`
   - Verifies publisher ownership for `com.mojemote.app` (App Store + Google Play); ASC marketing URL + Play developer URL must declare `https://macsiem.github.io/mote-privacy/`
-  - Do not remove without coordinating with AdMob console
+  - Do not remove without coordinating with Unity Ads console

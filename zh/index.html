@@ -77,7 +77,7 @@
 <p>对于通过 Google Play 分发的应用版本，数据控制者为 LICENCEPRO POLSKA Sp. z o.o., ul. Huculska 6, 00-730 Warszawa, Polska。</p>
 <p>本隐私政策解释了 Mote 处理哪些个人数据，如何处理，为何处理以及您拥有哪些权利。</p>
 <h2>2. 简明摘要</h2>
-<p>我们不会在我们的服务器上存储您的日记内容。您的消息、照片、语音备忘录、心情签到和标签会在您的设备上加密，并在与您的伴侣同步时进行传输中的端到端加密。无需创建账户，Mote 即可完整使用；使用 Apple 或 Google 登录是可选的，可实现 Premium 权益跨设备同步以及加密云备份的恢复——我们绝不会以未加密的形式获取您的云备份内容。我们使用 Google AdMob 在辅助屏幕上显示非侵入性横幅广告，并使用 Apple/Google 账单处理应用内购买。Sentry 仅在构建中明确启用以报告崩溃时使用。您拥有完整的 GDPR 权利，包括访问、删除和可移植性——其中大部分可直接在应用中行使。</p>
+<p>我们不会在我们的服务器上存储您的日记内容。您的消息、照片、语音备忘录、心情签到和标签会在您的设备上加密，并在与您的伴侣同步时进行传输中的端到端加密。无需创建账户，Mote 即可完整使用；使用 Apple 或 Google 登录是可选的，可实现 Premium 权益跨设备同步以及加密云备份的恢复——我们绝不会以未加密的形式获取您的云备份内容。我们使用 Unity Ads 在辅助屏幕上显示非侵入性横幅广告，并使用 Apple/Google 账单处理应用内购买。Sentry 仅在构建中明确启用以报告崩溃时使用。您拥有完整的 GDPR 权利，包括访问、删除和可移植性——其中大部分可直接在应用中行使。</p>
 <h2>3. 我们处理的数据</h2>
 <h3>3.1 仅限本地数据</h3>
 <p>您添加的日记、消息、标签、心情签到、照片和语音备忘录以加密形式（使用 Apple Keychain / Android Keystore 中保存的设备派生密钥的 MMKV）<strong>本地存储在您的设备上</strong>。当与您配对的伴侣设备同步时，内容会使用在每台设备上生成的 <code>tweetnacl</code> 密钥进行<strong>端到端加密</strong> — Mote 的开发者无法读取您的日记。</p>
@@ -97,13 +97,12 @@
 <li>应用版本和构建号。</li>
 </ul>
 <p>Sentry <strong>不</strong>收集您的内容（日记、文件、疫苗接种记录、照片、存档）、用户名或其他个人身份信息（PII）。诊断数据由 Sentry 最多保留 <strong>90 天</strong>。在某些生产版本中，Sentry 会被有意禁用（未配置 DSN）— 在这种情况下，设备不会离开任何诊断数据。</p>
-<h3>3.4 广告 (AdMob)</h3>
-<p>Mote 在“设置”、“空状态”和“导出”页面显示非侵入性广告。广告由 <strong>Google AdMob</strong> 提供，其 SDK 收集：</p>
+<h3>3.4 广告 (Unity Ads)</h3>
+<p>Mote 在“设置”、“空状态”和“导出”页面显示非侵入性广告。广告由 <strong>Unity Ads</strong> 提供，其 SDK 收集：</p>
 <ul>
 <li><strong>广告 ID</strong> (Android Advertising ID / Apple IDFA)，与 Google 共享以投放广告；</li>
 <li>诊断数据（设备型号、国家级位置、语言）。</li>
 </ul>
-<p>Ads may also be served by AdMob mediation partners: Meta Platforms, Inc. (<a href="https://www.facebook.com/privacy/policy/">Meta Audience Network</a>) and Unity Technologies (<a href="https://unity.com/legal/privacy-policy">Unity Ads</a>).</p>
 <p>默认模式是<strong>非个性化广告</strong>。在 iOS 上，应用跟踪透明度 (ATT) 提示会在使用任何跟踪级标识符之前征求您的同意；在 Android 上，您可以在系统设置中控制广告 ID。广告可通过“终身 / 高级”应用内购买 (IAP) 永久禁用。</p>
 <h3>3.5 应用内购买 (IAP)</h3>
 <p>Mote 通过 Apple 应用内购买 (iOS) 和 Google Play 结算 (Android) 提供付费功能。当您进行购买时：</p>
@@ -156,7 +155,7 @@
 <li><strong>在您的设备上运行应用</strong> — 本地存储和（如果存在）加密使您的数据在会话之间持续存在。</li>
 <li><strong>与您的伴侣同步</strong> — 配对中继实现您的加密内容的实时 E2E 传输。</li>
 <li><strong>提高稳定性</strong> — Sentry 诊断有助于修复影响您使用的崩溃。</li>
-<li><strong>维持免费层级</strong> — AdMob 提供非侵入性广告，为不购买高级版的用户提供资金。</li>
+<li><strong>维持免费层级</strong> — Unity Ads 提供非侵入性广告，为不购买高级版的用户提供资金。</li>
 <li><strong>处理购买</strong> — Apple / Google 结算实现您选择购买的高级授权。</li>
 <li><strong>跨设备同步权益和云备份</strong> — 对于选择登录的用户，Premium 权益同步和可选的加密云备份恢复功能可让您在新设备上恢复配对和设置。</li>
 </ul>
@@ -177,8 +176,6 @@
 <tr><td>Cloudflare, Inc.</td><td>配对中继；可选的账户/会话服务；权益同步；加密云备份存储</td><td>随机配对 ID, 加密数据块, 会话标识符, 加密备份密文（仅当您登录并使用云备份时）</td><td><a href="https://www.cloudflare.com/privacypolicy/">https://www.cloudflare.com/privacypolicy/</a></td></tr>
 <tr><td>Apple Inc. (Sign in with Apple)</td><td>可选的账户身份验证</td><td>身份令牌, 电子邮件地址（可能是 Apple 转发地址）</td><td><a href="https://www.apple.com/legal/privacy/">https://www.apple.com/legal/privacy/</a></td></tr>
 <tr><td>Google LLC (Google Sign-In)</td><td>可选的账户身份验证</td><td>身份令牌, 电子邮件地址</td><td><a href="https://policies.google.com/privacy">https://policies.google.com/privacy</a></td></tr>
-<tr><td>Google LLC (AdMob)</td><td>提供广告</td><td>广告 ID, 设备和广告指标</td><td><a href="https://policies.google.com/privacy">https://policies.google.com/privacy</a></td></tr>
-<tr><td>Meta Platforms, Inc. (Meta Audience Network)</td><td>提供广告</td><td>广告 ID, 设备和广告指标</td><td><a href="https://www.facebook.com/privacy/policy/">https://www.facebook.com/privacy/policy/</a></td></tr>
 <tr><td>Unity Technologies (Unity Ads)</td><td>提供广告</td><td>广告 ID, 设备和广告指标</td><td><a href="https://unity.com/legal/privacy-policy">https://unity.com/legal/privacy-policy</a></td></tr>
 <tr><td>Functional Software Inc. (Sentry)</td><td>崩溃报告</td><td>堆栈跟踪、设备元数据</td><td><a href="https://sentry.io/privacy/">https://sentry.io/privacy/</a></td></tr>
 <tr><td>Apple Inc. (App Store / IAP)</td><td>iOS 应用内购买处理</td><td>购买令牌、账户级授权</td><td><a href="https://www.apple.com/legal/privacy/">https://www.apple.com/legal/privacy/</a></td></tr>
@@ -201,7 +198,7 @@
 <tr><td>配对握手数据块</td><td>Cloudflare 中继（已加密）</td><td>最多 24 小时，然后自动过期</td></tr>
 <tr><td>实时 E2E 消息</td><td>Cloudflare 中继（已加密）</td><td>仅存储直到传递到配对设备，然后删除</td></tr>
 <tr><td>随机配对 ID</td><td>两台设备 + 中继</td><td>直到您解除配对或删除应用数据</td></tr>
-<tr><td>广告 ID</td><td>Google AdMob 系统</td><td>根据 Google 的保留政策（广告指标通常最多 14 个月）</td></tr>
+<tr><td>广告 ID</td><td>Unity Ads 系统</td><td>根据 Unity 的保留政策</td></tr>
 <tr><td>Sentry 崩溃数据</td><td>Sentry 系统</td><td>自事件发生起最多 90 天</td></tr>
 <tr><td>IAP 购买令牌 / 收据</td><td>您的设备 + Apple / Google</td><td>直到您卸载；Apple / Google 根据其自身政策保留交易记录</td></tr>
 <tr><td>会话 JWT</td><td>您的设备（安全存储）</td><td>最长 30 天，可在最后 7 天内刷新；登出时移除</td></tr>
@@ -237,8 +234,8 @@
 </ul>
 <p>没有任何系统是 100% 安全的；请保持您的设备更新并使用强设备锁。</p>
 <h2>13. 应用跟踪透明度 (iOS) 和广告 ID</h2>
-<p>在 iOS 上，在 AdMob 使用任何跟踪级标识符之前，Mote 会显示系统<strong>应用跟踪透明度</strong>提示。如果您拒绝，Mote 只会提供非个性化广告。</p>
-<p>在 Android 上，您可以在<strong>设置 → Google → 广告</strong>下重置或限制您的广告 ID。选择“删除广告 ID”会阻止 AdMob 使用个人标识符；非个性化广告将继续显示。</p>
+<p>在 iOS 上，在 Unity Ads 使用任何跟踪级标识符之前，Mote 会显示系统<strong>应用跟踪透明度</strong>提示。如果您拒绝，Mote 只会提供非个性化广告。</p>
+<p>在 Android 上，您可以在<strong>设置 → Google → 广告</strong>下重置或限制您的广告 ID。选择“删除广告 ID”会阻止 Unity Ads 使用个人标识符；非个性化广告将继续显示。</p>
 <h2>14. 应用内购买</h2>
 <p>Mote 通过 Apple App Store 和 Google Play 提供以下应用内产品：年度订阅、终身解锁、可选打赏罐。</p>
 <p>所有支付数据均由 <strong>Apple Inc.</strong> (App Store / iTunes 账户) 或 <strong>Google LLC</strong> (Play Billing) 处理。我们从不查看您的卡号、账单地址或您的完整 Apple ID / Google 账户。Apple 和 Google 仅返回一个不透明的购买令牌和授权元数据，我们用它来解锁功能。订阅可在 iOS “设置”→“Apple ID”→“订阅”或 Google Play 应用 →“订阅”中随时取消；取消规则受 Apple / Google 规定。</p>

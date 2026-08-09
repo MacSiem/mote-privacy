@@ -77,7 +77,7 @@
 <p>Untuk versi aplikasi yang didistribusikan melalui Google Play, pengendali data adalah LICENCEPRO POLSKA Sp. z o.o., ul. Huculska 6, 00-730 Warszawa, Polska.</p>
 <p>Kebijakan Privasi ini menjelaskan data pribadi apa yang Mote proses, bagaimana, mengapa, dan hak-hak apa yang Anda miliki.</p>
 <h2>2. Ringkasan bahasa sederhana</h2>
-<p>Kami tidak menyimpan konten entri Anda di server kami. Pesan, foto, catatan suara, check-in suasana hati, dan tag Anda dienkripsi di perangkat Anda dan, saat disinkronkan dengan pasangan Anda, dienkripsi ujung ke ujung saat transit. Mote dapat digunakan sepenuhnya tanpa membuat akun; masuk dengan Apple atau Google bersifat opsional dan memungkinkan sinkronisasi hak Premium serta pemulihan cadangan cloud terenkripsi di seluruh perangkat Anda — kami tidak pernah menerima konten cadangan cloud Anda dalam bentuk tidak terenkripsi. Kami menggunakan Google AdMob untuk iklan banner yang tidak mengganggu di layar tambahan dan penagihan Apple/Google untuk memproses pembelian dalam aplikasi. Sentry hanya digunakan ketika secara eksplisit diaktifkan dalam build untuk melaporkan kerusakan. Anda memiliki hak GDPR penuh termasuk akses, penghapusan, dan portabilitas — sebagian besar dapat dilaksanakan langsung di aplikasi.</p>
+<p>Kami tidak menyimpan konten entri Anda di server kami. Pesan, foto, catatan suara, check-in suasana hati, dan tag Anda dienkripsi di perangkat Anda dan, saat disinkronkan dengan pasangan Anda, dienkripsi ujung ke ujung saat transit. Mote dapat digunakan sepenuhnya tanpa membuat akun; masuk dengan Apple atau Google bersifat opsional dan memungkinkan sinkronisasi hak Premium serta pemulihan cadangan cloud terenkripsi di seluruh perangkat Anda — kami tidak pernah menerima konten cadangan cloud Anda dalam bentuk tidak terenkripsi. Kami menggunakan Unity Ads untuk iklan banner yang tidak mengganggu di layar tambahan dan penagihan Apple/Google untuk memproses pembelian dalam aplikasi. Sentry hanya digunakan ketika secara eksplisit diaktifkan dalam build untuk melaporkan kerusakan. Anda memiliki hak GDPR penuh termasuk akses, penghapusan, dan portabilitas — sebagian besar dapat dilaksanakan langsung di aplikasi.</p>
 <h2>3. Data yang kami proses</h2>
 <h3>3.1 Data khusus lokal</h3>
 <p>Entri, pesan, tag, check-in suasana hati, foto, dan catatan suara yang Anda tambahkan disimpan <strong>secara lokal di perangkat Anda</strong> dalam bentuk terenkripsi (MMKV dengan kunci turunan perangkat yang disimpan di Apple Keychain / Android Keystore). Saat disinkronkan dengan perangkat pasangan Anda yang terpasang, konten dienkripsi <strong>ujung ke ujung</strong> menggunakan kunci <code>tweetnacl</code> yang dibuat di setiap perangkat — pengembang Mote tidak dapat membaca entri Anda.</p>
@@ -97,13 +97,12 @@
 <li>versi aplikasi dan nomor build.</li>
 </ul>
 <p>Sentry <strong>tidak</strong> mengumpulkan konten Anda (entri, file, catatan vaksinasi, foto, arsip), nama pengguna, atau PII lainnya. Data diagnostik disimpan oleh Sentry hingga <strong>90 hari</strong>. Dalam beberapa build produksi, Sentry sengaja dinonaktifkan (tidak ada DSN yang dikonfigurasi) — dalam hal ini tidak ada data diagnostik yang meninggalkan perangkat Anda.</p>
-<h3>3.4 Periklanan (AdMob)</h3>
-<p>Mote menampilkan iklan yang tidak mengganggu di Pengaturan, status Kosong, dan Ekspor. Iklan dikirimkan oleh <strong>Google AdMob</strong>, yang SDK-nya mengumpulkan:</p>
+<h3>3.4 Periklanan (Unity Ads)</h3>
+<p>Mote menampilkan iklan yang tidak mengganggu di Pengaturan, status Kosong, dan Ekspor. Iklan dikirimkan oleh <strong>Unity Ads</strong>, yang SDK-nya mengumpulkan:</p>
 <ul>
 <li><strong>ID Iklan</strong> (Android Advertising ID / Apple IDFA), dibagikan dengan Google untuk menayangkan iklan;</li>
 <li>data diagnostik (model perangkat, lokasi tingkat negara, bahasa).</li>
 </ul>
-<p>Ads may also be served by AdMob mediation partners: Meta Platforms, Inc. (<a href="https://www.facebook.com/privacy/policy/">Meta Audience Network</a>) and Unity Technologies (<a href="https://unity.com/legal/privacy-policy">Unity Ads</a>).</p>
 <p>Mode default adalah <strong>iklan non-personalisasi</strong>. Di iOS, perintah App Tracking Transparency (ATT) meminta persetujuan Anda sebelum pengenal tingkat pelacakan digunakan; di Android Anda mengontrol ID Iklan di bawah Pengaturan sistem. Iklan dapat dinonaktifkan secara permanen melalui IAP Seumur Hidup / Premium.</p>
 <h3>3.5 Pembelian dalam aplikasi (IAP)</h3>
 <p>Mote menawarkan fitur berbayar melalui Apple In-App Purchase (iOS) dan Google Play Billing (Android). Ketika Anda melakukan pembelian:</p>
@@ -156,7 +155,7 @@
 <li><strong>Menjalankan aplikasi di perangkat Anda</strong> — penyimpanan lokal dan (jika ada) enkripsi memungkinkan data Anda bertahan antar sesi.</li>
 <li><strong>Sinkronisasi dengan pasangan Anda</strong> — relai pemasangan memungkinkan pengiriman konten terenkripsi E2E secara real-time.</li>
 <li><strong>Meningkatkan stabilitas</strong> — diagnostik Sentry membantu memperbaiki kerusakan yang memengaruhi penggunaan Anda.</li>
-<li><strong>Mempertahankan tingkatan gratis</strong> — AdMob menampilkan iklan yang tidak mengganggu untuk mendanai pengguna yang tidak membeli premium.</li>
+<li><strong>Mempertahankan tingkatan gratis</strong> — Unity Ads menampilkan iklan yang tidak mengganggu untuk mendanai pengguna yang tidak membeli premium.</li>
 <li><strong>Memproses pembelian</strong> — penagihan Apple / Google memenuhi hak premium yang Anda pilih untuk dibeli.</li>
 <li><strong>Menyinkronkan hak dan cadangan cloud di berbagai perangkat</strong> — bagi pengguna yang memilih untuk masuk, sinkronisasi hak Premium dan pemulihan cadangan cloud terenkripsi opsional memungkinkan Anda memulihkan pemasangan dan pengaturan Anda di perangkat baru.</li>
 </ul>
@@ -177,8 +176,6 @@
 <tr><td>Cloudflare, Inc.</td><td>Relai pemasangan; layanan akun/sesi opsional; sinkronisasi hak; penyimpanan cadangan cloud terenkripsi</td><td>ID pasangan acak, blob terenkripsi, pengidentifikasi sesi, ciphertext cadangan terenkripsi (hanya jika Anda masuk dan menggunakan cadangan cloud)</td><td><a href="https://www.cloudflare.com/privacypolicy/">https://www.cloudflare.com/privacypolicy/</a></td></tr>
 <tr><td>Apple Inc. (Sign in with Apple)</td><td>Autentikasi akun opsional</td><td>Token identitas, alamat email (dapat berupa alamat private relay Apple)</td><td><a href="https://www.apple.com/legal/privacy/">https://www.apple.com/legal/privacy/</a></td></tr>
 <tr><td>Google LLC (Google Sign-In)</td><td>Autentikasi akun opsional</td><td>Token identitas, alamat email</td><td><a href="https://policies.google.com/privacy">https://policies.google.com/privacy</a></td></tr>
-<tr><td>Google LLC (AdMob)</td><td>Menayangkan iklan</td><td>ID Iklan, metrik perangkat &amp; iklan</td><td><a href="https://policies.google.com/privacy">https://policies.google.com/privacy</a></td></tr>
-<tr><td>Meta Platforms, Inc. (Meta Audience Network)</td><td>Menayangkan iklan</td><td>ID Iklan, metrik perangkat &amp; iklan</td><td><a href="https://www.facebook.com/privacy/policy/">https://www.facebook.com/privacy/policy/</a></td></tr>
 <tr><td>Unity Technologies (Unity Ads)</td><td>Menayangkan iklan</td><td>ID Iklan, metrik perangkat &amp; iklan</td><td><a href="https://unity.com/legal/privacy-policy">https://unity.com/legal/privacy-policy</a></td></tr>
 <tr><td>Functional Software Inc. (Sentry)</td><td>Pelaporan kerusakan</td><td>Jejak tumpukan, metadata perangkat</td><td><a href="https://sentry.io/privacy/">https://sentry.io/privacy/</a></td></tr>
 <tr><td>Apple Inc. (App Store / IAP)</td><td>Pemrosesan pembelian dalam aplikasi di iOS</td><td>Token pembelian, hak tingkat akun</td><td><a href="https://www.apple.com/legal/privacy/">https://www.apple.com/legal/privacy/</a></td></tr>
@@ -201,7 +198,7 @@
 <tr><td>Blob jabat tangan pasangan</td><td>Relai Cloudflare (terenkripsi)</td><td>Hingga 24 jam, kemudian kedaluwarsa secara otomatis</td></tr>
 <tr><td>Pesan E2E real-time</td><td>Relai Cloudflare (terenkripsi)</td><td>Disimpan hanya sampai dikirim ke perangkat yang terpasang, lalu dihapus</td></tr>
 <tr><td>ID pasangan acak</td><td>Kedua perangkat + relai</td><td>Sampai Anda membatalkan pemasangan atau menghapus data aplikasi</td></tr>
-<tr><td>ID Iklan</td><td>Sistem Google AdMob</td><td>Sesuai kebijakan retensi Google (biasanya hingga 14 bulan untuk metrik iklan)</td></tr>
+<tr><td>ID Iklan</td><td>Sistem Unity Ads</td><td>Sesuai kebijakan retensi Unity</td></tr>
 <tr><td>Data kerusakan Sentry</td><td>Sistem Sentry</td><td>Hingga 90 hari sejak kejadian</td></tr>
 <tr><td>Token pembelian IAP / tanda terima</td><td>Perangkat Anda + Apple / Google</td><td>Sampai Anda menghapus instalasi; Apple / Google menyimpan catatan transaksi sesuai kebijakan mereka sendiri</td></tr>
 <tr><td>JWT sesi</td><td>Perangkat Anda (penyimpanan aman)</td><td>Hingga 30 hari, dapat diperbarui selama 7 hari terakhir; dihapus saat Anda keluar</td></tr>
@@ -237,8 +234,8 @@
 </ul>
 <p>Tidak ada sistem yang 100% aman; harap perbarui perangkat Anda dan gunakan kunci perangkat yang kuat.</p>
 <h2>13. App Tracking Transparency (iOS) dan ID Iklan</h2>
-<p>Di iOS, sebelum pengenal tingkat pelacakan apa pun digunakan oleh AdMob, Mote menampilkan perintah sistem <strong>App Tracking Transparency</strong>. Jika Anda menolak, Mote hanya menayangkan iklan non-personalisasi.</p>
-<p>Di Android, Anda dapat mengatur ulang atau membatasi ID Iklan Anda di bawah <strong>Pengaturan → Google → Iklan</strong>. Memilih "Hapus ID iklan" menghentikan AdMob menggunakan pengenal pribadi; iklan non-personalisasi terus ditampilkan.</p>
+<p>Di iOS, sebelum pengenal tingkat pelacakan apa pun digunakan oleh Unity Ads, Mote menampilkan perintah sistem <strong>App Tracking Transparency</strong>. Jika Anda menolak, Mote hanya menayangkan iklan non-personalisasi.</p>
+<p>Di Android, Anda dapat mengatur ulang atau membatasi ID Iklan Anda di bawah <strong>Pengaturan → Google → Iklan</strong>. Memilih "Hapus ID iklan" menghentikan Unity Ads menggunakan pengenal pribadi; iklan non-personalisasi terus ditampilkan.</p>
 <h2>14. Pembelian dalam aplikasi</h2>
 <p>Mote menawarkan produk dalam aplikasi berikut melalui Apple App Store dan Google Play: langganan tahunan, pembukaan seumur hidup, kotak tip opsional.</p>
 <p>Semua data pembayaran ditangani oleh <strong>Apple Inc.</strong> (akun App Store / iTunes) atau <strong>Google LLC</strong> (Penagihan Play). Kami tidak pernah melihat nomor kartu Anda, alamat penagihan Anda, atau akun Apple ID / Google lengkap Anda. Apple dan Google hanya mengembalikan token pembelian opak dan metadata hak yang kami gunakan untuk membuka fitur. Langganan dapat dibatalkan kapan saja di Pengaturan iOS → Apple ID → Langganan atau di aplikasi Google Play → Langganan; aturan pembatalan diatur oleh Apple / Google.</p>

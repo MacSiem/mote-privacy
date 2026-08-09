@@ -77,7 +77,7 @@
 <p>W przypadku wersji aplikacji dystrybuowanej przez Google Play administratorem danych jest LICENCEPRO POLSKA Sp. z o.o., ul. Huculska 6, 00-730 Warszawa, Polska.</p>
 <p>Niniejsza polityka opisuje, jakie dane osobowe Mote przetwarza, w jaki sposób, w jakim celu i jakie prawa przysługują Tobie.</p>
 <h2>2. Streszczenie w prostym języku</h2>
-<p>Nie przechowujemy treści Twoich wpisów na naszych serwerach. Wiadomości, zdjęcia, notatki głosowe, mood check-iny i tagi są szyfrowane na Twoim urządzeniu, a podczas synchronizacji z partnerem przesyłane są w formie szyfrowanej end-to-end. Z Mote można w pełni korzystać bez zakładania konta; logowanie przez Apple lub Google jest opcjonalne i umożliwia synchronizację uprawnień Premium oraz odzyskiwanie szyfrowanej kopii zapasowej w chmurze na innych urządzeniach — nigdy nie mamy dostępu do treści kopii zapasowej w formie jawnej. Korzystamy z Google AdMob, aby wyświetlać reklamy bannerowe na ekranach pomocniczych, oraz z Apple/Google billing do obsługi zakupów w aplikacji. Sentry jest używany wyłącznie wtedy, gdy w danej wersji aplikacji jest włączony. Masz pełne prawa wynikające z RODO: dostęp, sprostowanie, usunięcie, przenośność — większość możesz wykonać samodzielnie w aplikacji.</p>
+<p>Nie przechowujemy treści Twoich wpisów na naszych serwerach. Wiadomości, zdjęcia, notatki głosowe, mood check-iny i tagi są szyfrowane na Twoim urządzeniu, a podczas synchronizacji z partnerem przesyłane są w formie szyfrowanej end-to-end. Z Mote można w pełni korzystać bez zakładania konta; logowanie przez Apple lub Google jest opcjonalne i umożliwia synchronizację uprawnień Premium oraz odzyskiwanie szyfrowanej kopii zapasowej w chmurze na innych urządzeniach — nigdy nie mamy dostępu do treści kopii zapasowej w formie jawnej. Korzystamy z Unity Ads, aby wyświetlać reklamy bannerowe na ekranach pomocniczych, oraz z Apple/Google billing do obsługi zakupów w aplikacji. Sentry jest używany wyłącznie wtedy, gdy w danej wersji aplikacji jest włączony. Masz pełne prawa wynikające z RODO: dostęp, sprostowanie, usunięcie, przenośność — większość możesz wykonać samodzielnie w aplikacji.</p>
 <h2>3. Jakie dane przetwarzamy</h2>
 <h3>3.1 Dane wyłącznie lokalne</h3>
 <p>Wpisy, wiadomości, tagi, mood check-iny, zdjęcia i notatki głosowe są przechowywane <strong>lokalnie na Twoim urządzeniu</strong> w formie zaszyfrowanej (MMKV z kluczem wyprowadzanym z urządzenia, przechowywanym w Apple Keychain / Android Keystore). Podczas synchronizacji z urządzeniem sparowanego partnera treść jest <strong>szyfrowana end-to-end</strong> przy użyciu kluczy <code>tweetnacl</code> generowanych na każdym urządzeniu — twórca Mote nie ma technicznej możliwości odczytania Twoich wpisów.</p>
@@ -97,13 +97,12 @@
 <li>wersję aplikacji i build number.</li>
 </ul>
 <p>Sentry <strong>nie</strong> zbiera Twoich treści (wpisów, plików, danych szczepień, zdjęć, archiwów), nazw użytkownika ani innych PII. Dane diagnostyczne są przechowywane przez Sentry do <strong>90 dni</strong>. W niektórych wersjach produkcyjnych Sentry jest świadomie wyłączony (brak DSN) — w takim przypadku żadne dane diagnostyczne nie opuszczają Twojego urządzenia.</p>
-<h3>3.4 Reklamy (AdMob)</h3>
-<p>Mote wyświetla nieinwazyjne reklamy na ekranach: Ustawienia, Empty state i Eksport. Reklamy są dostarczane przez <strong>Google AdMob</strong>, którego SDK zbiera:</p>
+<h3>3.4 Reklamy (Unity Ads)</h3>
+<p>Mote wyświetla nieinwazyjne reklamy na ekranach: Ustawienia, Empty state i Eksport. Reklamy są dostarczane przez <strong>Unity Ads</strong>, którego SDK zbiera:</p>
 <ul>
 <li><strong>identyfikator reklamowy</strong> (Android Advertising ID / Apple IDFA), udostępniany Google w celu serwowania reklam;</li>
 <li>dane diagnostyczne (model urządzenia, lokalizacja na poziomie kraju, język).</li>
 </ul>
-<p>Reklamy mogą być dostarczane także przez partnerów mediacji AdMob: Meta Platforms, Inc. (Meta Audience Network, <a href="https://www.facebook.com/privacy/policy/">polityka prywatności</a>) oraz Unity Technologies (Unity Ads, <a href="https://unity.com/legal/privacy-policy">polityka prywatności</a>). Partnerzy ci otrzymują żądania reklam na tych samych zasadach — reklamy niespersonalizowane.</p>
 <p>Domyślnym trybem są <strong>reklamy nie-spersonalizowane</strong>. Na iOS, przed użyciem identyfikatora typu tracking, Mote wyświetla systemowy monit App Tracking Transparency (ATT); na Androidzie identyfikatorem reklamowym zarządzasz w ustawieniach systemu. Reklamy możesz trwale wyłączyć jednorazowym zakupem IAP Lifetime / Premium.</p>
 <h3>3.5 Zakupy w aplikacji (IAP)</h3>
 <p>Mote oferuje funkcje płatne przez Apple In-App Purchase (iOS) i Google Play Billing (Android). Przy zakupie:</p>
@@ -156,7 +155,7 @@
 <li><strong>Uruchamianie aplikacji na Twoim urządzeniu</strong> — lokalna pamięć i (gdy ma to zastosowanie) szyfrowanie pozwalają zachować dane między sesjami.</li>
 <li><strong>Synchronizacja z partnerem</strong> — przekaźnik parowania umożliwia real-time dostarczenie zaszyfrowanej E2E treści.</li>
 <li><strong>Poprawa stabilności</strong> — diagnostyka Sentry pomaga naprawiać awarie wpływające na korzystanie.</li>
-<li><strong>Utrzymanie wersji bezpłatnej</strong> — AdMob dostarcza nieinwazyjne reklamy, finansujące użytkowników nieopłacających.</li>
+<li><strong>Utrzymanie wersji bezpłatnej</strong> — Unity Ads dostarcza nieinwazyjne reklamy, finansujące użytkowników nieopłacających.</li>
 <li><strong>Realizacja zakupów</strong> — Apple / Google billing realizuje wykupione przez Ciebie uprawnienia premium.</li>
 <li><strong>Synchronizacja uprawnień i kopii w chmurze między urządzeniami</strong> — dla użytkowników, którzy zdecydują się zalogować, synchronizacja uprawnień Premium oraz opcjonalna szyfrowana kopia w chmurze pozwalają odtworzyć parowanie i ustawienia na nowym urządzeniu.</li>
 </ul>
@@ -177,8 +176,6 @@
 <tr><td>Cloudflare, Inc.</td><td>Przekaźnik parowania; opcjonalna usługa konta/sesji; synchronizacja uprawnień; przechowywanie szyfrowanej kopii w chmurze</td><td>Losowy ID pary, zaszyfrowany blob, identyfikator sesji, zaszyfrowany szyfrogram kopii zapasowej (tylko jeśli się zalogujesz i użyjesz kopii w chmurze)</td><td><a href="https://www.cloudflare.com/privacypolicy/">https://www.cloudflare.com/privacypolicy/</a></td></tr>
 <tr><td>Apple Inc. (Sign in with Apple)</td><td>Opcjonalne uwierzytelnianie konta</td><td>Token tożsamości, adres e-mail (może to być adres Private Relay)</td><td><a href="https://www.apple.com/legal/privacy/">https://www.apple.com/legal/privacy/</a></td></tr>
 <tr><td>Google LLC (Google Sign-In)</td><td>Opcjonalne uwierzytelnianie konta</td><td>Token tożsamości, adres e-mail</td><td><a href="https://policies.google.com/privacy">https://policies.google.com/privacy</a></td></tr>
-<tr><td>Google LLC (AdMob)</td><td>Serwowanie reklam</td><td>Identyfikator reklamowy, metryki urządzenia i reklam</td><td><a href="https://policies.google.com/privacy">https://policies.google.com/privacy</a></td></tr>
-<tr><td>Meta Platforms, Inc. (Meta Audience Network)</td><td>Serwowanie reklam</td><td>Identyfikator reklamowy, metryki urządzenia i reklam</td><td><a href="https://www.facebook.com/privacy/policy/">https://www.facebook.com/privacy/policy/</a></td></tr>
 <tr><td>Unity Technologies (Unity Ads)</td><td>Serwowanie reklam</td><td>Identyfikator reklamowy, metryki urządzenia i reklam</td><td><a href="https://unity.com/legal/privacy-policy">https://unity.com/legal/privacy-policy</a></td></tr>
 <tr><td>Functional Software Inc. (Sentry)</td><td>Raportowanie awarii</td><td>Stack traces, metadane urządzenia</td><td><a href="https://sentry.io/privacy/">https://sentry.io/privacy/</a></td></tr>
 <tr><td>Apple Inc. (App Store / IAP)</td><td>Realizacja zakupów na iOS</td><td>Token zakupu, uprawnienia konta</td><td><a href="https://www.apple.com/legal/privacy/">https://www.apple.com/legal/privacy/</a></td></tr>
@@ -201,7 +198,7 @@
 <tr><td>Pair handshake blob</td><td>Przekaźnik Cloudflare (zaszyfrowany)</td><td>Do 24 godzin, potem automatycznie wygaszany</td></tr>
 <tr><td>Wiadomości E2E real-time</td><td>Przekaźnik Cloudflare (zaszyfrowane)</td><td>Tylko do dostarczenia do urządzenia partnera, potem usuwane</td></tr>
 <tr><td>Losowy ID pary</td><td>Oba urządzenia + przekaźnik</td><td>Do momentu rozparowania lub wyczyszczenia danych aplikacji</td></tr>
-<tr><td>Identyfikator reklamowy</td><td>Systemy Google AdMob</td><td>Zgodnie z polityką retencji Google (zwykle do 14 miesięcy dla metryk reklam)</td></tr>
+<tr><td>Identyfikator reklamowy</td><td>Systemy Unity Ads</td><td>Zgodnie z polityką retencji Unity</td></tr>
 <tr><td>Dane awarii Sentry</td><td>Systemy Sentry</td><td>Do 90 dni od zdarzenia</td></tr>
 <tr><td>Token zakupu / paragon IAP</td><td>Twoje urządzenie + Apple / Google</td><td>Do odinstalowania; Apple / Google przechowują rekordy transakcji wg własnych polityk</td></tr>
 <tr><td>Token sesji JWT</td><td>Twoje urządzenie (bezpieczny magazyn)</td><td>Do 30 dni, odświeżalny w ciągu ostatnich 7 dni; usuwany przy wylogowaniu</td></tr>
@@ -237,8 +234,8 @@
 </ul>
 <p>Żaden system nie jest w 100% bezpieczny; pamiętaj, aby aktualizować urządzenie i używać silnych blokad ekranu.</p>
 <h2>13. App Tracking Transparency (iOS) i Identyfikator Reklamowy</h2>
-<p>Na iOS, zanim AdMob użyje identyfikatora typu tracking, Mote wyświetla systemowy monit <strong>App Tracking Transparency</strong>. Jeśli odmówisz, Mote serwuje wyłącznie reklamy nie-spersonalizowane.</p>
-<p>Na Androidzie identyfikator reklamowy możesz zresetować lub ograniczyć w <strong>Ustawienia → Google → Reklamy</strong>. Wybór "Usuń identyfikator reklam" zatrzymuje wykorzystanie identyfikatora przez AdMob; reklamy nie-spersonalizowane są nadal serwowane.</p>
+<p>Na iOS, zanim Unity Ads użyje identyfikatora typu tracking, Mote wyświetla systemowy monit <strong>App Tracking Transparency</strong>. Jeśli odmówisz, Mote serwuje wyłącznie reklamy nie-spersonalizowane.</p>
+<p>Na Androidzie identyfikator reklamowy możesz zresetować lub ograniczyć w <strong>Ustawienia → Google → Reklamy</strong>. Wybór "Usuń identyfikator reklam" zatrzymuje wykorzystanie identyfikatora przez Unity Ads; reklamy nie-spersonalizowane są nadal serwowane.</p>
 <h2>14. Zakupy w aplikacji</h2>
 <p>Mote oferuje następujące produkty IAP w App Store i Google Play: subskrypcja roczna, jednorazowe odblokowanie Lifetime, opcjonalny tip jar.</p>
 <p>Wszystkie dane płatnicze obsługuje <strong>Apple Inc.</strong> (konto App Store / iTunes) lub <strong>Google LLC</strong> (Play Billing). Nie widzimy numeru karty, adresu rozliczeniowego ani pełnego konta Apple ID / Google. Apple i Google zwracają wyłącznie nieprzejrzysty token zakupu i metadane uprawnień, które wykorzystujemy do odblokowania funkcji. Subskrypcję możesz anulować w iOS Ustawienia → Apple ID → Subskrypcje lub w Google Play → Subskrypcje; zasady anulowania reguluje Apple / Google.</p>

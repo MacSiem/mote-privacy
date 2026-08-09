@@ -77,7 +77,7 @@
 <p>Pentru versiunea aplicației distribuită prin Google Play, operatorul de date este LICENCEPRO POLSKA Sp. z o.o., ul. Huculska 6, 00-730 Warszawa, Polska.</p>
 <p>Această Politică de confidențialitate explică ce date cu caracter personal procesează Mote, cum, de ce și ce drepturi aveți.</p>
 <h2>2. Rezumat în limbaj simplu</h2>
-<p>Nu stocăm conținutul intrărilor dvs. pe serverele noastre. Mesajele, fotografiile, notele vocale, verificările de dispoziție și etichetele dvs. sunt criptate pe dispozitivul dvs. și, atunci când sunt sincronizate cu partenerul dvs., sunt end-to-end encrypted în tranzit. Mote poate fi utilizat integral fără a crea un cont; autentificarea cu Apple sau Google este opțională și permite sincronizarea dreptului Premium și recuperarea copiei de rezervă criptate din cloud pe toate dispozitivele dvs. — nu primim niciodată conținutul copiei dvs. de rezervă din cloud în formă necriptată. Utilizăm Google AdMob pentru reclame banner neinvazive pe ecranele auxiliare și sistemul de facturare Apple/Google pentru a procesa achizițiile în aplicație. Sentry este utilizat numai atunci când este activat explicit într-o versiune pentru a raporta erorile. Aveți drepturi complete conform RGPD, inclusiv acces, ștergere și portabilitate — majoritatea exercitabile direct în aplicație.</p>
+<p>Nu stocăm conținutul intrărilor dvs. pe serverele noastre. Mesajele, fotografiile, notele vocale, verificările de dispoziție și etichetele dvs. sunt criptate pe dispozitivul dvs. și, atunci când sunt sincronizate cu partenerul dvs., sunt end-to-end encrypted în tranzit. Mote poate fi utilizat integral fără a crea un cont; autentificarea cu Apple sau Google este opțională și permite sincronizarea dreptului Premium și recuperarea copiei de rezervă criptate din cloud pe toate dispozitivele dvs. — nu primim niciodată conținutul copiei dvs. de rezervă din cloud în formă necriptată. Utilizăm Unity Ads pentru reclame banner neinvazive pe ecranele auxiliare și sistemul de facturare Apple/Google pentru a procesa achizițiile în aplicație. Sentry este utilizat numai atunci când este activat explicit într-o versiune pentru a raporta erorile. Aveți drepturi complete conform RGPD, inclusiv acces, ștergere și portabilitate — majoritatea exercitabile direct în aplicație.</p>
 <h2>3. Datele pe care le procesăm</h2>
 <h3>3.1 Date stocate doar local</h3>
 <p>Intrările, mesajele, etichetele, verificările de dispoziție, fotografiile și notele vocale pe care le adăugați sunt stocate <strong>local pe dispozitivul dvs.</strong> sub formă criptată (MMKV cu o cheie derivată de pe dispozitiv, păstrată în Apple Keychain / Android Keystore). Când sunt sincronizate cu dispozitivul partenerului dvs. asociat, conținutul este <strong>end-to-end encrypted</strong> utilizând chei <code>tweetnacl</code> generate pe fiecare dispozitiv — dezvoltatorul Mote nu vă poate citi intrările.</p>
@@ -97,13 +97,12 @@
 <li>versiunea aplicației și numărul build-ului.</li>
 </ul>
 <p>Sentry <strong>nu</strong> colectează conținutul dvs. (intrări, fișiere, înregistrări de vaccinare, fotografii, arhive), nume de utilizator sau alte PII. Datele de diagnostic sunt reținute de Sentry pentru o perioadă de până la <strong>90 de zile</strong>. În unele versiuni de producție, Sentry este dezactivat intenționat (fără DSN configurat) — în acest caz, nu părăsesc dispozitivul dvs. date de diagnostic.</p>
-<h3>3.4 Publicitate (AdMob)</h3>
-<p>Mote afișează reclame neinvazive în Ecranele de Setări, Stare goală și Export. Reclamele sunt livrate de <strong>Google AdMob</strong>, al cărui SDK colectează:</p>
+<h3>3.4 Publicitate (Unity Ads)</h3>
+<p>Mote afișează reclame neinvazive în Ecranele de Setări, Stare goală și Export. Reclamele sunt livrate de <strong>Unity Ads</strong>, al cărui SDK colectează:</p>
 <ul>
 <li><strong>ID-ul de publicitate</strong> (Android Advertising ID / Apple IDFA), partajat cu Google pentru a difuza reclame;</li>
 <li>date de diagnostic (modelul dispozitivului, locația la nivel de țară, limba).</li>
 </ul>
-<p>Ads may also be served by AdMob mediation partners: Meta Platforms, Inc. (<a href="https://www.facebook.com/privacy/policy/">Meta Audience Network</a>) and Unity Technologies (<a href="https://unity.com/legal/privacy-policy">Unity Ads</a>).</p>
 <p>Modul implicit este <strong>reclame nepersonalizate</strong>. Pe iOS, solicitarea App Tracking Transparency (ATT) cere consimțământul dvs. înainte ca orice identificator de urmărire să fie utilizat; pe Android, controlați Advertising ID-ul din Setările sistemului. Reclamele pot fi dezactivate permanent prin IAP-ul Lifetime / Premium.</p>
 <h3>3.5 Achiziții în aplicație (IAP)</h3>
 <p>Mote oferă funcționalități plătite prin Apple In-App Purchase (iOS) și Google Play Billing (Android). Când efectuați o achiziție:</p>
@@ -156,7 +155,7 @@
 <li><strong>Rularea aplicației pe dispozitivul dvs.</strong> — stocarea locală și (acolo unde este prezentă) criptarea permit datelor dvs. să persiste între sesiuni.</li>
 <li><strong>Sincronizarea cu partenerul dvs.</strong> — releul de asociere permite livrarea E2E în timp real a conținutului dvs. criptat.</li>
 <li><strong>Îmbunătățirea stabilității</strong> — diagnosticele Sentry ajută la remedierea blocărilor care afectează utilizarea dvs.</li>
-<li><strong>Susținerea nivelului gratuit</strong> — AdMob livrează reclame neinvazive pentru a finanța utilizatorii care nu cumpără versiunea premium.</li>
+<li><strong>Susținerea nivelului gratuit</strong> — Unity Ads livrează reclame neinvazive pentru a finanța utilizatorii care nu cumpără versiunea premium.</li>
 <li><strong>Procesarea achizițiilor</strong> — sistemul de facturare Apple / Google îndeplinește drepturile premium pe care alegeți să le cumpărați.</li>
 <li><strong>Sincronizarea dreptului și a copiei de rezervă din cloud pe mai multe dispozitive</strong> — pentru utilizatorii care aleg să se autentifice, sincronizarea dreptului Premium și recuperarea opțională a copiei de rezervă criptate din cloud vă permit să restabiliți asocierea și setările pe un dispozitiv nou.</li>
 </ul>
@@ -177,8 +176,6 @@
 <tr><td>Cloudflare, Inc.</td><td>Releu de asociere; serviciu opțional de cont/sesiune; sincronizarea dreptului; stocarea copiei de rezervă criptate din cloud</td><td>ID de pereche aleatoriu, blob criptat, identificator de sesiune, text cifrat al copiei de rezervă criptate (numai dacă vă autentificați și utilizați copia de rezervă din cloud)</td><td><a href="https://www.cloudflare.com/privacypolicy/">https://www.cloudflare.com/privacypolicy/</a></td></tr>
 <tr><td>Apple Inc. (Sign in with Apple)</td><td>Autentificare opțională a contului</td><td>Token de identitate, adresă de e-mail (poate fi o adresă Apple private relay)</td><td><a href="https://www.apple.com/legal/privacy/">https://www.apple.com/legal/privacy/</a></td></tr>
 <tr><td>Google LLC (Google Sign-In)</td><td>Autentificare opțională a contului</td><td>Token de identitate, adresă de e-mail</td><td><a href="https://policies.google.com/privacy">https://policies.google.com/privacy</a></td></tr>
-<tr><td>Google LLC (AdMob)</td><td>Difuzare reclame</td><td>Advertising ID, valori dispozitiv și reclame</td><td><a href="https://policies.google.com/privacy">https://policies.google.com/privacy</a></td></tr>
-<tr><td>Meta Platforms, Inc. (Meta Audience Network)</td><td>Difuzare reclame</td><td>Advertising ID, valori dispozitiv și reclame</td><td><a href="https://www.facebook.com/privacy/policy/">https://www.facebook.com/privacy/policy/</a></td></tr>
 <tr><td>Unity Technologies (Unity Ads)</td><td>Difuzare reclame</td><td>Advertising ID, valori dispozitiv și reclame</td><td><a href="https://unity.com/legal/privacy-policy">https://unity.com/legal/privacy-policy</a></td></tr>
 <tr><td>Functional Software Inc. (Sentry)</td><td>Raportare blocări</td><td>Stack traces, metadate dispozitiv</td><td><a href="https://sentry.io/privacy/">https://sentry.io/privacy/</a></td></tr>
 <tr><td>Apple Inc. (App Store / IAP)</td><td>Procesarea achizițiilor în aplicație pe iOS</td><td>Token de achiziție, drept de utilizare la nivel de cont</td><td><a href="https://www.apple.com/legal/privacy/">https://www.apple.com/legal/privacy/</a></td></tr>
@@ -201,7 +198,7 @@
 <tr><td>Blob de handshake pentru asociere</td><td>Releu Cloudflare (criptat)</td><td>Până la 24 de ore, apoi expiră automat</td></tr>
 <tr><td>Mesaje E2E în timp real</td><td>Releu Cloudflare (criptat)</td><td>Stocate doar până la livrarea către dispozitivul asociat, apoi șterse</td></tr>
 <tr><td>ID de pereche aleatoriu</td><td>Ambele dispozitive + releu</td><td>Până când anulați asocierea sau ștergeți datele aplicației</td></tr>
-<tr><td>Advertising ID</td><td>Sisteme Google AdMob</td><td>Conform politicii de păstrare a Google (de obicei până la 14 luni pentru valorile reclamelor)</td></tr>
+<tr><td>Advertising ID</td><td>Sisteme Unity Ads</td><td>Conform politicii de păstrare a Unity</td></tr>
 <tr><td>Date de blocare Sentry</td><td>Sisteme Sentry</td><td>Până la 90 de zile de la eveniment</td></tr>
 <tr><td>Token / chitanță de achiziție IAP</td><td>Dispozitivul dvs. + Apple / Google</td><td>Până la dezinstalare; Apple / Google păstrează înregistrările tranzacțiilor conform propriilor politici</td></tr>
 <tr><td>JWT de sesiune</td><td>Dispozitivul dvs. (stocare securizată)</td><td>Până la 30 de zile, se poate reînnoi în ultimele 7 zile; eliminat la deconectare</td></tr>
@@ -237,8 +234,8 @@
 </ul>
 <p>Niciun sistem nu este 100% sigur; vă rugăm să vă mențineți dispozitivul actualizat și să utilizați blocări puternice ale dispozitivului.</p>
 <h2>13. App Tracking Transparency (iOS) și Advertising ID</h2>
-<p>Pe iOS, înainte ca AdMob să utilizeze orice identificator de urmărire, Mote afișează solicitarea de sistem <strong>App Tracking Transparency</strong>. Dacă refuzați, Mote difuzează numai reclame nepersonalizate.</p>
-<p>Pe Android, puteți reseta sau limita Advertising ID-ul dvs. în <strong>Setări → Google → Reclame</strong>. Alegerea "Ștergeți Advertising ID" oprește AdMob din a utiliza un identificator personal; reclamele nepersonalizate continuă să fie afișate.</p>
+<p>Pe iOS, înainte ca Unity Ads să utilizeze orice identificator de urmărire, Mote afișează solicitarea de sistem <strong>App Tracking Transparency</strong>. Dacă refuzați, Mote difuzează numai reclame nepersonalizate.</p>
+<p>Pe Android, puteți reseta sau limita Advertising ID-ul dvs. în <strong>Setări → Google → Reclame</strong>. Alegerea "Ștergeți Advertising ID" oprește Unity Ads din a utiliza un identificator personal; reclamele nepersonalizate continuă să fie afișate.</p>
 <h2>14. Achiziții în aplicație</h2>
 <p>Mote oferă următoarele produse în aplicație prin Apple App Store și Google Play: abonament anual, deblocare pe viață, borcan de tips opțional.</p>
 <p>Toate datele de plată sunt gestionate de <strong>Apple Inc.</strong> (App Store / cont iTunes) sau <strong>Google LLC</strong> (Play Billing). Nu vedem niciodată numărul cardului dvs., adresa de facturare sau contul dvs. complet Apple ID / Google. Apple și Google returnează doar un token de achiziție opac și metadate de drepturi pe care le utilizăm pentru a debloca funcționalitățile. Abonamentele pot fi anulate în orice moment din Setările iOS → Apple ID → Abonamente sau din aplicația Google Play → Abonamente; regulile de anulare sunt guvernate de Apple / Google.</p>

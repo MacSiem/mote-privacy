@@ -77,7 +77,7 @@
 <p>Google Playn kautta jaettavan sovellusversion osalta tietojen rekisterinpitäjä on LICENCEPRO POLSKA Sp. z o.o., ul. Huculska 6, 00-730 Warszawa, Polska.</p>
 <p>Tämä tietosuojakäytäntö selittää, mitä henkilötietoja Mote käsittelee, miten, miksi ja mitä oikeuksia sinulla on.</p>
 <h2>2. Yksinkertainen yhteenveto</h2>
-<p>Emme tallenna merkintöjesi sisältöä palvelimillemme. Viestisi, valokuvasi, äänimuistiosi, mielialakirjauksesi ja tagisi salataan laitteellasi, ja kun ne synkronoidaan kumppanisi kanssa, ne ovat päästä päähän -salattuja siirron aikana. Motea voi käyttää täysin ilman tilin luomista; kirjautuminen Applella tai Googlella on valinnaista, ja se mahdollistaa Premium-oikeuden synkronoinnin sekä salatun pilvivarmuuskopion palauttamisen eri laitteilla — emme koskaan saa pilvivarmuuskopiosi sisältöä salaamattomana. Käytämme Google AdMob -palvelua ei-invasiivisiin bannerimainoksiin apunäytöillä sekä Apple/Google-laskutusta sovelluksen sisäisten ostosten käsittelyyn. Sentryä käytetään vain, kun se on erikseen otettu käyttöön tietyssä koontiversiossa kaatumisten raportointiin. Sinulla on kaikki GDPR-oikeudet, mukaan lukien pääsy, poisto ja siirrettävyys – useimmat niistä ovat käytettävissä suoraan sovelluksessa.</p>
+<p>Emme tallenna merkintöjesi sisältöä palvelimillemme. Viestisi, valokuvasi, äänimuistiosi, mielialakirjauksesi ja tagisi salataan laitteellasi, ja kun ne synkronoidaan kumppanisi kanssa, ne ovat päästä päähän -salattuja siirron aikana. Motea voi käyttää täysin ilman tilin luomista; kirjautuminen Applella tai Googlella on valinnaista, ja se mahdollistaa Premium-oikeuden synkronoinnin sekä salatun pilvivarmuuskopion palauttamisen eri laitteilla — emme koskaan saa pilvivarmuuskopiosi sisältöä salaamattomana. Käytämme Unity Ads -palvelua ei-invasiivisiin bannerimainoksiin apunäytöillä sekä Apple/Google-laskutusta sovelluksen sisäisten ostosten käsittelyyn. Sentryä käytetään vain, kun se on erikseen otettu käyttöön tietyssä koontiversiossa kaatumisten raportointiin. Sinulla on kaikki GDPR-oikeudet, mukaan lukien pääsy, poisto ja siirrettävyys – useimmat niistä ovat käytettävissä suoraan sovelluksessa.</p>
 <h2>3. Käsittelemämme tiedot</h2>
 <h3>3.1 Vain paikallisesti tallennetut tiedot</h3>
 <p>Lisäämäsi merkinnät, viestit, tagit, mielialakirjaukset, valokuvat ja äänimuistiot tallennetaan <strong>paikallisesti laitteellesi</strong> salatussa muodossa (MMKV laitekohtaisella avaimella, joka on tallennettu Apple Keychainiin / Android Keystoreen). Kun sisältö synkronoidaan pariksi liitetyn kumppanisi laitteen kanssa, se on <strong>päästä päähän -salattu</strong> käyttäen kummassakin laitteessa generoituja <code>tweetnacl</code>-avaimia — Mote-sovelluksen kehittäjä ei voi lukea merkintöjäsi.</p>
@@ -97,13 +97,12 @@
 <li>sovelluksen version ja koontiversion numeron.</li>
 </ul>
 <p>Sentry <strong>ei kerää</strong> sisältöäsi (merkintöjä, tiedostoja, rokotustietoja, valokuvia, arkistoja), käyttäjätunnuksia tai muita henkilökohtaisesti tunnistettavia tietoja (PII). Sentry säilyttää diagnostisia tietoja enintään <strong>90 päivää</strong>. Joissakin tuotantokoontiversioissa Sentry on tarkoituksellisesti poistettu käytöstä (ei DSN-konfigurointia) – tässä tapauksessa laitteeltasi ei poistu diagnostisia tietoja.</p>
-<h3>3.4 Mainonta (AdMob)</h3>
-<p>Mote näyttää ei-invasiivisia mainoksia Asetukset-, Tyhjä tila- ja Vie-näytöillä. Mainokset toimittaa <strong>Google AdMob</strong>, jonka SDK kerää:</p>
+<h3>3.4 Mainonta (Unity Ads)</h3>
+<p>Mote näyttää ei-invasiivisia mainoksia Asetukset-, Tyhjä tila- ja Vie-näytöillä. Mainokset toimittaa <strong>Unity Ads</strong>, jonka SDK kerää:</p>
 <ul>
 <li><strong>mainostunnuksen</strong> (Android Advertising ID / Apple IDFA), joka jaetaan Googlen kanssa mainosten näyttämiseksi;</li>
 <li>diagnostiset tiedot (laitteen malli, maakohtainen sijainti, kieli).</li>
 </ul>
-<p>Ads may also be served by AdMob mediation partners: Meta Platforms, Inc. (<a href="https://www.facebook.com/privacy/policy/">Meta Audience Network</a>) and Unity Technologies (<a href="https://unity.com/legal/privacy-policy">Unity Ads</a>).</p>
 <p>Oletustila on <strong>ei-personoidut mainokset</strong>. iOS:ssä App Tracking Transparency (ATT) -kehotus pyytää suostumuksesi ennen minkään seurantaluokan tunnisteen käyttöä; Androidissa voit hallita mainostunnusta järjestelmän Asetuksissa. Mainokset voidaan poistaa pysyvästi käytöstä Lifetime / Premium IAP -ostoksella.</p>
 <h3>3.5 Sovelluksen sisäiset ostokset (IAP)</h3>
 <p>Mote tarjoaa maksullisia ominaisuuksia Apple In-App Purchase (iOS) ja Google Play Billing (Android) -palveluiden kautta. Kun teet ostoksen:</p>
@@ -156,7 +155,7 @@
 <li><strong>Sovelluksen suorittaminen laitteellasi</strong> — paikallinen tallennus ja (tarvittaessa) salaus mahdollistavat tietojesi säilymisen istuntojen välillä.</li>
 <li><strong>Synkronointi kumppanisi kanssa</strong> — pariliitosrele mahdollistaa salatun sisältösi reaaliaikaisen päästä päähän -toimituksen.</li>
 <li><strong>Vakauden parantaminen</strong> — Sentryn diagnostiikka auttaa korjaamaan kaatumisia, jotka vaikuttavat käyttöösi.</li>
-<li><strong>Ilmaisen tason ylläpitäminen</strong> — AdMob näyttää ei-invasiivisia mainoksia rahoittaakseen käyttäjiä, jotka eivät osta premium-versiota.</li>
+<li><strong>Ilmaisen tason ylläpitäminen</strong> — Unity Ads näyttää ei-invasiivisia mainoksia rahoittaakseen käyttäjiä, jotka eivät osta premium-versiota.</li>
 <li><strong>Ostosten käsittely</strong> — Apple / Google -laskutus täyttää ostamasi premium-oikeudet.</li>
 <li><strong>Oikeuden ja pilvivarmuuskopion synkronointi eri laitteiden välillä</strong> — käyttäjille, jotka valitsevat kirjautumisen, Premium-oikeuden synkronointi ja valinnainen salatun pilvivarmuuskopion palautus mahdollistavat pariliitoksen ja asetusten palauttamisen uudella laitteella.</li>
 </ul>
@@ -177,8 +176,6 @@
 <tr><td>Cloudflare, Inc.</td><td>Pariliitosrele; valinnainen tili-/istuntopalvelu; oikeuden synkronointi; salatun pilvivarmuuskopion tallennus</td><td>Satunnainen paritunnus, salattu tiiviste, istuntotunniste, salattu varmuuskopion salateksti (vain jos kirjaudut sisään ja käytät pilvivarmuuskopiota)</td><td><a href="https://www.cloudflare.com/privacypolicy/">https://www.cloudflare.com/privacypolicy/</a></td></tr>
 <tr><td>Apple Inc. (Sign in with Apple)</td><td>Valinnainen tilin todennus</td><td>Identiteettitunniste, sähköpostiosoite (voi olla Applen private relay -osoite)</td><td><a href="https://www.apple.com/legal/privacy/">https://www.apple.com/legal/privacy/</a></td></tr>
 <tr><td>Google LLC (Google Sign-In)</td><td>Valinnainen tilin todennus</td><td>Identiteettitunniste, sähköpostiosoite</td><td><a href="https://policies.google.com/privacy">https://policies.google.com/privacy</a></td></tr>
-<tr><td>Google LLC (AdMob)</td><td>Mainosten näyttäminen</td><td>Mainostunnus, laite- ja mainostilastot</td><td><a href="https://policies.google.com/privacy">https://policies.google.com/privacy</a></td></tr>
-<tr><td>Meta Platforms, Inc. (Meta Audience Network)</td><td>Mainosten näyttäminen</td><td>Mainostunnus, laite- ja mainostilastot</td><td><a href="https://www.facebook.com/privacy/policy/">https://www.facebook.com/privacy/policy/</a></td></tr>
 <tr><td>Unity Technologies (Unity Ads)</td><td>Mainosten näyttäminen</td><td>Mainostunnus, laite- ja mainostilastot</td><td><a href="https://unity.com/legal/privacy-policy">https://unity.com/legal/privacy-policy</a></td></tr>
 <tr><td>Functional Software Inc. (Sentry)</td><td>Kaatumisraportointi</td><td>Pinomuistikuvat, laitteen metatiedot</td><td><a href="https://sentry.io/privacy/">https://sentry.io/privacy/</a></td></tr>
 <tr><td>Apple Inc. (App Store / IAP)</td><td>Sovelluksen sisäisten ostosten käsittely iOS:ssä</td><td>Ostotunnus, tilin tason oikeutus</td><td><a href="https://www.apple.com/legal/privacy/">https://www.apple.com/legal/privacy/</a></td></tr>
@@ -201,7 +198,7 @@
 <tr><td>Pariliitoksen kättelytiiviste</td><td>Cloudflare-rele (salattu)</td><td>Enintään 24 tuntia, sitten vanhenee automaattisesti</td></tr>
 <tr><td>Reaaliaikaiset E2E-viestit</td><td>Cloudflare-rele (salattu)</td><td>Tallennetaan vain, kunnes ne toimitetaan pariksi liitetylle laitteelle, sitten poistetaan</td></tr>
 <tr><td>Satunnainen paritunnus</td><td>Molemmat laitteet + rele</td><td>Kunnes purat pariliitoksen tai poistat sovelluksen tiedot</td></tr>
-<tr><td>Mainostunnus</td><td>Google AdMob -järjestelmät</td><td>Googlen säilytyskäytännön mukaisesti (yleensä enintään 14 kuukautta mainostilastoille)</td></tr>
+<tr><td>Mainostunnus</td><td>Unity Ads -järjestelmät</td><td>Unityn säilytyskäytännön mukaisesti</td></tr>
 <tr><td>Sentryn kaatumistiedot</td><td>Sentryn järjestelmät</td><td>Enintään 90 päivää tapahtumasta</td></tr>
 <tr><td>IAP-ostotunnus / kuitti</td><td>Laitteesi + Apple / Google</td><td>Kunnes poistat asennuksen; Apple / Google säilyttävät tapahtumarekisterit omien käytäntöjensä mukaisesti</td></tr>
 <tr><td>Istunto-JWT</td><td>Laitteesi (suojattu tallennustila)</td><td>Enintään 30 päivää, uusittavissa viimeisten 7 päivän aikana; poistetaan uloskirjautuessa</td></tr>
@@ -237,8 +234,8 @@
 </ul>
 <p>Mikään järjestelmä ei ole 100 % turvallinen; pidä laitteesi päivitettynä ja käytä vahvoja laitelukkoja.</p>
 <h2>13. Sovellusten seurantatoimintojen läpinäkyvyys (iOS) ja mainostunnus</h2>
-<p>iOS:ssä, ennen kuin AdMob käyttää mitään seurantaluokan tunnistetta, Mote näyttää järjestelmän <strong>App Tracking Transparency</strong> -kehotuksen. Jos kieltäydyt, Mote näyttää vain ei-personoituja mainoksia.</p>
-<p>Androidissa voit nollata tai rajoittaa mainostunnustasi kohdasta <strong>Asetukset → Google → Mainokset</strong>. Valitsemalla "Poista mainostunnus" estää AdMobia käyttämästä henkilökohtaista tunnistetta; ei-personoituja mainoksia näytetään edelleen.</p>
+<p>iOS:ssä, ennen kuin Unity Ads käyttää mitään seurantaluokan tunnistetta, Mote näyttää järjestelmän <strong>App Tracking Transparency</strong> -kehotuksen. Jos kieltäydyt, Mote näyttää vain ei-personoituja mainoksia.</p>
+<p>Androidissa voit nollata tai rajoittaa mainostunnustasi kohdasta <strong>Asetukset → Google → Mainokset</strong>. Valitsemalla "Poista mainostunnus" estää Unity Adsia käyttämästä henkilökohtaista tunnistetta; ei-personoituja mainoksia näytetään edelleen.</p>
 <h2>14. Sovelluksen sisäiset ostokset</h2>
 <p>Mote tarjoaa seuraavia sovelluksen sisäisiä tuotteita Apple App Storen ja Google Playn kautta: vuosittainen tilaus, elinikäinen avaaminen, valinnainen tippi.</p>
 <p>Kaikki maksutiedot käsittelee <strong>Apple Inc.</strong> (App Store / iTunes-tili) tai <strong>Google LLC</strong> (Play Billing). Emme koskaan näe korttisi numeroa, laskutusosoitettasi tai täyttä Apple ID / Google -tiliäsi. Apple ja Google palauttavat vain läpinäkymättömän ostotunnuksen ja oikeuden metatiedot, joita käytämme ominaisuuksien avaamiseen. Tilaukset voidaan peruuttaa milloin tahansa iOS:n Asetuksista → Apple ID → Tilaukset tai Google Play -sovelluksesta → Tilaukset; peruutusehtoja säätelevät Apple / Google.</p>

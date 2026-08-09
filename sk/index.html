@@ -77,7 +77,7 @@
 <p>Pre verziu aplikácie distribuovanú cez Google Play je prevádzkovateľom údajov LICENCEPRO POLSKA Sp. z o.o., ul. Huculska 6, 00-730 Warszawa, Polska.</p>
 <p>Tieto Zásady ochrany osobných údajov vysvetľujú, aké osobné údaje Mote spracúva, ako, prečo a aké práva máte.</p>
 <h2>2. Zhrnutie v jednoduchom jazyku</h2>
-<p>Obsah vašich záznamov neuchovávame na našich serveroch. Vaše správy, fotografie, hlasové poznámky, záznamy nálady a tagy sú šifrované na vašom zariadení a pri synchronizácii s vaším partnerom sú end-to-end šifrované počas prenosu. Mote je možné plne používať bez vytvorenia účtu; prihlásenie cez Apple alebo Google je voliteľné a umožňuje synchronizáciu nároku Premium a obnovenie šifrovanej zálohy v cloude naprieč vašimi zariadeniami — obsah vašej cloudovej zálohy nikdy nedostávame v nešifrovanej podobe. Google AdMob používame na neinvazívne bannerové reklamy na pomocných obrazovkách a fakturáciu Apple/Google na spracovanie nákupov v aplikácii. Sentry sa používa iba vtedy, ak je explicitne povolené v zostave na hlásenie pádov. Máte plné práva podľa nariadenia GDPR vrátane prístupu, vymazania a prenositeľnosti — väčšinu z nich je možné uplatniť priamo v aplikácii.</p>
+<p>Obsah vašich záznamov neuchovávame na našich serveroch. Vaše správy, fotografie, hlasové poznámky, záznamy nálady a tagy sú šifrované na vašom zariadení a pri synchronizácii s vaším partnerom sú end-to-end šifrované počas prenosu. Mote je možné plne používať bez vytvorenia účtu; prihlásenie cez Apple alebo Google je voliteľné a umožňuje synchronizáciu nároku Premium a obnovenie šifrovanej zálohy v cloude naprieč vašimi zariadeniami — obsah vašej cloudovej zálohy nikdy nedostávame v nešifrovanej podobe. Unity Ads používame na neinvazívne bannerové reklamy na pomocných obrazovkách a fakturáciu Apple/Google na spracovanie nákupov v aplikácii. Sentry sa používa iba vtedy, ak je explicitne povolené v zostave na hlásenie pádov. Máte plné práva podľa nariadenia GDPR vrátane prístupu, vymazania a prenositeľnosti — väčšinu z nich je možné uplatniť priamo v aplikácii.</p>
 <h2>3. Údaje, ktoré spracúvame</h2>
 <h3>3.1 Iba lokálne údaje</h3>
 <p>Záznamy, správy, tagy, záznamy nálady, fotografie a hlasové poznámky, ktoré pridáte, sú uložené <strong>lokálne na vašom zariadení</strong> v šifrovanej forme (MMKV s kľúčom odvodeným od zariadenia, uloženým v Apple Keychain / Android Keystore). Pri synchronizácii so zariadením vášho spárovaného partnera je obsah <strong>end-to-end šifrovaný</strong> pomocou <code>tweetnacl</code> kľúčov vygenerovaných na každom zariadení — vývojár aplikácie Mote nemôže čítať vaše záznamy.</p>
@@ -97,13 +97,12 @@
 <li>verziu a číslo zostavy aplikácie.</li>
 </ul>
 <p>Sentry <strong>nezhromažďuje</strong> váš obsah (záznamy, súbory, vaccination records, fotografie, archívy), používateľské mená ani iné PII. Diagnostické údaje uchováva Sentry po dobu až <strong>90 dní</strong>. V niektorých produkčných zostavách je Sentry úmyselne deaktivované (nie je nakonfigurovaný žiadny DSN) — v takom prípade žiadne diagnostické údaje neopustia vaše zariadenie.</p>
-<h3>3.4 Reklama (AdMob)</h3>
-<p>Mote zobrazuje neinvazívne reklamy na obrazovkách Nastavenia, Prázdny stav a Export. Reklamy sú doručované prostredníctvom <strong>Google AdMob</strong>, ktorého SDK zbiera:</p>
+<h3>3.4 Reklama (Unity Ads)</h3>
+<p>Mote zobrazuje neinvazívne reklamy na obrazovkách Nastavenia, Prázdny stav a Export. Reklamy sú doručované prostredníctvom <strong>Unity Ads</strong>, ktorého SDK zbiera:</p>
 <ul>
 <li><strong>ID reklamy</strong> (Android Advertising ID / Apple IDFA), zdieľané so spoločnosťou Google na zobrazovanie reklám;</li>
 <li>diagnostické údaje (model zariadenia, lokalizácia na úrovni krajiny, jazyk).</li>
 </ul>
-<p>Ads may also be served by AdMob mediation partners: Meta Platforms, Inc. (<a href="https://www.facebook.com/privacy/policy/">Meta Audience Network</a>) and Unity Technologies (<a href="https://unity.com/legal/privacy-policy">Unity Ads</a>).</p>
 <p>Predvolený režim sú <strong>nepersonalizované reklamy</strong>. V systéme iOS, výzva App Tracking Transparency (ATT) žiada o váš súhlas predtým, ako sa použije akýkoľvek identifikátor na sledovanie; v systéme Android ovládate ID reklamy v systémových Nastaveniach. Reklamy môžu byť trvalo vypnuté prostredníctvom IAP Lifetime / Premium.</p>
 <h3>3.5 Nákupy v aplikácii (IAP)</h3>
 <p>Mote ponúka platené funkcie prostredníctvom Apple In-App Purchase (iOS) a Google Play Billing (Android). Keď uskutočníte nákup:</p>
@@ -156,7 +155,7 @@
 <li><strong>Spustenie aplikácie na vašom zariadení</strong> — lokálne úložisko a (ak je prítomné) šifrovanie umožňujú, aby vaše údaje pretrvali medzi reláciami.</li>
 <li><strong>Synchronizácia s vaším partnerom</strong> — relé pre párovanie umožňuje doručovanie vášho šifrovaného obsahu end-to-end v reálnom čase.</li>
 <li><strong>Zlepšenie stability</strong> — diagnostika Sentry pomáha opravovať pády, ktoré ovplyvňujú vaše používanie.</li>
-<li><strong>Udržanie bezplatnej verzie</strong> — AdMob doručuje neinvazívne reklamy na financovanie používateľov, ktorí si nekupujú prémiové funkcie.</li>
+<li><strong>Udržanie bezplatnej verzie</strong> — Unity Ads doručuje neinvazívne reklamy na financovanie používateľov, ktorí si nekupujú prémiové funkcie.</li>
 <li><strong>Spracovanie nákupov</strong> — fakturácia Apple / Google plní prémiové nároky, ktoré sa rozhodnete kúpiť.</li>
 <li><strong>Synchronizácia nároku a zálohy v cloude naprieč zariadeniami</strong> — pre používateľov, ktorí sa rozhodnú prihlásiť, synchronizácia nároku Premium a voliteľné obnovenie šifrovanej zálohy v cloude umožňujú obnoviť párovanie a nastavenia na novom zariadení.</li>
 </ul>
@@ -177,8 +176,6 @@
 <tr><td>Cloudflare, Inc.</td><td>Relé pre párovanie; voliteľná služba účtu/relácie; synchronizácia nároku; uchovávanie šifrovanej zálohy v cloude</td><td>Náhodné ID páru, šifrovaný blob, identifikátor relácie, šifrovaný text zálohy (iba ak sa prihlásite a používate zálohu v cloude)</td><td><a href="https://www.cloudflare.com/privacypolicy/">https://www.cloudflare.com/privacypolicy/</a></td></tr>
 <tr><td>Apple Inc. (Sign in with Apple)</td><td>Voliteľná autentifikácia účtu</td><td>Token identity, e-mailová adresa (môže ísť o adresu Apple private relay)</td><td><a href="https://www.apple.com/legal/privacy/">https://www.apple.com/legal/privacy/</a></td></tr>
 <tr><td>Google LLC (Google Sign-In)</td><td>Voliteľná autentifikácia účtu</td><td>Token identity, e-mailová adresa</td><td><a href="https://policies.google.com/privacy">https://policies.google.com/privacy</a></td></tr>
-<tr><td>Google LLC (AdMob)</td><td>Zobrazovanie reklám</td><td>ID reklamy, metriky zariadenia a reklamy</td><td><a href="https://policies.google.com/privacy">https://policies.google.com/privacy</a></td></tr>
-<tr><td>Meta Platforms, Inc. (Meta Audience Network)</td><td>Zobrazovanie reklám</td><td>ID reklamy, metriky zariadenia a reklamy</td><td><a href="https://www.facebook.com/privacy/policy/">https://www.facebook.com/privacy/policy/</a></td></tr>
 <tr><td>Unity Technologies (Unity Ads)</td><td>Zobrazovanie reklám</td><td>ID reklamy, metriky zariadenia a reklamy</td><td><a href="https://unity.com/legal/privacy-policy">https://unity.com/legal/privacy-policy</a></td></tr>
 <tr><td>Functional Software Inc. (Sentry)</td><td>Hlásenie pádov</td><td>Zásobníky volaní chýb, metadáta zariadenia</td><td><a href="https://sentry.io/privacy/">https://sentry.io/privacy/</a></td></tr>
 <tr><td>Apple Inc. (App Store / IAP)</td><td>Spracovanie nákupov v aplikácii na iOS</td><td>Nákupný token, nárok na úrovni účtu</td><td><a href="https://www.apple.com/legal/privacy/">https://www.apple.com/legal/privacy/</a></td></tr>
@@ -201,7 +198,7 @@
 <tr><td>Blob pre párovanie handshake</td><td>Relé Cloudflare (šifrované)</td><td>Až 24 hodín, potom automaticky vyprší</td></tr>
 <tr><td>E2E správy v reálnom čase</td><td>Relé Cloudflare (šifrované)</td><td>Uložené len do doručenia spárovanému zariadeniu, potom vymazané</td></tr>
 <tr><td>Náhodné ID páru</td><td>Obe zariadenia + relé</td><td>Kým nezrušíte párovanie alebo nevymažete údaje aplikácie</td></tr>
-<tr><td>ID reklamy</td><td>Systémy Google AdMob</td><td>Podľa politiky uchovávania spoločnosti Google (zvyčajne až 14 mesiacov pre metriky reklamy)</td></tr>
+<tr><td>ID reklamy</td><td>Systémy Unity Ads</td><td>Podľa politiky uchovávania spoločnosti Unity</td></tr>
 <tr><td>Údaje o páde Sentry</td><td>Systémy Sentry</td><td>Až 90 dní od udalosti</td></tr>
 <tr><td>Nákupný token / potvrdenie IAP</td><td>Vaše zariadenie + Apple / Google</td><td>Kým neodinstalujete; Apple / Google uchovávajú záznamy transakcií podľa ich vlastných zásad</td></tr>
 <tr><td>JWT token relácie</td><td>Vaše zariadenie (bezpečné úložisko)</td><td>Až 30 dní, obnoviteľný počas posledných 7 dní; odstránený pri odhlásení</td></tr>
@@ -237,8 +234,8 @@
 </ul>
 <p>Žiadny systém nie je 100% bezpečný; udržiavajte svoje zariadenie aktualizované a používajte silné zámky zariadenia.</p>
 <h2>13. Transparentnosť sledovania aplikácií (iOS) a ID reklamy</h2>
-<p>Na iOS, predtým ako AdMob použije akýkoľvek identifikátor na sledovanie, Mote zobrazí systémovú výzvu <strong>App Tracking Transparency</strong>. Ak odmietnete, Mote zobrazuje iba nepersonalizované reklamy.</p>
-<p>Na Androide môžete resetovať alebo obmedziť svoje ID reklamy v časti <strong>Nastavenia → Google → Reklamy</strong>. Voľba „Odstrániť ID reklamy“ zabráni AdMobu v používaní osobného identifikátora; nepersonalizované reklamy sa naďalej zobrazujú.</p>
+<p>Na iOS, predtým ako Unity Ads použije akýkoľvek identifikátor na sledovanie, Mote zobrazí systémovú výzvu <strong>App Tracking Transparency</strong>. Ak odmietnete, Mote zobrazuje iba nepersonalizované reklamy.</p>
+<p>Na Androide môžete resetovať alebo obmedziť svoje ID reklamy v časti <strong>Nastavenia → Google → Reklamy</strong>. Voľba „Odstrániť ID reklamy“ zabráni Unity Adsu v používaní osobného identifikátora; nepersonalizované reklamy sa naďalej zobrazujú.</p>
 <h2>14. Nákupy v aplikácii</h2>
 <p>Mote ponúka nasledujúce produkty v aplikácii prostredníctvom Apple App Store a Google Play: ročné predplatné, doživotné odomknutie, voliteľná darčeková nádoba.</p>
 <p>Všetky platobné údaje spracúvajú <strong>Apple Inc.</strong> (App Store / účet iTunes) alebo <strong>Google LLC</strong> (Play Billing). Nikdy nevidíme číslo vašej karty, vašu fakturačnú adresu ani váš úplný Apple ID / Google účet. Apple a Google vrátia iba nepriehľadný nákupný token a metadáta nároku, ktoré používame na odomknutie funkcií. Predplatné je možné kedykoľvek zrušiť v Nastaveniach iOS → Apple ID → Predplatné alebo v aplikácii Google Play → Predplatné; pravidlá zrušenia sú riadené spoločnosťami Apple / Google.</p>

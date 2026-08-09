@@ -77,7 +77,7 @@
 <p>For the version of the app distributed via Google Play, the data controller is LICENCEPRO POLSKA Sp. z o.o., ul. Huculska 6, 00-730 Warszawa, Polska.</p>
 <p>This Privacy Policy explains what personal data Mote processes, how, why, and what rights you have.</p>
 <h2>2. Plain-language summary</h2>
-<p>We do not store the content of your entries on our servers. Your messages, photos, voice notes, mood check-ins and tags are encrypted on your device and, when synced with your partner, end-to-end encrypted in transit. Mote can be used fully without creating an account; signing in with Apple or Google is optional and enables Premium entitlement sync and encrypted cloud-backup recovery across your devices — we never receive your cloud backup content unencrypted. We use Google AdMob for non-invasive banner ads on auxiliary screens and Apple/Google billing to process in-app purchases. Sentry is used only when explicitly enabled in a build to report crashes. You have full GDPR rights including access, deletion, and portability — most exercisable directly in the app.</p>
+<p>We do not store the content of your entries on our servers. Your messages, photos, voice notes, mood check-ins and tags are encrypted on your device and, when synced with your partner, end-to-end encrypted in transit. Mote can be used fully without creating an account; signing in with Apple or Google is optional and enables Premium entitlement sync and encrypted cloud-backup recovery across your devices — we never receive your cloud backup content unencrypted. We use Unity Ads for non-invasive banner ads on auxiliary screens and Apple/Google billing to process in-app purchases. Sentry is used only when explicitly enabled in a build to report crashes. You have full GDPR rights including access, deletion, and portability — most exercisable directly in the app.</p>
 <h2>3. Data we process</h2>
 <h3>3.1 Local-only data</h3>
 <p>Entries, messages, tags, mood check-ins, photos and voice notes you add are stored <strong>locally on your device</strong> in encrypted form (MMKV with a device-derived key kept in Apple Keychain / Android Keystore). When synced with your paired partner's device, content is <strong>end-to-end encrypted</strong> using <code>tweetnacl</code> keys generated on each device — Mote's developer cannot read your entries.</p>
@@ -97,13 +97,12 @@
 <li>app version and build number.</li>
 </ul>
 <p>Sentry <strong>does not</strong> collect your content (entries, files, vaccination records, photos, archives), usernames, or other PII. Diagnostic data is retained by Sentry for up to <strong>90 days</strong>. In some production builds Sentry is intentionally disabled (no DSN configured) — in that case no diagnostic data leaves your device.</p>
-<h3>3.4 Advertising (AdMob)</h3>
-<p>Mote shows non-invasive ads on Settings, Empty state, and Export. Ads are delivered by <strong>Google AdMob</strong>, whose SDK collects:</p>
+<h3>3.4 Advertising (Unity Ads)</h3>
+<p>Mote shows non-invasive ads on Settings, Empty state, and Export. Ads are delivered by <strong>Unity Ads</strong>, whose SDK collects:</p>
 <ul>
 <li>the <strong>Advertising ID</strong> (Android Advertising ID / Apple IDFA), shared with Google to serve ads;</li>
 <li>diagnostic data (device model, country-level location, language).</li>
 </ul>
-<p>Ads may also be delivered through AdMob mediation partners: Meta Platforms, Inc. (Meta Audience Network, <a href="https://www.facebook.com/privacy/policy/">privacy policy</a>) and Unity Technologies (Unity Ads, <a href="https://unity.com/legal/privacy-policy">privacy policy</a>). These partners receive ad requests under the same configuration — non-personalized ads.</p>
 <p>Default mode is <strong>non-personalized ads</strong>. On iOS, the App Tracking Transparency (ATT) prompt asks for your consent before any tracking-grade identifier is used; on Android you control the Advertising ID under system Settings. Ads can be permanently disabled via the Lifetime / Premium IAP.</p>
 <h3>3.5 In-app purchases (IAP)</h3>
 <p>Mote offers paid features through Apple In-App Purchase (iOS) and Google Play Billing (Android). When you make a purchase:</p>
@@ -156,7 +155,7 @@
 <li><strong>Run the app on your device</strong> — local storage and (where present) encryption let your data persist between sessions.</li>
 <li><strong>Sync with your partner</strong> — pairing relay enables real-time E2E delivery of your encrypted content.</li>
 <li><strong>Improve stability</strong> — Sentry diagnostics help fix crashes that affect your usage.</li>
-<li><strong>Sustain the free tier</strong> — AdMob delivers non-invasive ads to fund users who do not buy premium.</li>
+<li><strong>Sustain the free tier</strong> — Unity Ads delivers non-invasive ads to fund users who do not buy premium.</li>
 <li><strong>Process purchases</strong> — Apple / Google billing fulfils premium entitlements you choose to buy.</li>
 <li><strong>Sync entitlement and cloud backup across devices</strong> — for users who choose to sign in, Premium entitlement sync and optional encrypted cloud-backup recovery let you restore your pairing and settings on a new device.</li>
 </ul>
@@ -177,8 +176,6 @@
 <tr><td>Cloudflare, Inc.</td><td>Pairing relay; optional account/session service; entitlement sync; encrypted cloud-backup storage</td><td>Random pair ID, encrypted blob, session identifier, encrypted backup ciphertext (only if you sign in and use cloud backup)</td><td><a href="https://www.cloudflare.com/privacypolicy/">https://www.cloudflare.com/privacypolicy/</a></td></tr>
 <tr><td>Apple Inc. (Sign in with Apple)</td><td>Optional account authentication</td><td>Identity token, email address (may be an Apple private-relay address)</td><td><a href="https://www.apple.com/legal/privacy/">https://www.apple.com/legal/privacy/</a></td></tr>
 <tr><td>Google LLC (Google Sign-In)</td><td>Optional account authentication</td><td>Identity token, email address</td><td><a href="https://policies.google.com/privacy">https://policies.google.com/privacy</a></td></tr>
-<tr><td>Google LLC (AdMob)</td><td>Serve ads</td><td>Advertising ID, device &amp; ad metrics</td><td><a href="https://policies.google.com/privacy">https://policies.google.com/privacy</a></td></tr>
-<tr><td>Meta Platforms, Inc. (Meta Audience Network)</td><td>Serve ads</td><td>Advertising ID, device &amp; ad metrics</td><td><a href="https://www.facebook.com/privacy/policy/">https://www.facebook.com/privacy/policy/</a></td></tr>
 <tr><td>Unity Technologies (Unity Ads)</td><td>Serve ads</td><td>Advertising ID, device &amp; ad metrics</td><td><a href="https://unity.com/legal/privacy-policy">https://unity.com/legal/privacy-policy</a></td></tr>
 <tr><td>Functional Software Inc. (Sentry)</td><td>Crash reporting</td><td>Stack traces, device metadata</td><td><a href="https://sentry.io/privacy/">https://sentry.io/privacy/</a></td></tr>
 <tr><td>Apple Inc. (App Store / IAP)</td><td>In-app purchase processing on iOS</td><td>Purchase token, account-level entitlement</td><td><a href="https://www.apple.com/legal/privacy/">https://www.apple.com/legal/privacy/</a></td></tr>
@@ -201,7 +198,7 @@
 <tr><td>Pair handshake blob</td><td>Cloudflare relay (encrypted)</td><td>Up to 24 hours, then automatically expired</td></tr>
 <tr><td>Real-time E2E messages</td><td>Cloudflare relay (encrypted)</td><td>Stored only until delivered to the paired device, then deleted</td></tr>
 <tr><td>Random pair ID</td><td>Both devices + relay</td><td>Until you unpair or delete app data</td></tr>
-<tr><td>Advertising ID</td><td>Google AdMob systems</td><td>Per Google's retention policy (typically up to 14 months for ad metrics)</td></tr>
+<tr><td>Advertising ID</td><td>Unity Ads systems</td><td>Per Unity's retention policy</td></tr>
 <tr><td>Sentry crash data</td><td>Sentry systems</td><td>Up to 90 days from the event</td></tr>
 <tr><td>IAP purchase token / receipt</td><td>Your device + Apple / Google</td><td>Until you uninstall; Apple / Google keep transaction records per their own policies</td></tr>
 <tr><td>Session JWT</td><td>Your device (secure storage)</td><td>Up to 30 days, refreshable during the final 7 days; removed when you sign out</td></tr>
@@ -237,8 +234,8 @@
 </ul>
 <p>No system is 100% secure; please keep your device updated and use strong device locks.</p>
 <h2>13. App Tracking Transparency (iOS) and Advertising ID</h2>
-<p>On iOS, before any tracking-grade identifier is used by AdMob, Mote shows the system <strong>App Tracking Transparency</strong> prompt. If you decline, Mote serves only non-personalized ads.</p>
-<p>On Android, you can reset or limit your Advertising ID under <strong>Settings → Google → Ads</strong>. Choosing "Delete advertising ID" stops AdMob from using a personal identifier; non-personalized ads continue to be shown.</p>
+<p>On iOS, before any tracking-grade identifier is used by Unity Ads, Mote shows the system <strong>App Tracking Transparency</strong> prompt. If you decline, Mote serves only non-personalized ads.</p>
+<p>On Android, you can reset or limit your Advertising ID under <strong>Settings → Google → Ads</strong>. Choosing "Delete advertising ID" stops Unity Ads from using a personal identifier; non-personalized ads continue to be shown.</p>
 <h2>14. In-app purchases</h2>
 <p>Mote offers the following in-app products through Apple App Store and Google Play: annual subscription, lifetime unlock, optional tip jar.</p>
 <p>All payment data is handled by <strong>Apple Inc.</strong> (App Store / iTunes account) or <strong>Google LLC</strong> (Play Billing). We never see your card number, your billing address, or your full Apple ID / Google account. Apple and Google return only an opaque purchase token and entitlement metadata that we use to unlock features. Subscriptions can be cancelled at any time in iOS Settings → Apple ID → Subscriptions or in the Google Play app → Subscriptions; cancellation rules are governed by Apple / Google.</p>

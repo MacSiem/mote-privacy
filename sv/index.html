@@ -78,7 +78,7 @@
 <p>För versionen av appen som distribueras via Google Play är dataansvarig LICENCEPRO POLSKA Sp. z o.o., ul. Huculska 6, 00-730 Warszawa, Polska.</p>
 <p>Denna Integritetspolicy förklarar vilka personuppgifter Mote behandlar, hur, varför, och vilka rättigheter du har.</p>
 <h2>2. Sammanfattning i klartext</h2>
-<p>Vi lagrar inte innehållet i dina poster på våra servrar. Dina meddelanden, foton, röstanteckningar, humörsregistreringar och taggar krypteras på din enhet och, när de synkroniseras med din partner, är de end-to-end-krypterade under överföring. Mote kan användas helt utan att skapa ett konto; att logga in med Apple eller Google är valfritt och möjliggör synkronisering av Premium-behörighet och återställning av krypterad molnsäkerhetskopiering mellan dina enheter — vi får aldrig tillgång till innehållet i din molnsäkerhetskopia i okrypterad form. Vi använder Google AdMob för icke-påträngande bannerannonser på hjälp-skärmar och Apple/Google-fakturering för att hantera köp i appen. Sentry används endast när det är uttryckligen aktiverat i en version för att rapportera krascher. Du har fullständiga GDPR-rättigheter inklusive åtkomst, radering och dataportabilitet — de flesta kan utövas direkt i appen.</p>
+<p>Vi lagrar inte innehållet i dina poster på våra servrar. Dina meddelanden, foton, röstanteckningar, humörsregistreringar och taggar krypteras på din enhet och, när de synkroniseras med din partner, är de end-to-end-krypterade under överföring. Mote kan användas helt utan att skapa ett konto; att logga in med Apple eller Google är valfritt och möjliggör synkronisering av Premium-behörighet och återställning av krypterad molnsäkerhetskopiering mellan dina enheter — vi får aldrig tillgång till innehållet i din molnsäkerhetskopia i okrypterad form. Vi använder Unity Ads för icke-påträngande bannerannonser på hjälp-skärmar och Apple/Google-fakturering för att hantera köp i appen. Sentry används endast när det är uttryckligen aktiverat i en version för att rapportera krascher. Du har fullständiga GDPR-rättigheter inklusive åtkomst, radering och dataportabilitet — de flesta kan utövas direkt i appen.</p>
 <h2>3. Uppgifter vi behandlar</h2>
 <h3>3.1 Endast lokal data</h3>
 <p>Inlägg, meddelanden, taggar, humörsregistreringar, foton och röstanteckningar du lägger till lagras <strong>lokalt på din enhet</strong> i krypterad form (MMKV med en enhetsgenererad nyckel som förvaras i Apple Keychain / Android Keystore). När innehållet synkroniseras med din parkopplade partners enhet är det <strong>end-to-end-krypterat</strong> med <code>tweetnacl</code>-nycklar som genereras på varje enhet — Motes utvecklare kan inte läsa dina inlägg.</p>
@@ -98,13 +98,12 @@
 <li>appversion och byggnummer.</li>
 </ul>
 <p>Sentry <strong>samlar inte in</strong> ditt innehåll (inlägg, filer, vaccinationsjournaler, foton, arkiv), användarnamn eller annan PII. Diagnostikdata behålls av Sentry i upp till <strong>90 dagar</strong>. I vissa produktionsbyggen är Sentry avsiktligt inaktiverat (ingen DSN konfigurerad) — i så fall lämnar ingen diagnostikdata din enhet.</p>
-<h3>3.4 Annonsering (AdMob)</h3>
-<p>Mote visar icke-påträngande annonser på Inställningar, Tomt läge och Exportera. Annonser levereras av <strong>Google AdMob</strong>, vars SDK samlar in:</p>
+<h3>3.4 Annonsering (Unity Ads)</h3>
+<p>Mote visar icke-påträngande annonser på Inställningar, Tomt läge och Exportera. Annonser levereras av <strong>Unity Ads</strong>, vars SDK samlar in:</p>
 <ul>
 <li><strong>Annonserings-ID</strong> (Android Advertising ID / Apple IDFA), som delas med Google för att visa annonser;</li>
 <li>diagnostikdata (enhetsmodell, plats på landsnivå, språk).</li>
 </ul>
-<p>Ads may also be served by AdMob mediation partners: Meta Platforms, Inc. (<a href="https://www.facebook.com/privacy/policy/">Meta Audience Network</a>) and Unity Technologies (<a href="https://unity.com/legal/privacy-policy">Unity Ads</a>).</p>
 <p>Standardläget är <strong>icke-personaliserade annonser</strong>. På iOS ber App Tracking Transparency (ATT)-prompten om ditt samtycke innan någon spårningsidentifierare används; på Android kontrollerar du annonserings-ID under systeminställningarna. Annonser kan permanent inaktiveras via Livstids- / Premium-köp i appen.</p>
 <h3>3.5 Köp i appen (IAP)</h3>
 <p>Mote erbjuder betalda funktioner via Apple In-App Purchase (iOS) och Google Play Billing (Android). När du gör ett köp:</p>
@@ -157,7 +156,7 @@
 <li><strong>Driva appen på din enhet</strong> — lokal lagring och (där det förekommer) kryptering låter din data bestå mellan sessioner.</li>
 <li><strong>Synkronisera med din partner</strong> — parkopplingsreläet möjliggör E2E-leverans i realtid av ditt krypterade innehåll.</li>
 <li><strong>Förbättra stabiliteten</strong> — Sentry-diagnostik hjälper till att åtgärda krascher som påverkar din användning.</li>
-<li><strong>Upprätthålla gratistjänsten</strong> — AdMob levererar icke-påträngande annonser för att finansiera användare som inte köper premium.</li>
+<li><strong>Upprätthålla gratistjänsten</strong> — Unity Ads levererar icke-påträngande annonser för att finansiera användare som inte köper premium.</li>
 <li><strong>Behandla köp</strong> — Apple / Google-fakturering uppfyller premiumbehörigheter du väljer att köpa.</li>
 <li><strong>Synkronisera behörighet och molnsäkerhetskopiering mellan enheter</strong> — för användare som väljer att logga in möjliggör synkronisering av Premium-behörighet och valfri krypterad molnsäkerhetskopiering återställning av din parkoppling och dina inställningar på en ny enhet.</li>
 </ul>
@@ -178,8 +177,6 @@
 <tr><td>Cloudflare, Inc.</td><td>Parkopplingsrelä; valfri konto-/sessionstjänst; synkronisering av behörighet; krypterad molnsäkerhetskopieringslagring</td><td>Slumpmässigt par-ID, krypterad blob, sessions-ID, krypterad säkerhetskopiechiffertext (endast om du loggar in och använder molnsäkerhetskopiering)</td><td><a href="https://www.cloudflare.com/privacypolicy/">https://www.cloudflare.com/privacypolicy/</a></td></tr>
 <tr><td>Apple Inc. (Sign in with Apple)</td><td>Valfri kontoautentisering</td><td>Identitetstoken, e-postadress (kan vara en Apple private-relay-adress)</td><td><a href="https://www.apple.com/legal/privacy/">https://www.apple.com/legal/privacy/</a></td></tr>
 <tr><td>Google LLC (Google Sign-In)</td><td>Valfri kontoautentisering</td><td>Identitetstoken, e-postadress</td><td><a href="https://policies.google.com/privacy">https://policies.google.com/privacy</a></td></tr>
-<tr><td>Google LLC (AdMob)</td><td>Visa annonser</td><td>Annonserings-ID, enhets- och annonsmätvärden</td><td><a href="https://policies.google.com/privacy">https://policies.google.com/privacy</a></td></tr>
-<tr><td>Meta Platforms, Inc. (Meta Audience Network)</td><td>Visa annonser</td><td>Annonserings-ID, enhets- och annonsmätvärden</td><td><a href="https://www.facebook.com/privacy/policy/">https://www.facebook.com/privacy/policy/</a></td></tr>
 <tr><td>Unity Technologies (Unity Ads)</td><td>Visa annonser</td><td>Annonserings-ID, enhets- och annonsmätvärden</td><td><a href="https://unity.com/legal/privacy-policy">https://unity.com/legal/privacy-policy</a></td></tr>
 <tr><td>Functional Software Inc. (Sentry)</td><td>Kraschrapportering</td><td>Stackspårningar, enhetsmetadata</td><td><a href="https://sentry.io/privacy/">https://sentry.io/privacy/</a></td></tr>
 <tr><td>Apple Inc. (App Store / IAP)</td><td>Behandling av köp i appen på iOS</td><td>Köp-token, behörighet på kontonivå</td><td><a href="https://www.apple.com/legal/privacy/">https://www.apple.com/legal/privacy/</a></td></tr>
@@ -202,7 +199,7 @@
 <tr><td>Parkopplingshandskakningsblob</td><td>Cloudflare-relä (krypterad)</td><td>Upp till 24 timmar, sedan automatiskt borttagen</td></tr>
 <tr><td>E2E-meddelanden i realtid</td><td>Cloudflare-relä (krypterad)</td><td>Lagras endast tills de levererats till den parkopplade enheten, raderas sedan</td></tr>
 <tr><td>Slumpmässigt par-ID</td><td>Båda enheter + relä</td><td>Tills du avparar eller raderar appdata</td></tr>
-<tr><td>Annonserings-ID</td><td>Google AdMob-system</td><td>Enligt Googles lagringspolicy (typiskt upp till 14 månader för annonsmätvärden)</td></tr>
+<tr><td>Annonserings-ID</td><td>Unity Ads-system</td><td>Enligt Unitys lagringspolicy</td></tr>
 <tr><td>Sentry kraschdata</td><td>Sentry-system</td><td>Upp till 90 dagar från händelsen</td></tr>
 <tr><td>IAP-köptoken / kvitto</td><td>Din enhet + Apple / Google</td><td>Tills du avinstallerar; Apple / Google behåller transaktionshistorik enligt sina egna policyer</td></tr>
 <tr><td>Sessions-JWT</td><td>Din enhet (säker lagring)</td><td>Upp till 30 dagar, förnybar under de sista 7 dagarna; tas bort när du loggar ut</td></tr>
@@ -238,8 +235,8 @@
 </ul>
 <p>Inget system är 100% säkert; vänligen håll din enhet uppdaterad och använd starka enhetslås.</p>
 <h2>13. App Tracking Transparency (iOS) och Annonserings-ID</h2>
-<p>På iOS, innan någon spårningsidentifierare används av AdMob, visar Mote systemets prompt för <strong>App Tracking Transparency</strong>. Om du nekar, visar Mote endast icke-personaliserade annonser.</p>
-<p>På Android kan du återställa eller begränsa ditt Annonserings-ID under <strong>Inställningar → Google → Annonser</strong>. Att välja "Radera annonserings-ID" hindrar AdMob från att använda en personlig identifierare; icke-personaliserade annonser fortsätter att visas.</p>
+<p>På iOS, innan någon spårningsidentifierare används av Unity Ads, visar Mote systemets prompt för <strong>App Tracking Transparency</strong>. Om du nekar, visar Mote endast icke-personaliserade annonser.</p>
+<p>På Android kan du återställa eller begränsa ditt Annonserings-ID under <strong>Inställningar → Google → Annonser</strong>. Att välja "Radera annonserings-ID" hindrar Unity Ads från att använda en personlig identifierare; icke-personaliserade annonser fortsätter att visas.</p>
 <h2>14. Köp i appen</h2>
 <p>Mote erbjuder följande produkter i appen via Apple App Store och Google Play: årsabonnemang, livstidsupplåsning, valfri dricksburk.</p>
 <p>All betalningsdata hanteras av <strong>Apple Inc.</strong> (App Store / iTunes-konto) eller <strong>Google LLC</strong> (Play Billing). Vi ser aldrig ditt kortnummer, din faktureringsadress eller ditt fullständiga Apple ID / Google-konto. Apple och Google returnerar endast en opålitlig köp-token och behörighetsmetadata som vi använder för att låsa upp funktioner. Prenumerationer kan avbrytas när som helst i iOS Inställningar → Apple ID → Prenumerationer eller i Google Play-appen → Prenumerationer; avbokningsregler styrs av Apple / Google.</p>

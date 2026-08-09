@@ -77,7 +77,7 @@
 <p>Đối với phiên bản ứng dụng được phân phối qua Google Play, bộ điều khiển dữ liệu là LICENCEPRO POLSKA Sp. z o.o., ul. Huculska 6, 00-730 Warszawa, Polska.</p>
 <p>Chính sách quyền riêng tư này giải thích Mote xử lý dữ liệu cá nhân nào, cách thức, lý do và các quyền mà bạn có.</p>
 <h2>2. Tóm tắt bằng ngôn ngữ đơn giản</h2>
-<p>Chúng tôi không lưu trữ nội dung các mục nhập của bạn trên máy chủ của chúng tôi. Các tin nhắn, ảnh, ghi chú thoại, trạng thái cảm xúc và thẻ của bạn được mã hóa trên thiết bị của bạn và, khi đồng bộ hóa với đối tác của bạn, được mã hóa đầu cuối trong quá trình truyền tải. Mote có thể được sử dụng đầy đủ mà không cần tạo tài khoản; đăng nhập bằng Apple hoặc Google là tùy chọn và cho phép đồng bộ hóa quyền lợi Premium cùng khôi phục bản sao lưu đám mây được mã hóa trên các thiết bị của bạn — chúng tôi không bao giờ nhận được nội dung bản sao lưu đám mây của bạn ở dạng chưa mã hóa. Chúng tôi sử dụng Google AdMob cho quảng cáo biểu ngữ không xâm phạm trên các màn hình phụ và thanh toán của Apple/Google để xử lý các giao dịch mua trong ứng dụng. Sentry chỉ được sử dụng khi được bật rõ ràng trong một bản dựng để báo cáo sự cố. Bạn có đầy đủ các quyền theo GDPR bao gồm truy cập, xóa và chuyển đổi dữ liệu — hầu hết có thể thực hiện trực tiếp trong ứng dụng.</p>
+<p>Chúng tôi không lưu trữ nội dung các mục nhập của bạn trên máy chủ của chúng tôi. Các tin nhắn, ảnh, ghi chú thoại, trạng thái cảm xúc và thẻ của bạn được mã hóa trên thiết bị của bạn và, khi đồng bộ hóa với đối tác của bạn, được mã hóa đầu cuối trong quá trình truyền tải. Mote có thể được sử dụng đầy đủ mà không cần tạo tài khoản; đăng nhập bằng Apple hoặc Google là tùy chọn và cho phép đồng bộ hóa quyền lợi Premium cùng khôi phục bản sao lưu đám mây được mã hóa trên các thiết bị của bạn — chúng tôi không bao giờ nhận được nội dung bản sao lưu đám mây của bạn ở dạng chưa mã hóa. Chúng tôi sử dụng Unity Ads cho quảng cáo biểu ngữ không xâm phạm trên các màn hình phụ và thanh toán của Apple/Google để xử lý các giao dịch mua trong ứng dụng. Sentry chỉ được sử dụng khi được bật rõ ràng trong một bản dựng để báo cáo sự cố. Bạn có đầy đủ các quyền theo GDPR bao gồm truy cập, xóa và chuyển đổi dữ liệu — hầu hết có thể thực hiện trực tiếp trong ứng dụng.</p>
 <h2>3. Dữ liệu chúng tôi xử lý</h2>
 <h3>3.1 Dữ liệu chỉ lưu trữ cục bộ</h3>
 <p>Các mục nhập, tin nhắn, thẻ, trạng thái cảm xúc, ảnh và ghi chú thoại bạn thêm vào được lưu trữ <strong>cục bộ trên thiết bị của bạn</strong> dưới dạng mã hóa (MMKV với khóa được tạo từ thiết bị và lưu trữ trong Apple Keychain / Android Keystore). Khi đồng bộ hóa với thiết bị của đối tác đã ghép nối của bạn, nội dung được <strong>mã hóa đầu cuối</strong> bằng các khóa <code>tweetnacl</code> được tạo trên mỗi thiết bị — nhà phát triển của Mote không thể đọc các mục nhập của bạn.</p>
@@ -97,13 +97,12 @@
 <li>phiên bản và số bản dựng của ứng dụng.</li>
 </ul>
 <p>Sentry <strong>không</strong> thu thập nội dung của bạn (mục nhập, tệp, hồ sơ tiêm chủng, ảnh, kho lưu trữ), tên người dùng hoặc các PII khác. Dữ liệu chẩn đoán được Sentry giữ lại trong tối đa <strong>90 ngày</strong>. Trong một số bản dựng sản xuất, Sentry được chủ ý tắt (không cấu hình DSN) — trong trường hợp đó, không có dữ liệu chẩn đoán nào rời khỏi thiết bị của bạn.</p>
-<h3>3.4 Quảng cáo (AdMob)</h3>
-<p>Mote hiển thị quảng cáo không xâm phạm trên màn hình Cài đặt, Trạng thái trống và Xuất. Quảng cáo được phân phối bởi <strong>Google AdMob</strong>, SDK của họ thu thập:</p>
+<h3>3.4 Quảng cáo (Unity Ads)</h3>
+<p>Mote hiển thị quảng cáo không xâm phạm trên màn hình Cài đặt, Trạng thái trống và Xuất. Quảng cáo được phân phối bởi <strong>Unity Ads</strong>, SDK của họ thu thập:</p>
 <ul>
 <li><strong>ID quảng cáo</strong> (ID quảng cáo Android / Apple IDFA), được chia sẻ với Google để phân phát quảng cáo;</li>
 <li>dữ liệu chẩn đoán (mô hình thiết bị, vị trí cấp quốc gia, ngôn ngữ).</li>
 </ul>
-<p>Ads may also be served by AdMob mediation partners: Meta Platforms, Inc. (<a href="https://www.facebook.com/privacy/policy/">Meta Audience Network</a>) and Unity Technologies (<a href="https://unity.com/legal/privacy-policy">Unity Ads</a>).</p>
 <p>Chế độ mặc định là <strong>quảng cáo không cá nhân hóa</strong>. Trên iOS, lời nhắc App Tracking Transparency (ATT) yêu cầu sự đồng ý của bạn trước khi bất kỳ mã định danh cấp độ theo dõi nào được sử dụng; trên Android, bạn kiểm soát ID quảng cáo trong Cài đặt hệ thống. Quảng cáo có thể bị tắt vĩnh viễn thông qua IAP Lifetime / Premium.</p>
 <h3>3.5 Mua hàng trong ứng dụng (IAP)</h3>
 <p>Mote cung cấp các tính năng trả phí thông qua Mua hàng trong ứng dụng của Apple (iOS) và Thanh toán của Google Play (Android). Khi bạn thực hiện mua hàng:</p>
@@ -156,7 +155,7 @@
 <li><strong>Chạy ứng dụng trên thiết bị của bạn</strong> — lưu trữ cục bộ và (nếu có) mã hóa giúp dữ liệu của bạn tồn tại giữa các phiên.</li>
 <li><strong>Đồng bộ hóa với đối tác của bạn</strong> — rơ le ghép nối cho phép phân phối mã hóa đầu cuối theo thời gian thực nội dung đã mã hóa của bạn.</li>
 <li><strong>Cải thiện độ ổn định</strong> — chẩn đoán Sentry giúp khắc phục các sự cố ảnh hưởng đến việc sử dụng của bạn.</li>
-<li><strong>Duy trì gói miễn phí</strong> — AdMob phân phát quảng cáo không xâm phạm để tài trợ cho những người dùng không mua gói cao cấp.</li>
+<li><strong>Duy trì gói miễn phí</strong> — Unity Ads phân phát quảng cáo không xâm phạm để tài trợ cho những người dùng không mua gói cao cấp.</li>
 <li><strong>Xử lý giao dịch mua</strong> — thanh toán của Apple / Google thực hiện các quyền lợi cao cấp mà bạn chọn mua.</li>
 <li><strong>Đồng bộ hóa quyền lợi và bản sao lưu đám mây giữa các thiết bị</strong> — đối với người dùng chọn đăng nhập, đồng bộ hóa quyền lợi Premium và khôi phục bản sao lưu đám mây được mã hóa tùy chọn cho phép bạn khôi phục việc ghép nối và cài đặt của mình trên thiết bị mới.</li>
 </ul>
@@ -177,8 +176,6 @@
 <tr><td>Cloudflare, Inc.</td><td>Rơ le ghép nối; dịch vụ tài khoản/phiên tùy chọn; đồng bộ hóa quyền lợi; lưu trữ bản sao lưu đám mây được mã hóa</td><td>ID cặp ngẫu nhiên, khối dữ liệu mã hóa, mã định danh phiên, văn bản mã hóa của bản sao lưu (chỉ khi bạn đăng nhập và sử dụng sao lưu đám mây)</td><td><a href="https://www.cloudflare.com/privacypolicy/">https://www.cloudflare.com/privacypolicy/</a></td></tr>
 <tr><td>Apple Inc. (Sign in with Apple)</td><td>Xác thực tài khoản tùy chọn</td><td>Mã thông báo danh tính, địa chỉ email (có thể là địa chỉ chuyển tiếp riêng tư của Apple)</td><td><a href="https://www.apple.com/legal/privacy/">https://www.apple.com/legal/privacy/</a></td></tr>
 <tr><td>Google LLC (Google Sign-In)</td><td>Xác thực tài khoản tùy chọn</td><td>Mã thông báo danh tính, địa chỉ email</td><td><a href="https://policies.google.com/privacy">https://policies.google.com/privacy</a></td></tr>
-<tr><td>Google LLC (AdMob)</td><td>Phân phát quảng cáo</td><td>ID quảng cáo, số liệu thiết bị &amp; quảng cáo</td><td><a href="https://policies.google.com/privacy">https://policies.google.com/privacy</a></td></tr>
-<tr><td>Meta Platforms, Inc. (Meta Audience Network)</td><td>Phân phát quảng cáo</td><td>ID quảng cáo, số liệu thiết bị &amp; quảng cáo</td><td><a href="https://www.facebook.com/privacy/policy/">https://www.facebook.com/privacy/policy/</a></td></tr>
 <tr><td>Unity Technologies (Unity Ads)</td><td>Phân phát quảng cáo</td><td>ID quảng cáo, số liệu thiết bị &amp; quảng cáo</td><td><a href="https://unity.com/legal/privacy-policy">https://unity.com/legal/privacy-policy</a></td></tr>
 <tr><td>Functional Software Inc. (Sentry)</td><td>Báo cáo sự cố</td><td>Dấu vết ngăn xếp, siêu dữ liệu thiết bị</td><td><a href="https://sentry.io/privacy/">https://sentry.io/privacy/</a></td></tr>
 <tr><td>Apple Inc. (App Store / IAP)</td><td>Xử lý mua hàng trong ứng dụng trên iOS</td><td>Mã thông báo mua hàng, quyền lợi cấp tài khoản</td><td><a href="https://www.apple.com/legal/privacy/">https://www.apple.com/legal/privacy/</a></td></tr>
@@ -201,7 +198,7 @@
 <tr><td>Pair handshake blob</td><td>Rơ le Cloudflare (đã mã hóa)</td><td>Tối đa 24 giờ, sau đó tự động hết hạn</td></tr>
 <tr><td>Tin nhắn E2E theo thời gian thực</td><td>Rơ le Cloudflare (đã mã hóa)</td><td>Chỉ lưu trữ cho đến khi được gửi đến thiết bị đã ghép nối, sau đó bị xóa</td></tr>
 <tr><td>ID cặp ngẫu nhiên</td><td>Cả hai thiết bị + rơ le</td><td>Cho đến khi bạn hủy ghép nối hoặc xóa dữ liệu ứng dụng</td></tr>
-<tr><td>ID quảng cáo</td><td>Hệ thống Google AdMob</td><td>Theo chính sách lưu trữ của Google (thường lên đến 14 tháng đối với số liệu quảng cáo)</td></tr>
+<tr><td>ID quảng cáo</td><td>Hệ thống Unity Ads</td><td>Theo chính sách lưu trữ của Unity</td></tr>
 <tr><td>Dữ liệu sự cố Sentry</td><td>Hệ thống Sentry</td><td>Lên đến 90 ngày kể từ sự kiện</td></tr>
 <tr><td>Mã thông báo / biên nhận mua hàng IAP</td><td>Thiết bị của bạn + Apple / Google</td><td>Cho đến khi bạn gỡ cài đặt; Apple / Google giữ hồ sơ giao dịch theo chính sách riêng của họ</td></tr>
 <tr><td>JWT phiên</td><td>Thiết bị của bạn (bộ nhớ an toàn)</td><td>Tối đa 30 ngày, có thể làm mới trong 7 ngày cuối cùng; bị xóa khi bạn đăng xuất</td></tr>
@@ -237,8 +234,8 @@
 </ul>
 <p>Không có hệ thống nào an toàn 100%; vui lòng giữ thiết bị của bạn được cập nhật và sử dụng khóa thiết bị mạnh.</p>
 <h2>13. App Tracking Transparency (iOS) và ID quảng cáo</h2>
-<p>Trên iOS, trước khi bất kỳ mã định danh cấp độ theo dõi nào được AdMob sử dụng, Mote hiển thị lời nhắc hệ thống <strong>App Tracking Transparency</strong>. Nếu bạn từ chối, Mote chỉ phân phát quảng cáo không cá nhân hóa.</p>
-<p>Trên Android, bạn có thể đặt lại hoặc giới hạn ID quảng cáo của mình trong <strong>Cài đặt → Google → Quảng cáo</strong>. Chọn "Xóa ID quảng cáo" sẽ ngăn AdMob sử dụng một mã định danh cá nhân; quảng cáo không cá nhân hóa vẫn tiếp tục được hiển thị.</p>
+<p>Trên iOS, trước khi bất kỳ mã định danh cấp độ theo dõi nào được Unity Ads sử dụng, Mote hiển thị lời nhắc hệ thống <strong>App Tracking Transparency</strong>. Nếu bạn từ chối, Mote chỉ phân phát quảng cáo không cá nhân hóa.</p>
+<p>Trên Android, bạn có thể đặt lại hoặc giới hạn ID quảng cáo của mình trong <strong>Cài đặt → Google → Quảng cáo</strong>. Chọn "Xóa ID quảng cáo" sẽ ngăn Unity Ads sử dụng một mã định danh cá nhân; quảng cáo không cá nhân hóa vẫn tiếp tục được hiển thị.</p>
 <h2>14. Mua hàng trong ứng dụng</h2>
 <p>Mote cung cấp các sản phẩm trong ứng dụng sau thông qua Apple App Store và Google Play: đăng ký hàng năm, mở khóa trọn đời, hộp tiền boa tùy chọn.</p>
 <p>Tất cả dữ liệu thanh toán được xử lý bởi <strong>Apple Inc.</strong> (tài khoản App Store / iTunes) hoặc <strong>Google LLC</strong> (Play Billing). Chúng tôi không bao giờ thấy số thẻ, địa chỉ thanh toán hoặc Apple ID / tài khoản Google đầy đủ của bạn. Apple và Google chỉ trả về một mã thông báo mua hàng không rõ ràng và siêu dữ liệu quyền lợi mà chúng tôi sử dụng để mở khóa các tính năng. Đăng ký có thể bị hủy bất kỳ lúc nào trong Cài đặt iOS → Apple ID → Đăng ký hoặc trong ứng dụng Google Play → Đăng ký; các quy tắc hủy được quản lý bởi Apple / Google.</p>
